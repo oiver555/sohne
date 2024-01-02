@@ -62,7 +62,7 @@ export function BKG_01(props) {
   });
 
   const wall2 = new THREE.MeshPhysicalMaterial({
-    // lightMap: wall2LightMap,
+    lightMap: wall2LightMap,
     side: THREE.DoubleSide,
     envMapIntensity: 0,
   });
