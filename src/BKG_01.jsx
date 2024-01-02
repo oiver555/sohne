@@ -28,34 +28,34 @@ export function BKG_01(props) {
   });
 
   const {
-    shadowFloorPosX,
-    shadowFloorPosY,
-    shadowFloorPosZ,
-    shadowFloorRotX,
-    shadowFloorRotY,
-    shadowFloorRotZ,
+    shadowPosX,
+    shadowPosY,
+    shadowPosZ,
+    shadowRotX,
+    shadowRotY,
+    shadowRotZ,
   } = useControls({
-    shadowFloorPosX: {
+    shadowPosX: {
       value: 20,
       step: 0.1,
     },
-    shadowFloorPosY: {
+    shadowPosY: {
       value: 0.5,
       step: 0.1,
     },
-    shadowFloorPosZ: {
+    shadowPosZ: {
       value: 35,
       step: 0.1,
     },
-    shadowFloorRotX: {
+    shadowRotX: {
       value: -0.5,
       step: 0.001,
     },
-    shadowFloorRotY: {
+    shadowRotY: {
       value: 0.0,
       step: 0.001,
     },
-    shadowFloorRotZ: {
+    shadowRotZ: {
       value: 0,
       step: 0.001,
     },
@@ -106,11 +106,11 @@ export function BKG_01(props) {
         <mesh
           receiveShadow
           rotation={[
-            Math.PI * shadowFloorRotX,
-            Math.PI * shadowFloorRotY,
-            Math.PI * shadowFloorRotZ,
+            Math.PI * shadowRotX,
+            Math.PI * shadowRotY,
+            Math.PI * shadowRotZ,
           ]}
-          position={[shadowFloorPosX, shadowFloorPosY, shadowFloorPosZ]}
+          position={[shadowPosX, shadowPosY, shadowPosZ]}
           scale={[50, 50, 0]}
         >
           <planeGeometry />
