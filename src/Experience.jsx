@@ -95,7 +95,6 @@ export default function Experience() {
         ref={camRef}
         fov={10}
         // focus={30}
-
         makeDefault
         left={-1}
         right={1}
@@ -105,7 +104,7 @@ export default function Experience() {
         far={400}
         position={[100, 15, 70]}
       />
-      {/* <Environment     files={"/textures/solitude_interior_2k.hdr"} /> */}
+      <Environment     files={"/textures/solitude_interior_2k.hdr"} />
       {/* <SoftShadows size={5} samples={17} focus={0} /> */}
       <OrbitControls enabled={true} enableRotate />
       {/* <Furniture/> */}
@@ -115,7 +114,7 @@ export default function Experience() {
         castShadow
         ref={directionalLightRef1}
         position={[positionX, positionY, positionZ]}
-        intensity={5}
+        intensity={0}
         target={targetObject}
         color={"white"}
         // shadow-mapsize={[2048, 2048]}

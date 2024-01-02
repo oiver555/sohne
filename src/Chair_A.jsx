@@ -35,12 +35,12 @@ export default function Chair_A_1(props) {
   });
 
     const woodMat = new THREE.MeshStandardMaterial({
-      // map: fabric_00,
-      // normalMap: fabric_00_norm,
-      // roughnessMap: fabric_00_rough,
-      // roughness: .9, 
-      // normalScale: new THREE.Vector2( 0.8, 0.8 ),
-      // envMapIntensity: .4
+      map: fabric_00,
+      normalMap: fabric_00_norm,
+      roughnessMap: fabric_00_rough,
+      roughness: .9, 
+      normalScale: new THREE.Vector2( 0.8, 0.8 ),
+      envMapIntensity: .4
     });
 
   return (

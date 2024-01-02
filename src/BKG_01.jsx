@@ -111,10 +111,10 @@ export function BKG_01(props) {
             Math.PI * shadowRotZ,
           ]}
           position={[shadowPosX, shadowPosY, shadowPosZ]}
-          scale={[50, 50, 0]}
+          scale={[50, 50, 1]}
         >
           <planeGeometry />
-          <meshStandardMaterial side={THREE.DoubleSide} color={"yellow"} />
+          <shadowMaterial opacity={.2}/>
         </mesh>
       </group>
     </group>
