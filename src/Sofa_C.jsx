@@ -85,11 +85,13 @@ export default function Sofa_C(props) {
     normalMapType: THREE.TangentSpaceNormalMap,
     sheen: 0.6,
   });
-  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Sofa_C.glb");
   const objRef = useRef();
   useFrame(() => {
     objRef.current.rotation.y += 0.01;
   });
+
+  console.log(nodes);
 
   return (
     <group
@@ -267,4 +269,4 @@ export default function Sofa_C(props) {
   );
 }
 
-useGLTF.preload("gltf/Scene_06.glb");
+useGLTF.preload("gltf/Sofa_C.glb");

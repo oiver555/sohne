@@ -26,8 +26,7 @@ import Table_A from "./Table_A";
 import Table_B from "./Table_B";
 import Table_C from "./Table_C";
 import Table_D from "./Table_D";
-import BKG from "./BKG";
-import { useFrame, useThree } from "@react-three/fiber";
+ import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { BKG_01 } from "./BKG_01";
 
@@ -144,9 +143,9 @@ export default function Experience() {
       {/* <Chair_B /> */}
       {/* <Chair_C /> */}
       {/* <Chair_D /> */}
-      {/* <Sofa_A /> */}
-      {/* <Sofa_B/> */}
-      {/* <Sofa_C/> */}
+      {/* <Sofa_A />  */}
+      {/* <Sofa_B/>   */}
+      {/* <Sofa_C/>  */}
       {/* <Sofa_D/> */}
       {/* <Storage_A /> */}
       {/* <Storage_B /> */}
@@ -155,9 +154,7 @@ export default function Experience() {
       {/* <Table_A /> */}
       {/* <Table_B /> */}
       {/* <Table_C /> */}
-      {/* <Table_D /> */}
-      {/* <BKG /> */}
-     
+      {/* <Table_D /> */}      
       <axesHelper position={[0, 10, 0]} />
     </>
   );

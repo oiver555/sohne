@@ -8,7 +8,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function Table_B(props) {
-  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Table_B.glb");
   const objRef = useRef();
   useFrame(() => {
     objRef.current.rotation.y += 0.001;
@@ -66,4 +66,4 @@ export default function Table_B(props) {
   );
 }
 
-useGLTF.preload("gltf/Scene_06.glb");
+useGLTF.preload("gltf/Table_B.glb");

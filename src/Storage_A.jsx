@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Storage_A(props) {
-  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Storage_A.glb");
   const objRef = useRef();
 
   const textureLoader = new THREE.TextureLoader();
@@ -66,4 +66,4 @@ export default function Storage_A(props) {
   );
 }
 
-useGLTF.preload("gltf/Scene_06.glb");
+useGLTF.preload("gltf/Storage_A.glb");

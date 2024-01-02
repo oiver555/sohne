@@ -64,6 +64,10 @@ export default function Sofa_D(props) {
     metalnessMap: kitchenwoodrough2k,
   });
 
+  console.log(
+    nodes
+  );
+
   return (
     <group {...props} dispose={null}>
       <group position={[0.147, 5.354, 0.056]}>

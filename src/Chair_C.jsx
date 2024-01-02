@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Chair_C(props) {
-  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Chair_C.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
   const chairdiffuse = textureLoader.load("./textures/chair_diffuse.jpg");
@@ -51,4 +51,4 @@ export default function Chair_C(props) {
   );
 }
 
-useGLTF.preload("gltf/Scene_06.glb");
+useGLTF.preload("gltf/Chair_C.glb");
