@@ -61,7 +61,7 @@ root.render(
 
     <Nav />
     <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
-      <Canvas style={{ flex: 1 }} shadows>
+      <Canvas style={{ flex: 1 }}  shadows >
         <Experience />
       </Canvas>
       <div style={{ flex: 1, backgroundColor: "red" }}></div>

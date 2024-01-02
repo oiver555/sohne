@@ -62,7 +62,7 @@ export default function Experience() {
   const directionalLightRef1 = useRef();
   const directionalLightRef2 = useRef();
   const ambLightRef = useRef();
-  useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 10);
+  useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 1, "red");
   useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10);
 
   useFrame(() => {});
@@ -106,7 +106,7 @@ export default function Experience() {
         position={[100, 15, 70]}
       />
       {/* <Environment     files={"/textures/solitude_interior_2k.hdr"} /> */}
-      <SoftShadows size={5} samples={17} focus={0} />
+      {/* <SoftShadows size={5} samples={17} focus={0} /> */}
       <OrbitControls enabled={true} enableRotate />
       {/* <Furniture/> */}
       {/* <ambientLight ref={ambLightRef} intensity={0.2} /> */}
@@ -115,17 +115,17 @@ export default function Experience() {
         castShadow
         ref={directionalLightRef1}
         position={[positionX, positionY, positionZ]}
-        intensity={2}
+        intensity={5}
         target={targetObject}
         color={"white"}
-        shadow-mapsize={[2048, 2048]}
-        shadow-camera-top={5}
-        shadow-camera-near={0.1}
-        shadow-camera-far={30}
-        shadow-camera-right={5}
-        shadow-camera-bottom={-5}
-        shadow-camera-left={-5}
-        shadow-normalBias={0.06}
+        // shadow-mapsize={[2048, 2048]}
+        // shadow-camera-top={500}
+        // shadow-camera-near={0.1}
+        // shadow-camera-far={500}
+        // shadow-camera-right={500}
+        // shadow-camera-bottom={-500}
+        // shadow-camera-left={-5}
+        // shadow-normalBias={0.06}
       /> 
 
       {/* <directionalLight

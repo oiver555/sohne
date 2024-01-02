@@ -6,6 +6,7 @@ Command: npx gltfjsx@6.2.15 BKG_01.gltf
 import React, { useRef } from "react";
 import { Plane, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import { useControls } from "leva";
 
 export function BKG_01(props) {
   const { nodes, materials } = useGLTF("./gltf/BKG_01.gltf");
@@ -19,15 +20,49 @@ export function BKG_01(props) {
   const floorLightMap = textureLoader.load("./textures/floor.png");
   floorLightMap.flipY = false;
   floorLightMap.colorSpace = THREE.SRGBColorSpace;
-  const shadowMat = new THREE.ShadowMaterial({ opacity: 1,  });
+
   const wall1 = new THREE.MeshPhysicalMaterial({
     lightMap: wall1LightMap,
     envMapIntensity: 0,
     side: THREE.DoubleSide,
   });
 
+  const {
+    shadowFloorPosX,
+    shadowFloorPosY,
+    shadowFloorPosZ,
+    shadowFloorRotX,
+    shadowFloorRotY,
+    shadowFloorRotZ,
+  } = useControls({
+    shadowFloorPosX: {
+      value: 20,
+      step: 0.1,
+    },
+    shadowFloorPosY: {
+      value: 0.5,
+      step: 0.1,
+    },
+    shadowFloorPosZ: {
+      value: 35,
+      step: 0.1,
+    },
+    shadowFloorRotX: {
+      value: -0.5,
+      step: 0.001,
+    },
+    shadowFloorRotY: {
+      value: 0.0,
+      step: 0.001,
+    },
+    shadowFloorRotZ: {
+      value: 0,
+      step: 0.001,
+    },
+  });
+
   const wall2 = new THREE.MeshPhysicalMaterial({
-    lightMap: wall2LightMap,
+    // lightMap: wall2LightMap,
     side: THREE.DoubleSide,
     envMapIntensity: 0,
   });
@@ -40,6 +75,7 @@ export function BKG_01(props) {
     side: THREE.DoubleSide,
     envMapIntensity: 0,
   });
+ 
   return (
     <group {...props} dispose={null}>
       <group position={[-5.427, 0.082, -21.46]}>
@@ -61,18 +97,25 @@ export function BKG_01(props) {
           />
         </group>
         <mesh
+          castShadow
           geometry={nodes.Wall_2.geometry}
           material={wall2}
           position={[0, 15.507, -6.894]}
           scale={[2.365, 33.869, 28.96]}
         />
-        <Plane
-          material={shadowMat}
-        
-          position={[0, 0.1, 0]}
-          rotation={[Math.PI * -2.5, 0, 0]}
-          scale={[500, 500, 0]}
-        />
+        <mesh
+          receiveShadow
+          rotation={[
+            Math.PI * shadowFloorRotX,
+            Math.PI * shadowFloorRotY,
+            Math.PI * shadowFloorRotZ,
+          ]}
+          position={[shadowFloorPosX, shadowFloorPosY, shadowFloorPosZ]}
+          scale={[50, 50, 0]}
+        >
+          <planeGeometry />
+          <meshStandardMaterial side={THREE.DoubleSide} color={"yellow"} />
+        </mesh>
       </group>
     </group>
   );
