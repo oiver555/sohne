@@ -8,15 +8,15 @@ import { Plane, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 export function BKG_01(props) {
-  const { nodes, materials } = useGLTF("/gltf/BKG_01.gltf");
+  const { nodes, materials } = useGLTF("./gltf/BKG_01.gltf");
   const textureLoader = new THREE.TextureLoader();
-  const marble00 = textureLoader.load("/textures/marble_00.jpeg");
-  const wall1LightMap = textureLoader.load("/textures/wall_1.png");
+  const marble00 = textureLoader.load("./textures/marble_00.jpeg");
+  const wall1LightMap = textureLoader.load("./textures/wall_1.png");
   wall1LightMap.flipY = false;
-  const wall2LightMap = textureLoader.load("/textures/wall_2.png");
+  const wall2LightMap = textureLoader.load("./textures/wall_2.png");
   wall2LightMap.flipY = false;
 
-  const floorLightMap = textureLoader.load("/textures/floor.png");
+  const floorLightMap = textureLoader.load("./textures/floor.png");
   floorLightMap.flipY = false;
   floorLightMap.colorSpace = THREE.SRGBColorSpace;
   const shadowMat = new THREE.ShadowMaterial({ opacity: 1,  });
@@ -78,4 +78,4 @@ export function BKG_01(props) {
   );
 }
 
-useGLTF.preload("/gltf/BKG_01.gltf");
+useGLTF.preload("./gltf/BKG_01.gltf");

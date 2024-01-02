@@ -6,10 +6,10 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 export default function BKG(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
 
   const textureLoader = new THREE.TextureLoader();
-  const marble_00 = textureLoader.load("/textures/marble_00.jpeg");
+  const marble_00 = textureLoader.load("./textures/marble_00.jpeg");
 
   const mat = new THREE.MeshStandardMaterial({
     map: marble_00

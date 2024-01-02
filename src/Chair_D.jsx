@@ -8,14 +8,14 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Chair_D(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const chairglossiness = textureLoader.load("/textures/chair_glossiness.jpg");
-  const Chairpbrdiffuse = textureLoader.load("/textures/Chair_pbr_diffuse.png");
+  const chairglossiness = textureLoader.load("./textures/chair_glossiness.jpg");
+  const Chairpbrdiffuse = textureLoader.load("./textures/Chair_pbr_diffuse.png");
   Chairpbrdiffuse.flipY = false;
 
-  const Chairpbrnormal = textureLoader.load("/textures/Chair_pbr_normal.jpg");
+  const Chairpbrnormal = textureLoader.load("./textures/Chair_pbr_normal.jpg");
   Chairpbrnormal.flipY = false;
   const Chairpbrroughness = textureLoader.load(
     "/textures/Chair_pbr_roughness.png"
@@ -24,8 +24,8 @@ export default function Chair_D(props) {
   const Chairpbrspecular = textureLoader.load(
     "/textures/Chair_pbr_specular.png"
   );
-  const chairreflection = textureLoader.load("/textures/chair_reflection.jpg");
-  const darkwooddiff2k = textureLoader.load("/textures/dark_wood_diff_2k.jpg");
+  const chairreflection = textureLoader.load("./textures/chair_reflection.jpg");
+  const darkwooddiff2k = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
 
   const fabricMtl = new THREE.MeshStandardMaterial({
     map: Chairpbrdiffuse,

@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Sofa_A(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
   const ArmchairLeatherFoldsDisp = textureLoader.load(
@@ -47,7 +47,7 @@ export default function Sofa_A(props) {
   const ArmchairLeatheMetalDirty = textureLoader.load(
     "/textures/Armchair_Leathe_Metal_Dirty.jpg"
   );
-  const plaidTexture1 = textureLoader.load("/textures/plaid_Texture_1.jpg");
+  const plaidTexture1 = textureLoader.load("./textures/plaid_Texture_1.jpg");
   plaidTexture1.flipY = false;
   plaidTexture1.colorSpace = THREE.SRGBColorSpace
   plaidTexture1.wrapS = THREE.RepeatWrapping;

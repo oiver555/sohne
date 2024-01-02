@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Sofa_D(props) {
-  const { nodes, materials } = useGLTF("/gltf/Sofa_D.glb");
+  const { nodes, materials } = useGLTF("./gltf/Sofa_D.glb");
   const textureLoader = new THREE.TextureLoader();
   const sofftexturedivanNormal = textureLoader.load(
     "/textures/sofftexture_divan_Normal.png"
@@ -22,9 +22,9 @@ export default function Sofa_D(props) {
   const sofftexturedivanBaseColor = textureLoader.load(
     "/textures/sofftexture_divan_BaseColor.png"
   );
-  const kitchenwooddiff2k = textureLoader.load("/textures/kitchen_wood_diff_2k.jpg")
-  const kitchenwoodnorgl2k = textureLoader.load("/textures/kitchen_wood_nor_gl_2k.jpg")
-  const kitchenwoodrough2k = textureLoader.load("/textures/kitchen_wood_rough_2k.jpg")
+  const kitchenwooddiff2k = textureLoader.load("./textures/kitchen_wood_diff_2k.jpg")
+  const kitchenwoodnorgl2k = textureLoader.load("./textures/kitchen_wood_nor_gl_2k.jpg")
+  const kitchenwoodrough2k = textureLoader.load("./textures/kitchen_wood_rough_2k.jpg")
   
   kitchenwooddiff2k.wrapS = THREE.RepeatWrapping
   kitchenwooddiff2k.wrapT = THREE.RepeatWrapping
@@ -97,4 +97,4 @@ export default function Sofa_D(props) {
   );
 }
 
-useGLTF.preload("/gltf/Sofa_D.glb");
+useGLTF.preload("./gltf/Sofa_D.glb");

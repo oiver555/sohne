@@ -8,15 +8,15 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function Chair_A_1(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
 
   const textureLoader = new THREE.TextureLoader();
   const fabric_00_rough = textureLoader.load(
     "/textures/dark_wood_rough_2k.jpg"
   );
-  const fabric_00 = textureLoader.load("/textures/dark_wood_diff_2k.jpg");
-  const fabric_00_norm = textureLoader.load("/textures/dark_wood_nor_gl_2k.jpg");
+  const fabric_00 = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
+  const fabric_00_norm = textureLoader.load("./textures/dark_wood_nor_gl_2k.jpg");
   fabric_00.wrapS = THREE.RepeatWrapping;
   fabric_00.wrapT = THREE.RepeatWrapping;
   fabric_00.repeat.set(10, 10);

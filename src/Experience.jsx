@@ -68,7 +68,7 @@ export default function Experience() {
 
   useFrame(() => {});
   const textureLoader = new THREE.TextureLoader();
-  const kitchenenv = textureLoader.load("/textures/kitchen_env.jpg");
+  const kitchenenv = textureLoader.load("./textures/kitchen_env.jpg");
   const targetObject = new THREE.Object3D();
   targetObject.position.y = targetY;
   targetObject.position.x = targetX;

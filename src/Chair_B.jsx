@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Chair_B(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
 
   const objRef = useRef();
 

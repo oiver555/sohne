@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Storage_B(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
   const Wood027ambientOcclusion = textureLoader.load(
@@ -17,9 +17,9 @@ export default function Storage_B(props) {
   const Wood027basecolor = textureLoader.load(
     "/textures/Wood_027_basecolor.jpg"
   );
-  const Wood027height = textureLoader.load("/textures/Wood_027_height.png");
-  const Wood027normal = textureLoader.load("/textures/Wood_027_normal.jpg");
-  const glassnormal = textureLoader.load("/textures/glassnormal.jpg");
+  const Wood027height = textureLoader.load("./textures/Wood_027_height.png");
+  const Wood027normal = textureLoader.load("./textures/Wood_027_normal.jpg");
+  const glassnormal = textureLoader.load("./textures/glassnormal.jpg");
 
   Wood027basecolor.wrapS = THREE.RepeatWrapping;
   Wood027basecolor.wrapT = THREE.RepeatWrapping;

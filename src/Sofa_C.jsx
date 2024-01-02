@@ -10,7 +10,7 @@ import { useFrame } from "@react-three/fiber";
 export default function Sofa_C(props) {
   const textureLoader = new THREE.TextureLoader();
 
-  const PlaidFabricBump = textureLoader.load("/textures/Plaid_Fabric_Bump.jpg");
+  const PlaidFabricBump = textureLoader.load("./textures/Plaid_Fabric_Bump.jpg");
   const PlaidFabricDiffuse = textureLoader.load(
     "/textures/Plaid_Fabric_Diffuse.jpg"
   );
@@ -85,7 +85,7 @@ export default function Sofa_C(props) {
     normalMapType: THREE.TangentSpaceNormalMap,
     sheen: 0.6,
   });
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   useFrame(() => {
     objRef.current.rotation.y += 0.01;

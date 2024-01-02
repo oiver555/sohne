@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Storage_D(props) {
-  const { nodes, materials } = useGLTF("/gltf/Storage_D.glb");
+  const { nodes, materials } = useGLTF("./gltf/Storage_D.glb");
 
   const objRef = useRef();
 
@@ -162,4 +162,4 @@ export default function Storage_D(props) {
   );
 }
 
-useGLTF.preload("/gltf/Storage_D.glb");
+useGLTF.preload("./gltf/Storage_D.glb");

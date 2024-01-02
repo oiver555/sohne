@@ -8,15 +8,15 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function Table_B(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   useFrame(() => {
     objRef.current.rotation.y += 0.001;
   });
   const textureLoader = new THREE.TextureLoader();
-  const plywooddiff2k = textureLoader.load("/textures/plywood_diff_2k.jpg");
-  const plywoodnorgl2k = textureLoader.load("/textures/plywood_nor_gl_2k.jpg");
-  const plywoodrough2k = textureLoader.load("/textures/plywood_rough_2k.jpg");
+  const plywooddiff2k = textureLoader.load("./textures/plywood_diff_2k.jpg");
+  const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
+  const plywoodrough2k = textureLoader.load("./textures/plywood_rough_2k.jpg");
 
   const plyMaterial = new THREE.MeshPhysicalMaterial({
     // color:plywooddiff2k, // Base color of the steel

@@ -8,14 +8,14 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Chair_C(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const chairdiffuse = textureLoader.load("/textures/chair_diffuse.jpg");
+  const chairdiffuse = textureLoader.load("./textures/chair_diffuse.jpg");
   chairdiffuse.flipY = false
-  const chairglossiness = textureLoader.load("/textures/chair_glossiness.jpg");
-  const chairnormalmap = textureLoader.load("/textures/chair_normal_map.jpg");
-  const chairreflection = textureLoader.load("/textures/chair_reflection.jpg");
+  const chairglossiness = textureLoader.load("./textures/chair_glossiness.jpg");
+  const chairnormalmap = textureLoader.load("./textures/chair_normal_map.jpg");
+  const chairreflection = textureLoader.load("./textures/chair_reflection.jpg");
 
   const woodMat = new THREE.MeshStandardMaterial({
     map: chairdiffuse,

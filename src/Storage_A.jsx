@@ -8,13 +8,13 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Storage_A(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
 
   const textureLoader = new THREE.TextureLoader();
-  const plywooddiff2k = textureLoader.load("/textures/plywood_diff_2k.jpg");
-  const plywoodnorgl2k = textureLoader.load("/textures/plywood_nor_gl_2k.jpg");
-  const plywoodrough2k = textureLoader.load("/textures/plywood_rough_2k.jpg");
+  const plywooddiff2k = textureLoader.load("./textures/plywood_diff_2k.jpg");
+  const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
+  const plywoodrough2k = textureLoader.load("./textures/plywood_rough_2k.jpg");
 
   plywooddiff2k.colorSpace = THREE.SRGBColorSpace;
   const woodMtl = new THREE.MeshPhysicalMaterial({

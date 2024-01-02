@@ -8,12 +8,12 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Storage_C(props) {
-  const { nodes, materials } = useGLTF("/gltf/Storage_C.glb");
+  const { nodes, materials } = useGLTF("./gltf/Storage_C.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const kitchenenv = textureLoader.load("/textures/kitchen_env.jpg");
-  const Wood027basecolor = textureLoader.load("/textures/Wood_027_basecolor.jpg")
-  const Wood027normal = textureLoader.load("/textures/Wood_027_normal.jpg");
+  const kitchenenv = textureLoader.load("./textures/kitchen_env.jpg");
+  const Wood027basecolor = textureLoader.load("./textures/Wood_027_basecolor.jpg")
+  const Wood027normal = textureLoader.load("./textures/Wood_027_normal.jpg");
   const Wood027ambientOcclusion = textureLoader.load(
     "/textures/Wood_027_ambientOcclusion.jpg"
   );

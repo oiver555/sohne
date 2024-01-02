@@ -8,28 +8,28 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Sofa_B(props) {
-  const { nodes, materials } = useGLTF("/gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Scene_06.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const SofaBDirty = textureLoader.load("/textures/Sofa_B_Dirty.jpg")
-  const SofaBFabricBump = textureLoader.load("/textures/Sofa_B_Fabric_Bump.jpg")
-  const SofaBFabricDiffuseGray = textureLoader.load("/textures/Sofa_B_Fabric_Diffuse_Gray.jpg")
-  const SofaBFabricFoldsDisp = textureLoader.load("/textures/Sofa_B_Fabric_Folds_Disp.jpg")
-  const SofaBFabricFoldsNRM = textureLoader.load("/textures/Sofa_B_Fabric_Folds_NRM.jpg")
-  const SofaBFabricNRM = textureLoader.load("/textures/Sofa_B_Fabric_NRM.jpg")
-  const SofaBMetalBump = textureLoader.load("/textures/Sofa_B_Metal_Bump.jpg")
-  const SofaBMetalDirty = textureLoader.load("/textures/Sofa_B_Metal_Dirty.jpg")
-  const SofaBPillow02B = textureLoader.load("/textures/Sofa_B_Pillow_02_B.jpg")
-  const SofaBPillow02D = textureLoader.load("/textures/Sofa_B_Pillow_02_D.jpg")
-  const SofaBPillow02N = textureLoader.load("/textures/Sofa_B_Pillow_02_N.jpg")
-  const SofaBPillowFabricBump = textureLoader.load("/textures/Sofa_B_Pillow_Fabric_Bump.jpg")
-  const SofaBPillowFabricDiffuse = textureLoader.load("/textures/Sofa_B_Pillow_Fabric_Diffuse.jpg")
-  const SofaBPillowFabricDisp = textureLoader.load("/textures/Sofa_B_Pillow_Fabric_Disp.jpg")
-  const SofaBPillowFabricGlossiness = textureLoader.load("/textures/Sofa_B_Pillow_Fabric_Glossiness.jpg")
-  const SofaBPillowFabricNRM = textureLoader.load("/textures/Sofa_B_Pillow_Fabric_NRM.jpg")
-  const SofaBPlaidFabricBump = textureLoader.load("/textures/Sofa_B_Plaid_Fabric_Bump.jpg")
-  const SofaBPlaidFabricDiffuse = textureLoader.load("/textures/Sofa_B_Plaid_Fabric_Diffuse.jpg")
-  const SofaBPlaidFabricMask = textureLoader.load("/textures/Sofa_B_Plaid_Fabric_Mask.png")
+  const SofaBDirty = textureLoader.load("./textures/Sofa_B_Dirty.jpg")
+  const SofaBFabricBump = textureLoader.load("./textures/Sofa_B_Fabric_Bump.jpg")
+  const SofaBFabricDiffuseGray = textureLoader.load("./textures/Sofa_B_Fabric_Diffuse_Gray.jpg")
+  const SofaBFabricFoldsDisp = textureLoader.load("./textures/Sofa_B_Fabric_Folds_Disp.jpg")
+  const SofaBFabricFoldsNRM = textureLoader.load("./textures/Sofa_B_Fabric_Folds_NRM.jpg")
+  const SofaBFabricNRM = textureLoader.load("./textures/Sofa_B_Fabric_NRM.jpg")
+  const SofaBMetalBump = textureLoader.load("./textures/Sofa_B_Metal_Bump.jpg")
+  const SofaBMetalDirty = textureLoader.load("./textures/Sofa_B_Metal_Dirty.jpg")
+  const SofaBPillow02B = textureLoader.load("./textures/Sofa_B_Pillow_02_B.jpg")
+  const SofaBPillow02D = textureLoader.load("./textures/Sofa_B_Pillow_02_D.jpg")
+  const SofaBPillow02N = textureLoader.load("./textures/Sofa_B_Pillow_02_N.jpg")
+  const SofaBPillowFabricBump = textureLoader.load("./textures/Sofa_B_Pillow_Fabric_Bump.jpg")
+  const SofaBPillowFabricDiffuse = textureLoader.load("./textures/Sofa_B_Pillow_Fabric_Diffuse.jpg")
+  const SofaBPillowFabricDisp = textureLoader.load("./textures/Sofa_B_Pillow_Fabric_Disp.jpg")
+  const SofaBPillowFabricGlossiness = textureLoader.load("./textures/Sofa_B_Pillow_Fabric_Glossiness.jpg")
+  const SofaBPillowFabricNRM = textureLoader.load("./textures/Sofa_B_Pillow_Fabric_NRM.jpg")
+  const SofaBPlaidFabricBump = textureLoader.load("./textures/Sofa_B_Plaid_Fabric_Bump.jpg")
+  const SofaBPlaidFabricDiffuse = textureLoader.load("./textures/Sofa_B_Plaid_Fabric_Diffuse.jpg")
+  const SofaBPlaidFabricMask = textureLoader.load("./textures/Sofa_B_Plaid_Fabric_Mask.png")
   
   useFrame(() => {
     objRef.current.rotation.z += 0.01;
