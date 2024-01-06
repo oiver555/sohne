@@ -8,89 +8,63 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function Chair_A_1(props) {
-  const { nodes, materials } = useGLTF("./gltf/Chair_A.glb");
+  const { nodes } = useGLTF("./gltf/Chair_A.glb");
   const objRef = useRef();
 
   const textureLoader = new THREE.TextureLoader();
-  const fabric_00_rough = textureLoader.load(
-    "/textures/dark_wood_rough_2k.jpg"
-  );
-  const fabric_00 = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
-  const fabric_00_norm = textureLoader.load("./textures/dark_wood_nor_gl_2k.jpg");
-  fabric_00.wrapS = THREE.RepeatWrapping;
-  fabric_00.wrapT = THREE.RepeatWrapping;
-  fabric_00.repeat.set(10, 10);
-  fabric_00.flipY = true
-  fabric_00_norm.wrapS = THREE.RepeatWrapping;
-  fabric_00_norm.wrapT = THREE.RepeatWrapping;
-  fabric_00_norm.repeat.set(10, 10);
-  fabric_00_norm.flipY = true
-  fabric_00_rough.wrapS = THREE.RepeatWrapping;
-  fabric_00_rough.wrapT = THREE.RepeatWrapping;
-  fabric_00_rough.repeat.set(10, 10);
-  fabric_00_rough.flipY = true
+  const wood_rough = textureLoader.load("/textures/dark_wood_rough_2k.jpg");
+  const Chair_A_AO = textureLoader.load("/textures/Chair_A.png");
+  Chair_A_AO.flipY = false;
+
+  const wood = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
+  const wood_norm = textureLoader.load("./textures/dark_wood_nor_gl_2k.jpg");
+  wood.wrapS = THREE.RepeatWrapping;
+  wood.wrapT = THREE.RepeatWrapping;
+  wood.repeat.set(10, 10);
+  wood.flipY = true;
+  wood_norm.wrapS = THREE.RepeatWrapping;
+  wood_norm.wrapT = THREE.RepeatWrapping;
+  wood_norm.repeat.set(10, 10);
+  wood_norm.flipY = true;
+  wood_rough.wrapS = THREE.RepeatWrapping;
+  wood_rough.wrapT = THREE.RepeatWrapping;
+  wood_rough.repeat.set(10, 10);
+  wood_rough.flipY = true;
 
   useFrame(() => {
     objRef.current.rotation.y += 0.005;
   });
 
-    const woodMat = new THREE.MeshStandardMaterial({
-      map: fabric_00,
-      normalMap: fabric_00_norm,
-      roughnessMap: fabric_00_rough,
-      roughness: .9, 
-      normalScale: new THREE.Vector2( 0.8, 0.8 ),
-      envMapIntensity: .4
-    });
+  const woodMat1 = new THREE.MeshStandardMaterial({
+    map: wood,
+    aoMap: Chair_A_AO,
+    aoMapIntensity: 1,
+    normalMap: wood_norm,
+    roughnessMap: wood_rough,
+    roughness: 0.9,
+    colorWrite: true,
+    dithering: true,
+    flatShading: true,
+    fog: true,
+    normalScale: new THREE.Vector2(0.8, 0.8),
+    envMapIntensity: 0.2,
+  });
 
   return (
     <group
       castShadow
       ref={objRef}
       name="Chair_A_grp"
-      position={[20, -.2, 14]}
-      rotation={[0, 30, 0]}
+      position={[20, -0.2, 14]}
+      rotation={[0, 31.6, 0]}
       scale={0.056}
     >
       <mesh
-        name="Chair_A_1"
         castShadow
         receiveShadow
-        geometry={nodes.Chair_A_1.geometry}
-        material={woodMat}
-        position={[-2.93, 104.706, 1.35]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={14.169}
-      ></mesh>
-      <mesh
-        name="Chair_A_2"
-        castShadow
-        receiveShadow
-        geometry={nodes.Chair_A_2.geometry}
-        material={woodMat}
-        position={[30.493, 44.681, 1.352]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={14.169}
-      />
-      <mesh
-        name="Chair_A_3"
-        castShadow
-        receiveShadow
-        geometry={nodes.Chair_A_3.geometry}
-        material={woodMat}
-        position={[5.295, 78.401, 1.352]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={14.169}
-      />
-      <mesh
-        name="Chair_A_4"
-        castShadow
-        receiveShadow
-        geometry={nodes.Chair_A_4.geometry}
-        material={woodMat}
-        position={[-37.022, 94.198, 11.915]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={14.169}
+        geometry={nodes.Chair_APIV.geometry}
+        material={woodMat1}
+        position={[-1.118, 0, -1.352]}
       />
     </group>
   );

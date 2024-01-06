@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Furniture (props) {
-  const { nodes, materials } = useGLTF("gltf/Scene_06.glb");
+  const { nodes, materials } = useGLTF("./gltf/Chair_A.glb");
   return (
     <group {...props} dispose={null}>
       <group name="Scene">
@@ -1631,4 +1631,4 @@ export default function Furniture (props) {
   )
 }
 
-useGLTF.preload("gltf/Scene_06.glb")
+useGLTF.preload("gltf/Chair_A.glb")

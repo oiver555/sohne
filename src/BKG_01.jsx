@@ -23,6 +23,7 @@ export function BKG_01(props) {
 
   const wall1 = new THREE.MeshPhysicalMaterial({
     lightMap: wall1LightMap,
+    map: marble00,
     envMapIntensity: 0,
     side: THREE.DoubleSide,
   });
@@ -40,8 +41,8 @@ export function BKG_01(props) {
       step: 0.1,
     },
     shadowPosY: {
-      value: 0.5,
-      step: 0.1,
+      value: 0.01,
+      step: 0.01,
     },
     shadowPosZ: {
       value: 35,
@@ -63,17 +64,19 @@ export function BKG_01(props) {
 
   const wall2 = new THREE.MeshPhysicalMaterial({
     lightMap: wall2LightMap,
+    map: marble00,
     side: THREE.DoubleSide,
     envMapIntensity: 0,
   });
   const floor = new THREE.MeshPhysicalMaterial({
-    // map: marble00,
+    map: marble00,
+    
     // aoMap: floorLightMap,
-    color: new THREE.Color("rgba(255,246,235,1)"),
+    color: new THREE.Color("rgba(240,245,255,1)"),
     lightMap: floorLightMap,
-    lightMapIntensity: 1.1,
+    lightMapIntensity: 1,
     side: THREE.DoubleSide,
-    envMapIntensity: 0,
+    envMapIntensity: .0,
   });
  
   return (
@@ -94,6 +97,7 @@ export function BKG_01(props) {
             geometry={nodes.Wall_1PIV.geometry}
             material={wall1}
             position={[0.5, 0, 0]}
+            scale={[1,5,1]}
           />
         </group>
         <mesh
@@ -114,7 +118,7 @@ export function BKG_01(props) {
           scale={[50, 50, 1]}
         >
           <planeGeometry />
-          <shadowMaterial opacity={.2}/>
+          <shadowMaterial opacity={.1}/>
         </mesh>
       </group>
     </group>

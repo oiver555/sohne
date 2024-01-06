@@ -6,8 +6,14 @@ import {
   SoftShadows,
   useHelper,
   useProgress,
+  Resize,
+  Icosahedron,
+  TransformControls,
 } from "@react-three/drei";
 import * as THREE from "three";
+import { RectAreaLightHelper } from "three/addons/helpers/RectAreaLightHelper.js";
+import { SSAOPass } from "three-stdlib";
+
 import Furniture from "./Furniture";
 import { useControls } from "leva";
 import Chair_A from "./Chair_A";
@@ -26,53 +32,108 @@ import Table_A from "./Table_A";
 import Table_B from "./Table_B";
 import Table_C from "./Table_C";
 import Table_D from "./Table_D";
- import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { extend, useFrame, useThree } from "@react-three/fiber";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { BKG_01 } from "./BKG_01";
+import Effects from "./Effects";
 
 export default function Experience() {
   const camRef = useRef();
-  const { targetX, targetY, targetZ, positionX, positionY, positionZ } = useControls({
+  const sceneRef = useRef();
+  const sunRef = useRef();
+  const {
+    targetX,
+    targetY,
+    targetZ,
+    sunTargetX,
+    sunTargetY,
+    sunTargetZ,
+    targetX2,
+    targetY2,
+    targetZ2,
+    positionX,
+    positionY,
+    positionZ,
+  } = useControls({
+    sunTargetX: {
+      value: 20,
+      step: 0.1,
+    },
+    sunTargetY: {
+      value: 5,
+      step: 0.1,
+    },
+    sunTargetZ: {
+      value: 17,
+      step: 0.1,
+    },
     targetX: {
       value: 20,
-      step: .1,
+      step: 0.1,
     },
     targetY: {
       value: 5,
-      step: .1,
+      step: 0.1,
     },
     targetZ: {
       value: 17,
-      step: .1,
+      step: 0.1,
+    },
+    targetX2: {
+      value: 20,
+      step: 0.1,
+    },
+    targetY2: {
+      value: 5,
+      step: 0.1,
+    },
+    targetZ2: {
+      value: 14.3,
+      step: 0.1,
     },
     positionX: {
       value: 19,
-      step: .1,
+      step: 0.1,
     },
     positionY: {
-      value: 12,
-      step: .1,
+      value: 7.7,
+      step: 0.1,
     },
     positionZ: {
       value: 31,
-      step: .1,
+      step: 0.1,
     },
   });
 
+  const [loaded, setLoaded] = useState(false);
+
+  extend({ SSAOPass });
+
   const directionalLightRef1 = useRef();
   const directionalLightRef2 = useRef();
+  const rectLightRef3 = useRef();
   const ambLightRef = useRef();
+  const pointLightRef = useRef();
   useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 1, "red");
-  useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10);
+  useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10, "red");
+  useHelper(rectLightRef3, RectAreaLightHelper, 10, "red");
+  useHelper(pointLightRef, THREE.PointLightHelper, 5, "red");
 
-  useFrame(() => {});
   const textureLoader = new THREE.TextureLoader();
   const kitchenenv = textureLoader.load("./textures/kitchen_env.jpg");
   const targetObject = new THREE.Object3D();
+  const targetObject2 = new THREE.Object3D();
   targetObject.position.y = targetY;
   targetObject.position.x = targetX;
   targetObject.position.z = targetZ;
+  targetObject2.position.y = targetY2;
+  targetObject2.position.x = targetX2;
+  targetObject2.position.z = targetZ2;
+  const Elsafabricref = textureLoader.load("/textures/Elsa_fabric_ref.jpg");
 
+  Elsafabricref.wrapS = THREE.RepeatWrapping;
+  Elsafabricref.wrapT = THREE.RepeatWrapping;
+  Elsafabricref.repeat.set(1, 1);
   useProgress((state) => {
     // console.log(state.progress);
 
@@ -83,18 +144,36 @@ export default function Experience() {
     }
   });
 
+  useFrame(() => {
+    sunRef.current.rotation.y += 0.005;
+  });
+
   useThree(({ camera, scene }) => {
     scene.add(targetObject);
+    sceneRef.current = scene;
     camera.lookAt(new THREE.Vector3(0, 5, 0));
-    console.log(camera);
   });
+
+  const sunMat = new THREE.MeshStandardMaterial({
+    transparent: true,
+    color: "red",
+    map: Elsafabricref,
+    colorWrite: true,
+    opacity: 1,
+    alphaMap: Elsafabricref,
+    side: THREE.DoubleSide,
+  });
+
+  useEffect(() => {
+    console.log(sunRef);
+    setLoaded(true);
+  }, []);
 
   return (
     <>
       <PerspectiveCamera
         ref={camRef}
         fov={10}
-        // focus={30}
         makeDefault
         left={-1}
         right={1}
@@ -104,40 +183,87 @@ export default function Experience() {
         far={400}
         position={[100, 15, 70]}
       />
-      <Environment     files={"/textures/solitude_interior_2k.hdr"} />
-      {/* <SoftShadows size={5} samples={17} focus={0} /> */}
-      <OrbitControls enabled={true} enableRotate />
+      <mesh
+        castShadow
+        ref={sunRef}
+        material={sunMat}
+        scale={0.5}
+        position={[sunTargetX, sunTargetY, sunTargetZ]}
+      >
+        <Icosahedron castShadow />
+      </mesh>
+      <TransformControls position={[22, 5, 17]}  mode="translate">
+        <mesh castShadow scale={[0.2, 2, 0.2]}>
+          <boxGeometry  castShadow />
+          <meshBasicMaterial  colorWrite={false} opacity={0} color={"black"} />
+        </mesh>
+      </TransformControls>
+      {loaded && <Effects ref={sunRef} />}
+      <Environment files={"/textures/veranda_1k.hdr"} />
+      <fog attach="fog" args={["orange", 40, 700]} />
+      <SoftShadows size={10} samples={17} focus={0} />
+      <OrbitControls makeDefault enabled={true} enableRotate />
       {/* <Furniture/> */}
-      {/* <ambientLight ref={ambLightRef} intensity={0.2} /> */}
-
+      <ambientLight ref={ambLightRef} intensity={1} />
+      <rectAreaLight
+        intensity={0.3}
+        width={20.0}
+        height={20}
+        position={[20, 10, 15]}
+        rotation={[Math.PI / -2, 0, 0]}
+        ref={rectLightRef3}
+      />
       <directionalLight
         castShadow
         ref={directionalLightRef1}
         position={[positionX, positionY, positionZ]}
-        intensity={0}
+        intensity={1}
         target={targetObject}
         color={"white"}
-        // shadow-mapsize={[2048, 2048]}
-        // shadow-camera-top={500}
-        // shadow-camera-near={0.1}
-        // shadow-camera-far={500}
-        // shadow-camera-right={500}
-        // shadow-camera-bottom={-500}
-        // shadow-camera-left={-5}
-        // shadow-normalBias={0.06}
-      /> 
+      />
 
-      {/* <directionalLight
-        castShadow
+      <pointLight
+        ref={pointLightRef}
+        decay={1}
+        position={[-25, 10, -30]}
+        color={"rgba(255,230,194,1)"}
+        distance={22}
+        intensity={20}
+      />
+
+      <directionalLight
         ref={directionalLightRef2}
-        position={[-10, 3, 0]}
-        lookAt={[-10, 30, 0]}
-        intensity={1}
-        shadow-mapsize={[2048, 2048]}
-        color={new THREE.Color("rgb(150,150, 200)")}
-        shadow-normalBias={0.06}
-      /> */}
-       <BKG_01 />
+        target={targetObject2}
+        // castShadow
+        position={[20, 6, 0]}
+        intensity={0.5}
+        color={"white"}
+      />
+      <BKG_01 />
+
+      {/* Light Blocker */}
+      <mesh
+        receiveShadow
+        rotation={[Math.PI / -12, Math.PI / 1.1, Math.PI / 1]}
+        scale={[50, 4, 1]}
+        castShadow
+        position={[20, 4, 20]}
+      >
+        <planeGeometry />
+        <meshStandardMaterial side={THREE.FrontSide} />
+      </mesh>
+
+      <mesh
+        receiveShadow
+        rotation={[Math.PI / -12, Math.PI / 1.1, Math.PI / 1]}
+        scale={[50, 4, 1]}
+        castShadow
+        position={[20, 10, 20]}
+      >
+        <planeGeometry />
+        <meshStandardMaterial side={THREE.FrontSide} />
+      </mesh>
+
       <Chair_A />
       {/* <Chair_B /> */}
       {/* <Chair_C /> */}
@@ -153,7 +279,7 @@ export default function Experience() {
       {/* <Table_A /> */}
       {/* <Table_B /> */}
       {/* <Table_C /> */}
-      {/* <Table_D /> */}      
+      {/* <Table_D /> */}
       <axesHelper position={[0, 10, 0]} />
     </>
   );
