@@ -8,27 +8,13 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Sofa_A(props) {
-  const { nodes, materials } = useGLTF("./gltf/Sofa_A.glb");
+  const { nodes } = useGLTF("./gltf/Sofa_A.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const ArmchairLeatherFoldsDisp = textureLoader.load(
-    "/textures/Armchair_Leather_Folds_Disp.jpg"
-  );
-  const ArmchairLeatherFoldsNRM = textureLoader.load(
-    "/textures/Armchair_Leather_Folds_NRM.jpg"
-  );
+   
   const ArmchairLeatheFabricbump = textureLoader.load(
     "/textures/Armchair_Leathe_Fabric_bump.jpg"
-  );
-  const ArmchairLeatheFoldsNRM = textureLoader.load(
-    "/textures/Armchair_Leathe_Folds_NRM.jpg"
-  );
-  const ArmchairLeatheFootstoolLeatherFoldsDisp = textureLoader.load(
-    "/textures/Armchair_Leathe_Footstool_Leather_Folds_Disp.jpg"
-  );
-  const ArmchairLeatheFootstoolLeatherFoldsNRM = textureLoader.load(
-    "/textures/Armchair_Leathe_Footstool_Leather_Folds_NRM.jpg"
-  );
+  ); 
   const ArmchairLeatheLeatherBump = textureLoader.load(
     "/textures/Armchair_Leathe_Leather_Bump.png"
   );
@@ -37,16 +23,7 @@ export default function Sofa_A(props) {
   );
   const ArmchairLeatheLeatherNRM = textureLoader.load(
     "/textures/Armchair_Leathe_Leather_NRM.png"
-  );
-  const ArmchairLeatheLeatherReflect = textureLoader.load(
-    "/textures/Armchair_Leathe_Leather_Reflect.jpg"
-  );
-  const ArmchairLeatheMetalBump = textureLoader.load(
-    "/textures/Armchair_Leathe_Metal_Bump.jpg"
-  );
-  const ArmchairLeatheMetalDirty = textureLoader.load(
-    "/textures/Armchair_Leathe_Metal_Dirty.jpg"
-  );
+  ); 
   const plaidTexture1 = textureLoader.load("./textures/plaid_Texture_1.jpg");
   plaidTexture1.flipY = false;
   plaidTexture1.colorSpace = THREE.SRGBColorSpace
@@ -55,31 +32,10 @@ export default function Sofa_A(props) {
   plaidTexture1.repeat.set(15, 15);
   const ArmchairLeathePillow01Fabric = textureLoader.load(
     "/textures/Armchair_Leathe_Pillow_01_Fabric.jpg"
-  );
-  const ArmchairLeathePillow02Fabric = textureLoader.load(
-    "/textures/Armchair_Leathe_Pillow_02_Fabric.jpg"
-  );
+  ); 
   const ArmchairLeathePlaidFabricDiffuse = textureLoader.load(
     "/textures/Armchair_Leathe_Plaid_Fabric_Diffuse.jpg"
-  );
-  const ArmchairLeathePlaidFabricNRM = textureLoader.load(
-    "/textures/Armchair_Leathe_Plaid_Fabric_NRM.jpg"
-  );
-  const ArmchairLeatheVelvetMask = textureLoader.load(
-    "/textures/Armchair_Leathe_Velvet_Mask.jpg"
-  );
-  const ArmchairLeatheVelvetMask01 = textureLoader.load(
-    "/textures/Armchair_Leathe_Velvet_Mask_01.jpg"
-  );
-  const ArmchairLeatheVelvetNRM = textureLoader.load(
-    "/textures/Armchair_Leathe_Velvet_NRM.jpg"
-  );
-
-  const sofaMtl = new THREE.MeshStandardMaterial({
-    map: ArmchairLeatheLeatherDiffuse,
-    normalMap: ArmchairLeatheLeatherNRM,
-    bumpMap: ArmchairLeatheLeatherBump,
-  });
+  );  
 
   const plaidMtl = new THREE.MeshStandardMaterial({
     map: plaidTexture1,

@@ -82,7 +82,6 @@ export default function Experience(props) {
         ? [0, 0, -20]
         : [0, 0, 0],
   });
-  const [loaded, setLoaded] = useState(false);
 
   const directionalLightRef1 = useRef();
   const directionalLightRef2 = useRef();
@@ -123,21 +122,6 @@ export default function Experience(props) {
     sceneRef.current = scene;
     camera.lookAt(new THREE.Vector3(0, 5, 0));
   });
-
-  const sunMat = new THREE.MeshStandardMaterial({
-    transparent: true,
-    color: "red",
-    map: Elsafabricref,
-    colorWrite: true,
-    opacity: 1,
-    alphaMap: Elsafabricref,
-    side: THREE.FrontSide,
-  });
-
-  useEffect(() => {
-    console.log(sunRef);
-    setLoaded(true);
-  }, []);
 
   return (
     <>
