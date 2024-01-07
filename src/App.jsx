@@ -6,16 +6,28 @@ import { OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import Experience from "./Experience.jsx";
 import { gsap } from "gsap";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Nav from "./navigation.jsx";
 import Slider from "./Slider.jsx";
 import SliderProgress from "./SliderProgress.jsx";
 import TitleDrop from "./TitleDrop.jsx";
 import CategoryDrop from "./CategoryDrop.jsx";
+import { useSpringRef } from "@react-spring/three";
 
 export default () => {
-  const [category, setCategory] = useState("Chairs");
   const tl = gsap.timeline({ repeat: 0 });
+  const chairA_springRef = useSpringRef();
+  const storageA_springRef = useSpringRef();
+  const tableA_springRef = useSpringRef();
+  const sofaA_springRef = useSpringRef();
+  const chairAGroupRef = useRef();
+  const storageAGroupRef = useRef();
+  const tableAGroupRef = useRef();
+  const sofaAGroupRef = useRef();
+  const chairARef = useRef();
+  const storageARef = useRef();
+  const tableARef = useRef();
+  const sofaARef = useRef();
 
   useEffect(() => {
     tl.fromTo(
@@ -64,7 +76,7 @@ export default () => {
           justifyContent: "center",
           margin: 0,
           textAlign: "center",
-          pointerEvents: "none",
+          
         }}
       >
         <button
@@ -72,32 +84,50 @@ export default () => {
           style={{
             borderRadius: 20,
             fontSize: 15,
-            border: ".5px solid grey",
+            border: "0px solid grey",
             padding: "10px 30px 10px 30px",
           }}
+          onClick={() => {
+            
+            console.log(chairARef.current.position.z);
+          }}
         >
-          Discover
+          discover
         </button>
       </div>
 
       {/* Category Slider/Picker */}
-      <Slider setCategory={setCategory} category={category} />
-      <SliderProgress category={category} />
+      <Slider
+        chairA_springRef={chairA_springRef}
+        storageA_springRef={storageA_springRef}
+        tableA_springRef={tableA_springRef}
+        sofaA_springRef={sofaA_springRef}
+      />
+      <SliderProgress />
 
       <Nav />
       <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
         <Canvas style={{ flex: 1 }} shadows>
-          <Experience category={category}/>
+          <Experience
+            storageA_springRef={storageA_springRef}
+            tableA_springRef={tableA_springRef}
+            sofaA_springRef={sofaA_springRef}
+            chairA_springRef={chairA_springRef}
+            chairARef={chairARef}
+            storageARef={storageARef}
+            tableARef={tableARef}
+            sofaARef={sofaARef}
+          />
         </Canvas>
-        <div style={{ flex: 1,  }}>
+        <div style={{ flex: 1 }}>
           <img
-            style={{ width: "100%", height: 'auto',  transform: 'scaleX(-1)' }}
+            style={{ width: "100%", height: "auto", transform: "scaleX(-1)" }}
             src="./images/Chair_A.png"
           />
         </div>
       </div>
       <TitleDrop />
-      <CategoryDrop category={category} />
+      <CategoryDrop />
     </div>
   );
 };

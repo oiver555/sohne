@@ -10,7 +10,6 @@ import { BlendFunction, KernelSize, Resizer } from "postprocessing";
 import { forwardRef } from "react";
 
 const Effects = forwardRef((props, test) => {
-  console.log(test);
 
   const {
     sunSamples,

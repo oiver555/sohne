@@ -4,73 +4,9 @@ import { useEffect } from "react";
 const Slider = (props) => {
   useEffect(() => {
     if (props.category === "Chairs") {
-      gsap.to("#chairs", {
-        duration: 1.5,
-        background: "black",
-      });
-      gsap.to("#storage", {
-        duration: 1.5,
-        background: "lightgrey",
-      });    
-      gsap.to("#tables", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#sofas", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
     } else if (props.category === "Storage") {
-      gsap.to("#chairs", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#storage", {
-        duration: 1.5,
-        background: "black",
-      }); 
-      gsap.to("#tables", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#sofas", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
     } else if (props.category === "Tables") {
-      gsap.to("#chairs", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#storage", {
-        duration: 1.5,
-        background: "lightgrey",
-      });      
-      gsap.to("#tables", {
-        duration: 1.5,
-        background: "black",
-      });
-      gsap.to("#sofas", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
     } else if (props.category === "Sofas") {
-      gsap.to("#chairs", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#storage", {
-        duration: 1.5,
-        background: "lightgrey",
-      }); 
-      gsap.to("#tables", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#sofas", {
-        duration: 1.5,
-        background: "black",
-      });
     }
   }, [props.category]);
 
@@ -97,19 +33,100 @@ const Slider = (props) => {
       >
         <div
           onClick={() => {
-            props.setCategory("Chairs");
+            console.log(props);
+            props.chairA_springRef.start({
+              to: {
+                position: [0, 0, 0],
+              },
+            });
+            props.storageA_springRef.start({
+              to: {
+                position: [0, 0, -20],
+              },
+            });
+            props.tableA_springRef.start({
+              to: {
+                position: [0, 0, -40],
+              },
+            });
+            props.sofaA_springRef.start({
+              to: {
+                position: [0, 0, -60],
+              },
+            });
+
+            // props.setCategory("Chairs");
+            gsap.to(".slider-progress", {
+              duration: 2,
+              xPercent: 0,
+            });
+            gsap.to("#chairs", {
+              duration: 1.5,
+              background: "black",
+            });
+            gsap.to("#storage", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#tables", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#sofas", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
           }}
           id="chairs"
           style={{
             height: 10,
             width: 10,
             borderRadius: 5,
-            backgroundColor: "lightgrey",
+            backgroundColor: "black",
           }}
         />
         <div
-          onClick={() => {
-            props.setCategory("Storage");
+          onClick={() => { 
+            props.chairA_springRef.start({
+              to: {
+                position: [0, 0, 20],
+              },
+            });
+            props.storageA_springRef.start({
+              to: {
+                position: [0, 0, 0],
+              },
+            });
+            props.tableA_springRef.start({
+              to: {
+                position: [0, 0, -20],
+              },
+            });
+            props.sofaA_springRef.start({
+              to: {
+                position: [0, 0, -40],
+              },
+            });
+            gsap.to(".slider-progress", {
+              duration: 2,
+              xPercent: 100,
+            });
+            gsap.to("#chairs", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#storage", {
+              duration: 1.5,
+              background: "black",
+            });
+            gsap.to("#tables", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#sofas", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
           }}
           id="storage"
           style={{
@@ -119,11 +136,51 @@ const Slider = (props) => {
             backgroundColor: "lightgrey",
           }}
         />
-        
+
         <div
           id="tables"
           onClick={() => {
-            props.setCategory("Tables");
+          
+            props.chairA_springRef.start({
+              to: {
+                position: [0, 0, 40],
+              },
+            });
+            props.storageA_springRef.start({
+              to: {
+                position: [0, 0, 20],
+              },
+            });
+            props.tableA_springRef.start({
+              to: {
+                position: [0, 0, 0],
+              },
+            });
+            props.sofaA_springRef.start({
+              to: {
+                position: [0, 0, -20],
+              },
+            });
+            gsap.to(".slider-progress", {
+              duration: 2,
+              xPercent: 200,
+            });
+            gsap.to("#chairs", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#storage", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#tables", {
+              duration: 1.5,
+              background: "black",
+            });
+            gsap.to("#sofas", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
           }}
           style={{
             height: 10,
@@ -135,7 +192,47 @@ const Slider = (props) => {
         <div
           id="sofas"
           onClick={() => {
-            props.setCategory("Sofas");
+            // props.setCategory("Sofas");
+            props.chairA_springRef.start({
+              to: {
+                position: [0, 0, 60],
+              },
+            });
+            props.storageA_springRef.start({
+              to: {
+                position: [0, 0, 40],
+              },
+            });
+            props.tableA_springRef.start({
+              to: {
+                position: [0, 0, 20],
+              },
+            });
+            props.sofaA_springRef.start({
+              to: {
+                position: [0, 0, 0],
+              },
+            });
+            gsap.to(".slider-progress", {
+              duration: 2,
+              xPercent: 300,
+            });
+            gsap.to("#chairs", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#storage", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#tables", {
+              duration: 1.5,
+              background: "lightgrey",
+            });
+            gsap.to("#sofas", {
+              duration: 1.5,
+              background: "black",
+            });
           }}
           style={{
             height: 10,

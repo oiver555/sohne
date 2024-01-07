@@ -43,44 +43,20 @@ export default function Experience(props) {
   const sceneRef = useRef();
   const sunRef = useRef();
   const springsChair_A = useSpring({
-    position:
-      props.category === "Chairs"
-        ? [0, 0, 0]
-        : props.category === "Storage"
-        ? [0, 0, 20]
-        : props.category === "Tables"
-        ? [0, 0, 40]
-        : [0, 0, 60],
+    ref: props.chairA_springRef,
+    from: { position: [0, 0, 0] },
   });
-  const springStorage_A = useSpring({
-    position:
-      props.category === "Chairs"
-        ? [0, 0, -20]
-        : props.category === "Storage"
-        ? [0, 0, 0]
-        : props.category === "Tables"
-        ? [0, 0, 20]
-        : [0, 0, 40],
+  const springsStorage_A = useSpring({
+    ref: props.storageA_springRef,
+    from: { position: [0, 0, -20] },
   });
-  const springTables_A = useSpring({
-    position:
-      props.category === "Chairs"
-        ? [0, 0, -40]
-        : props.category === "Storage"
-        ? [0, 0, -20]
-        : props.category === "Tables"
-        ? [0, 0, 0]
-        : [0, 0, 20],
+  const springsTable_A = useSpring({
+    ref: props.tableA_springRef,
+    from: { position: [0, 0, -40] },
   });
-  const springSofa_A = useSpring({
-    position:
-      props.category === "Chairs"
-        ? [0, 0, -60]
-        : props.category === "Storage"
-        ? [0, 0, -40]
-        : props.category === "Tables"
-        ? [0, 0, -20]
-        : [0, 0, 0],
+  const springsSofa_A = useSpring({
+    ref: props.sofaA_springRef,
+    from: { position: [0, 0, -60] },
   });
 
   const directionalLightRef1 = useRef();
@@ -107,15 +83,7 @@ export default function Experience(props) {
   Elsafabricref.wrapS = THREE.RepeatWrapping;
   Elsafabricref.wrapT = THREE.RepeatWrapping;
   Elsafabricref.repeat.set(1, 1);
-  useProgress((state) => {
-    // console.log(state.progress);
-
-    if (state.progress === 100) {
-      console.log(directionalLightRef1.current);
-      // directionalLightRef1.current.shadow.bias = -0.0001
-      // useHelper(directionalLightRef1.current.shadow.camera, THREE.CameraHelper, 10);
-    }
-  });
+  useProgress((state) => {});
 
   useThree(({ camera, scene }) => {
     scene.add(targetObject);
@@ -186,17 +154,29 @@ export default function Experience(props) {
       <BKG_01 />
 
       <group>
-        <animated.group position={springsChair_A.position}>
-          <Chair_A />
+        <animated.group
+          ref={props.chairAGroupRef}
+          position={springsChair_A.position}
+        >
+          <Chair_A chairARef={props.chairARef} />
         </animated.group>
-        <animated.group position={springStorage_A.position}>
-          <Storage_A />
+        <animated.group
+          ref={props.storageAGroupRef}
+          position={springsStorage_A.position}
+        >
+          <Storage_A storageARef={props.storageARef}  />
         </animated.group>
-        <animated.group position={springTables_A.position}>
-          <Table_A />
+        <animated.group
+          ref={props.tableAGroupRef}
+          position={springsTable_A.position}
+        >
+          <Table_A tableARef={props.tableARef} />
         </animated.group>
-        <animated.group position={springSofa_A.position}>
-          <Sofa_A />
+        <animated.group
+          ref={props.sofaAGroupRef}
+          position={springsSofa_A.position}
+        >
+          <Sofa_A sofaARef={props.sofaARef} />
         </animated.group>
       </group>
       {/* <Chair_B /> */}

@@ -91,7 +91,6 @@ export default function Sofa_C(props) {
     objRef.current.rotation.y += 0.01;
   });
 
-  console.log(nodes);
 
   return (
     <group

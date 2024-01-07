@@ -6,32 +6,7 @@ const SliderProgress = (props) => {
     gsap.to(".slider-progress", { scaleX: 1, duration: 3 });
   });
 
-  useEffect(() => {
-    if (props.category === "Chairs") {
-      gsap.to(".slider-progress", {
-        duration: 2,
-        xPercent: 0,
-      });
-    } else if (props.category === "Storage") {
-      gsap.to(".slider-progress", {
-        duration: 2,
-        xPercent: 100,
-      });
-       
-    } else if (props.category === "Tables") {
-      gsap.to(".slider-progress", {
-        duration: 2,
-        xPercent: 200,
-      });
-     
-    } else if (props.category === "Sofas") {
-      gsap.to(".slider-progress", {
-        duration: 2,
-        xPercent: 300,
-      });
-       
-    } 
-  }, [props.category]);
+  
 
   return (
     <div

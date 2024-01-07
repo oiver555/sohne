@@ -57,13 +57,11 @@ const CategoryDrop = (props) => {
         duration: 2,
         y: -400,
       });
-      console.log("Tables");
     } else if (props.category === "Sofas") {
       gsap.to(".categoryDrop", {
         duration: 2,
         y: -600,
       });
-      console.log("Sofas");
     }
   }, [props.category]);
 
