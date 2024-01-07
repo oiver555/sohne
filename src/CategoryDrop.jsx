@@ -42,7 +42,7 @@ const CategoryDrop = (props) => {
   }, []);
 
   useEffect(() => {
-    if (props.category === "Seating") {
+    if (props.category === "Chairs") {
       gsap.to(".categoryDrop", {
         duration: 2,
         y: 0,
@@ -52,23 +52,18 @@ const CategoryDrop = (props) => {
         duration: 2,
         y: -200,
       });
-    } else if (props.category === "Chair") {
+    }   else if (props.category === "Tables") {
       gsap.to(".categoryDrop", {
         duration: 2,
         y: -400,
       });
-    } else if (props.category === "Table") {
+      console.log("Tables");
+    } else if (props.category === "Sofas") {
       gsap.to(".categoryDrop", {
         duration: 2,
         y: -600,
       });
-      console.log("Table");
-    } else if (props.category === "Sofa") {
-      gsap.to(".categoryDrop", {
-        duration: 2,
-        y: -800,
-      });
-      console.log("Sofa");
+      console.log("Sofas");
     }
   }, [props.category]);
 
@@ -86,8 +81,7 @@ const CategoryDrop = (props) => {
       <div
         style={{
           // position: "absolute",
-          width: window.innerWidth,
-          height: window.innerHeight,
+          width: window.innerWidth,           
           zIndex: 10,
           pointerEvents: "none",
           fontSize: 150,
@@ -100,7 +94,7 @@ const CategoryDrop = (props) => {
         }}
       >
         <div style={{ height: 200 }}>
-          {"Seating".split("").map((letter, index) => (
+          {"Chairs".split("").map((letter, index) => (
             <span
               key={index}
               className="categoryDrop initial makeVis"
@@ -120,21 +114,10 @@ const CategoryDrop = (props) => {
               {letter}
             </span>
           ))}
-        </div>
-        <div style={{ height: 200, background: "purple" }}>
-          {"Chair".split("").map((letter, index) => (
-            <span
-              key={index}
-              className="makeVis categoryDrop"
-              style={{ display: "inline-block" }}
-            >
-              {letter}
-            </span>
-          ))}
-        </div>
+        </div>       
 
         <div style={{ height: 200, background: "blue" }}>
-          {"Table".split("").map((letter, index) => (
+          {"Tables".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
@@ -145,7 +128,7 @@ const CategoryDrop = (props) => {
           ))}
         </div>
         <div style={{ height: 200, background: "orange" }}>
-          {"Sofa".split("").map((letter, index) => (
+          {"Sofas".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"

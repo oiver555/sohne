@@ -7,7 +7,7 @@ const SliderProgress = (props) => {
   });
 
   useEffect(() => {
-    if (props.category === "Seating") {
+    if (props.category === "Chairs") {
       gsap.to(".slider-progress", {
         duration: 2,
         xPercent: 0,
@@ -17,24 +17,20 @@ const SliderProgress = (props) => {
         duration: 2,
         xPercent: 100,
       });
-    } else if (props.category === "Chair") {
+       
+    } else if (props.category === "Tables") {
       gsap.to(".slider-progress", {
         duration: 2,
         xPercent: 200,
       });
-    } else if (props.category === "Table") {
+     
+    } else if (props.category === "Sofas") {
       gsap.to(".slider-progress", {
         duration: 2,
         xPercent: 300,
       });
-      console.log("Table");
-    } else if (props.category === "Sofa") {
-      gsap.to(".slider-progress", {
-        duration: 2,
-        xPercent: 400,
-      });
-      console.log("Sofa");
-    }
+       
+    } 
   }, [props.category]);
 
   return (
@@ -65,7 +61,7 @@ const SliderProgress = (props) => {
           className="slider-progress"
           style={{
             height: 5,
-            width: "20%",
+            width: "25%",
             borderRadius: 5,
             backgroundColor: "black",
           }}

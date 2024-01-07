@@ -16,29 +16,26 @@ export default function Storage_A(props) {
   const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
   const plywoodrough2k = textureLoader.load("./textures/plywood_rough_2k.jpg");
 
-  plywooddiff2k.colorSpace = THREE.SRGBColorSpace;
   const woodMtl = new THREE.MeshPhysicalMaterial({
-    color: new THREE.Color(5, 5, 5),
+    // color: new THREE.Color(5, 5, 5),
     map: plywooddiff2k,
     normalMap: plywoodnorgl2k,
     normalMapType: THREE.TangentSpaceNormalMap,
     normalScale: new THREE.Vector2(0.2, 0.2),
-    // sheen: 0.2,
     // sheenColor: new THREE.Color(1, 1, 1),
-
-    sheenRoughnessMap: plywoodrough2k,
+    envMapIntensity: 0.2,
     metalness: 0.4,
     metalnessMap: plywoodrough2k,
   });
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.01;
+    // objRef.current.rotation.y += 0.01;
   });
   return (
     <group
       name="Storage_A_grp"
-      position={[0, 0, 0]}
-      rotation={[0, 1.571, 0]}
+      position={[19.8, 0, 14]}
+      rotation={[0, 1.8, 0]}
       scale={0.083}
       ref={objRef}
     >

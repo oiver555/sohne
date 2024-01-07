@@ -28,6 +28,7 @@ export default function Table_C(props) {
     roughnessMap: plywoodrough2k,
     roughness: 0.8, // Adjust the roughness for a brushed appearance
     side: THREE.DoubleSide,
+    envMapIntensity:.2,
   });
 
 
@@ -35,7 +36,7 @@ export default function Table_C(props) {
     <group
     ref={objRef}
     name="Table_C_grp"
-    position={[2.578, 0, 2.172]}
+    position={[19, 0, 13]}
     scale={0.067}
   >
     <group name="Table_C_Body" position={[0.017, 35.7, 0.018]}>

@@ -16,9 +16,7 @@ export default function Sofa_D(props) {
   const sofftexturedivanRoughness = textureLoader.load(
     "/textures/sofftexture_divan_Roughness.png"
   );
-  const sofftexturedivanHeight = textureLoader.load(
-    "/textures/sofftexture_divan_Height.png"
-  );
+  
   const sofftexturedivanBaseColor = textureLoader.load(
     "/textures/sofftexture_divan_BaseColor.png"
   );
@@ -30,8 +28,7 @@ export default function Sofa_D(props) {
   kitchenwooddiff2k.wrapT = THREE.RepeatWrapping
   kitchenwooddiff2k.repeat.set(5,5)
   kitchenwooddiff2k.colorSpace = THREE.SRGBColorSpace     
-  // sofftexturedivanBaseColor.colorSpace = THREE.SRGBColorSpace     
-
+  
   sofftexturedivanBaseColor.flipY = false
   sofftexturedivanNormal.flipY = false
 
@@ -48,9 +45,9 @@ export default function Sofa_D(props) {
     sheenRoughnessMap: sofftexturedivanRoughness,
     metalness: 0.4,
     metalnessMap: sofftexturedivanRoughness,
+    envMapIntensity:.2,
   });
-  const woodMtl = new THREE.MeshPhysicalMaterial({
-    // color: new THREE.Color(0.4, 0.4, 0.4),
+  const woodMtl = new THREE.MeshPhysicalMaterial({ 
     map: kitchenwooddiff2k,
     normalMap: kitchenwoodnorgl2k,
     normalMapType: THREE.TangentSpaceNormalMap,
@@ -62,14 +59,11 @@ export default function Sofa_D(props) {
     sheenRoughnessMap: kitchenwoodrough2k,
     metalness: 0.4,
     metalnessMap: kitchenwoodrough2k,
+    envMapIntensity:.2,
   });
-
-  console.log(
-    nodes
-  );
-
+ 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[19, 0, 14]}>
       <group position={[0.147, 5.354, 0.056]}>
         <mesh
           castShadow

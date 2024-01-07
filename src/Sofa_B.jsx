@@ -63,8 +63,16 @@ export default function Sofa_B(props) {
     "./textures/Sofa_B_Plaid_Fabric_Mask.png"
   );
 
+
+  const metalLegs = new THREE.MeshStandardMaterial({
+    color: "rgb(150,100,100)",
+    metalness: .2,
+    // roughness: 1,
+    envMapIntensity: .2
+  })
+
   useFrame(() => {
-    objRef.current.rotation.z += 0.01;
+    // objRef.current.rotation.z += 0.01;
   });
 
   SofaBPlaidFabricDiffuse.wrapS = THREE.RepeatWrapping;
@@ -75,6 +83,9 @@ export default function Sofa_B(props) {
   const sofaMtl = new THREE.MeshStandardMaterial({
     map: SofaBFabricDiffuseGray,
     normalMap: SofaBFabricNRM,
+    fog:true,
+    toneMapped: true,
+    envMapIntensity: .1,
     bumpMap: SofaBFabricBump,
     displacementMap: SofaBFabricFoldsDisp,
     displacementScale: 1,
@@ -83,20 +94,28 @@ export default function Sofa_B(props) {
   const pillowMtl = new THREE.MeshStandardMaterial({
     map: SofaBPillowFabricDiffuse,
     normalMap: SofaBPillowFabricNRM,
+    envMapIntensity:.2,
     bumpMap: SofaBPlaidFabricBump,
   });
   const blanketMtl = new THREE.MeshStandardMaterial({
     map: SofaBPlaidFabricDiffuse,
-    // normalMap: SofaBPillowFabricNRM,
+    normalMap: SofaBPillowFabricNRM,
+    envMapIntensity:.2,
     bumpMap: SofaBPlaidFabricBump,
+  });
+  const tealMtl = new THREE.MeshStandardMaterial({
+    color: "orange",
+   
+    envMapIntensity:.2,
+  
   });
 
   return (
     <group
       ref={objRef}
       name="Sofa_B_grp"
-      position={[0, 1.9, 0]}
-      rotation={[-Math.PI / 2, 0, 0]}
+      position={[19.8, 1.9, 14]}
+      rotation={[-Math.PI / 2, 0, 1.7]}
       scale={0.007}
     >
       <mesh
@@ -156,7 +175,7 @@ export default function Sofa_B(props) {
         castShadow
         receiveShadow
         geometry={nodes.Sofa_B_Leg.geometry}
-        material={materials.lambert1}
+        material={metalLegs}
         position={[358.824, -363.529, -219.025]}
       />
       <mesh
@@ -198,7 +217,7 @@ export default function Sofa_B(props) {
           castShadow
           receiveShadow
           geometry={nodes.Sofa_B_TrimPIV.geometry}
-          material={materials.lambert1}
+          material={tealMtl}
           position={[-6.445, -48.728, -1.833]}
         />
       </group>

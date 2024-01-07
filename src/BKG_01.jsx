@@ -28,40 +28,6 @@ export function BKG_01(props) {
     side: THREE.DoubleSide,
   });
 
-  const {
-    shadowPosX,
-    shadowPosY,
-    shadowPosZ,
-    shadowRotX,
-    shadowRotY,
-    shadowRotZ,
-  } = useControls({
-    shadowPosX: {
-      value: 20,
-      step: 0.1,
-    },
-    shadowPosY: {
-      value: 0.01,
-      step: 0.01,
-    },
-    shadowPosZ: {
-      value: 35,
-      step: 0.1,
-    },
-    shadowRotX: {
-      value: -0.5,
-      step: 0.001,
-    },
-    shadowRotY: {
-      value: 0.0,
-      step: 0.001,
-    },
-    shadowRotZ: {
-      value: 0,
-      step: 0.001,
-    },
-  });
-
   const wall2 = new THREE.MeshPhysicalMaterial({
     lightMap: wall2LightMap,
     map: marble00,
@@ -110,15 +76,15 @@ export function BKG_01(props) {
         <mesh
           receiveShadow
           rotation={[
-            Math.PI * shadowRotX,
-            Math.PI * shadowRotY,
-            Math.PI * shadowRotZ,
+            Math.PI * -0.5,
+            Math.PI * 0.0,
+            Math.PI * 0,
           ]}
-          position={[shadowPosX, shadowPosY, shadowPosZ]}
+          position={[20, 0.01, 35]}
           scale={[50, 50, 1]}
         >
           <planeGeometry />
-          <shadowMaterial opacity={.1}/>
+          <shadowMaterial opacity={.04}/>
         </mesh>
       </group>
     </group>

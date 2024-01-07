@@ -12,7 +12,9 @@ export default function Chair_D(props) {
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
   const chairglossiness = textureLoader.load("./textures/chair_glossiness.jpg");
-  const Chairpbrdiffuse = textureLoader.load("./textures/Chair_pbr_diffuse.png");
+  const Chairpbrdiffuse = textureLoader.load(
+    "./textures/Chair_pbr_diffuse.png"
+  );
   Chairpbrdiffuse.flipY = false;
 
   const Chairpbrnormal = textureLoader.load("./textures/Chair_pbr_normal.jpg");
@@ -29,20 +31,24 @@ export default function Chair_D(props) {
 
   const fabricMtl = new THREE.MeshStandardMaterial({
     map: Chairpbrdiffuse,
+    
     roughnessMap: Chairpbrroughness,
     normalMap: Chairpbrnormal,
+    roughness: 1,
+    metalness: 0,
+    envMapIntensity:.2,
+
   });
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.01;
+    // objRef.current.rotation.y += 0.01;
   });
 
   return (
     <group
       name="Chair_D_grp"
-      position={[0, 3.8, 0]}
-      
-      rotation={[-Math.PI, 0, -Math.PI]}
+      position={[19.8, 3.8, 14]}
+      rotation={[-Math.PI, 1.2, -Math.PI]}
       scale={0.011}
       ref={objRef}
     >

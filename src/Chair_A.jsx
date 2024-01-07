@@ -16,8 +16,8 @@ export default function Chair_A_1(props) {
   const Chair_A_AO = textureLoader.load("/textures/Chair_A.png");
   Chair_A_AO.flipY = false;
 
-  const wood = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
-  const wood_norm = textureLoader.load("./textures/dark_wood_nor_gl_2k.jpg");
+  const wood = textureLoader.load("/textures/dark_wood_diff_2k.jpg");
+  const wood_norm = textureLoader.load("/textures/dark_wood_nor_gl_2k.jpg");
   wood.wrapS = THREE.RepeatWrapping;
   wood.wrapT = THREE.RepeatWrapping;
   wood.repeat.set(10, 10);
@@ -32,7 +32,7 @@ export default function Chair_A_1(props) {
   wood_rough.flipY = true;
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.005;
+    // objRef.current.rotation.y += 0.005;
   });
 
   const woodMat1 = new THREE.MeshStandardMaterial({

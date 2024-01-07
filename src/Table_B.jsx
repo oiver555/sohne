@@ -11,7 +11,7 @@ export default function Table_B(props) {
   const { nodes, materials } = useGLTF("./gltf/Table_B.glb");
   const objRef = useRef();
   useFrame(() => {
-    objRef.current.rotation.y += 0.001;
+    // objRef.current.rotation.y += 0.001;
   });
   const textureLoader = new THREE.TextureLoader();
   const plywooddiff2k = textureLoader.load("./textures/plywood_diff_2k.jpg");
@@ -28,10 +28,16 @@ export default function Table_B(props) {
     roughnessMap: plywoodrough2k,
     roughness: 0.8, // Adjust the roughness for a brushed appearance
     side: THREE.DoubleSide,
+    envMapIntensity: 0.2,
   });
 
   return (
-    <group ref={objRef} name="Table_B_grp" position={[0.72, 0, 0.828]} scale={0.076}>
+    <group
+      ref={objRef}
+      name="Table_B_grp"
+      position={[19, 0, 13]}
+      scale={0.08}
+    >
       <group name="Table_B_Legs" position={[0.018, 31.773, 1.291]}>
         <mesh
           name="Table_B_LegsPIV"

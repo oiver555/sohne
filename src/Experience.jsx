@@ -32,103 +32,77 @@ import Table_A from "./Table_A";
 import Table_B from "./Table_B";
 import Table_C from "./Table_C";
 import Table_D from "./Table_D";
+import { useSpring, animated } from "@react-spring/three";
 import { extend, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, memo, useEffect, useRef, useState } from "react";
 import { BKG_01 } from "./BKG_01";
-import Effects from "./Effects";
+import { Perf } from "r3f-perf";
 
-export default function Experience() {
+export default function Experience(props) {
   const camRef = useRef();
   const sceneRef = useRef();
   const sunRef = useRef();
-  const {
-    targetX,
-    targetY,
-    targetZ,
-    sunTargetX,
-    sunTargetY,
-    sunTargetZ,
-    targetX2,
-    targetY2,
-    targetZ2,
-    positionX,
-    positionY,
-    positionZ,
-  } = useControls({
-    sunTargetX: {
-      value: 20,
-      step: 0.1,
-    },
-    sunTargetY: {
-      value: 5,
-      step: 0.1,
-    },
-    sunTargetZ: {
-      value: 17,
-      step: 0.1,
-    },
-    targetX: {
-      value: 20,
-      step: 0.1,
-    },
-    targetY: {
-      value: 5,
-      step: 0.1,
-    },
-    targetZ: {
-      value: 17,
-      step: 0.1,
-    },
-    targetX2: {
-      value: 20,
-      step: 0.1,
-    },
-    targetY2: {
-      value: 5,
-      step: 0.1,
-    },
-    targetZ2: {
-      value: 14.3,
-      step: 0.1,
-    },
-    positionX: {
-      value: 19,
-      step: 0.1,
-    },
-    positionY: {
-      value: 7.7,
-      step: 0.1,
-    },
-    positionZ: {
-      value: 31,
-      step: 0.1,
-    },
+  const springsChair_A = useSpring({
+    position:
+      props.category === "Chairs"
+        ? [0, 0, 0]
+        : props.category === "Storage"
+        ? [0, 0, 20]
+        : props.category === "Tables"
+        ? [0, 0, 40]
+        : [0, 0, 60],
   });
-
+  const springStorage_A = useSpring({
+    position:
+      props.category === "Chairs"
+        ? [0, 0, -20]
+        : props.category === "Storage"
+        ? [0, 0, 0]
+        : props.category === "Tables"
+        ? [0, 0, 20]
+        : [0, 0, 40],
+  });
+  const springTables_A = useSpring({
+    position:
+      props.category === "Chairs"
+        ? [0, 0, -40]
+        : props.category === "Storage"
+        ? [0, 0, -20]
+        : props.category === "Tables"
+        ? [0, 0, 0]
+        : [0, 0, 20],
+  });
+  const springSofa_A = useSpring({
+    position:
+      props.category === "Chairs"
+        ? [0, 0, -60]
+        : props.category === "Storage"
+        ? [0, 0, -40]
+        : props.category === "Tables"
+        ? [0, 0, -20]
+        : [0, 0, 0],
+  });
   const [loaded, setLoaded] = useState(false);
-
-  extend({ SSAOPass });
 
   const directionalLightRef1 = useRef();
   const directionalLightRef2 = useRef();
   const rectLightRef3 = useRef();
   const ambLightRef = useRef();
   const pointLightRef = useRef();
-  useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 1, "red");
-  useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10, "red");
-  useHelper(rectLightRef3, RectAreaLightHelper, 10, "red");
-  useHelper(pointLightRef, THREE.PointLightHelper, 5, "red");
+  // useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 1, "red");
+  // useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10, "red");
+  // useHelper(rectLightRef3, RectAreaLightHelper, 10, "red");
+  // useHelper(pointLightRef, THREE.PointLightHelper, 5, "red");
 
   const textureLoader = new THREE.TextureLoader();
-  const kitchenenv = textureLoader.load("./textures/kitchen_env.jpg");
   const targetObject = new THREE.Object3D();
   const targetObject2 = new THREE.Object3D();
-  targetObject.position.y = targetY;
-  targetObject.position.x = targetX;
-  targetObject.position.z = targetZ;
-  targetObject2.position.y = targetY2;
-  targetObject2.position.x = targetX2;
-  targetObject2.position.z = targetZ2;
+  targetObject.position.y = 5;
+  targetObject.position.x = 20;
+  targetObject.position.z = 17;
+  targetObject2.position.y = 5;
+  targetObject2.position.x = 20;
+  targetObject2.position.z = 14.3;
   const Elsafabricref = textureLoader.load("/textures/Elsa_fabric_ref.jpg");
 
   Elsafabricref.wrapS = THREE.RepeatWrapping;
@@ -144,10 +118,6 @@ export default function Experience() {
     }
   });
 
-  useFrame(() => {
-    sunRef.current.rotation.y += 0.005;
-  });
-
   useThree(({ camera, scene }) => {
     scene.add(targetObject);
     sceneRef.current = scene;
@@ -161,7 +131,7 @@ export default function Experience() {
     colorWrite: true,
     opacity: 1,
     alphaMap: Elsafabricref,
-    side: THREE.DoubleSide,
+    side: THREE.FrontSide,
   });
 
   useEffect(() => {
@@ -171,6 +141,7 @@ export default function Experience() {
 
   return (
     <>
+      {/* <Perf /> */}
       <PerspectiveCamera
         ref={camRef}
         fov={10}
@@ -183,52 +154,41 @@ export default function Experience() {
         far={400}
         position={[100, 15, 70]}
       />
-      <mesh
-        castShadow
-        ref={sunRef}
-        material={sunMat}
-        scale={0.5}
-        position={[sunTargetX, sunTargetY, sunTargetZ]}
-      >
-        <Icosahedron castShadow />
-      </mesh>
-      <TransformControls position={[22, 5, 17]}  mode="translate">
-        <mesh castShadow scale={[0.2, 2, 0.2]}>
-          <boxGeometry  castShadow />
-          <meshBasicMaterial  colorWrite={false} opacity={0} color={"black"} />
-        </mesh>
-      </TransformControls>
-      {loaded && <Effects ref={sunRef} />}
+
+      {/* {loaded && <Effects ref={sunRef} />} */}
       <Environment files={"/textures/veranda_1k.hdr"} />
       <fog attach="fog" args={["orange", 40, 700]} />
-      <SoftShadows size={10} samples={17} focus={0} />
+      <SoftShadows size={5} samples={25} focus={2} />
       <OrbitControls makeDefault enabled={true} enableRotate />
       {/* <Furniture/> */}
-      <ambientLight ref={ambLightRef} intensity={1} />
+      <ambientLight
+        ref={ambLightRef}
+        intensity={0.4}
+        color={"rgb(255,200,200)"}
+      />
       <rectAreaLight
         intensity={0.3}
         width={20.0}
         height={20}
-        position={[20, 10, 15]}
+        position={[20, 13, 15]}
         rotation={[Math.PI / -2, 0, 0]}
         ref={rectLightRef3}
       />
       <directionalLight
         castShadow
         ref={directionalLightRef1}
-        position={[positionX, positionY, positionZ]}
+        position={[19, 7.7, 31]}
         intensity={1}
+        scale={[0.1, 0.1, 0.1]}
+        shadow-mapSize={[2048, 2048]}
+        shadow-camera-near={0}
+        shadow-camera-far={200}
+        shadow-camera-top={30}
+        shadow-camera-right={30}
+        shadow-camera-bottom={-30}
+        shadow-camera-left={-30}
         target={targetObject}
         color={"white"}
-      />
-
-      <pointLight
-        ref={pointLightRef}
-        decay={1}
-        position={[-25, 10, -30]}
-        color={"rgba(255,230,194,1)"}
-        distance={22}
-        intensity={20}
       />
 
       <directionalLight
@@ -241,42 +201,29 @@ export default function Experience() {
       />
       <BKG_01 />
 
-      {/* Light Blocker */}
-      <mesh
-        receiveShadow
-        rotation={[Math.PI / -12, Math.PI / 1.1, Math.PI / 1]}
-        scale={[50, 4, 1]}
-        castShadow
-        position={[20, 4, 20]}
-      >
-        <planeGeometry />
-        <meshStandardMaterial side={THREE.FrontSide} />
-      </mesh>
-
-      <mesh
-        receiveShadow
-        rotation={[Math.PI / -12, Math.PI / 1.1, Math.PI / 1]}
-        scale={[50, 4, 1]}
-        castShadow
-        position={[20, 10, 20]}
-      >
-        <planeGeometry />
-        <meshStandardMaterial side={THREE.FrontSide} />
-      </mesh>
-
-      <Chair_A />
+      <group>
+        <animated.group position={springsChair_A.position}>
+          <Chair_A />
+        </animated.group>
+        <animated.group position={springStorage_A.position}>
+          <Storage_A />
+        </animated.group>
+        <animated.group position={springTables_A.position}>
+          <Table_A />
+        </animated.group>
+        <animated.group position={springSofa_A.position}>
+          <Sofa_A />
+        </animated.group>
+      </group>
       {/* <Chair_B /> */}
       {/* <Chair_C /> */}
       {/* <Chair_D /> */}
-      {/* <Sofa_A />  */}
       {/* <Sofa_B/>   */}
       {/* <Sofa_C/>  */}
       {/* <Sofa_D/> */}
-      {/* <Storage_A /> */}
       {/* <Storage_B /> */}
       {/* <Storage_C /> */}
       {/* <Storage_D /> */}
-      {/* <Table_A /> */}
       {/* <Table_B /> */}
       {/* <Table_C /> */}
       {/* <Table_D /> */}

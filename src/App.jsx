@@ -14,7 +14,7 @@ import TitleDrop from "./TitleDrop.jsx";
 import CategoryDrop from "./CategoryDrop.jsx";
 
 export default () => {
-  const [category, setCategory] = useState("Seating");
+  const [category, setCategory] = useState("Chairs");
   const tl = gsap.timeline({ repeat: 0 });
 
   useEffect(() => {
@@ -87,12 +87,14 @@ export default () => {
       <Nav />
       <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
         <Canvas style={{ flex: 1 }} shadows>
-          <Experience />
+          <Experience category={category}/>
         </Canvas>
-        <div
-          className="trackline"
-          style={{ flex: 1, backgroundColor: "red" }}
-        ></div>
+        <div style={{ flex: 1,  }}>
+          <img
+            style={{ width: "100%", height: 'auto',  transform: 'scaleX(-1)' }}
+            src="./images/Chair_A.png"
+          />
+        </div>
       </div>
       <TitleDrop />
       <CategoryDrop category={category} />

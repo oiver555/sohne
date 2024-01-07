@@ -18,7 +18,7 @@ export default function Table_D(props) {
   const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
   const plywoodrough2k = textureLoader.load("./textures/plywood_rough_2k.jpg");
 
-  const plyMaterial = new THREE.MeshPhysicalMaterial({
+  const plyMaterial = new THREE.MeshStandardMaterial({
     // color:plywooddiff2k, // Base color of the steel
     map: plywooddiff2k,
     // metalness: 0.4, // Fully metallic
@@ -28,10 +28,11 @@ export default function Table_D(props) {
     roughnessMap: plywoodrough2k,
     roughness: 0.8, // Adjust the roughness for a brushed appearance
     side: THREE.DoubleSide,
+    envMapIntensity:.2,
   });
 
   return (
-    <group ref={objRef} name="Table_D_grp" position={[0, 2, 0.4]} scale={0.096}>
+    <group ref={objRef} name="Table_D_grp" position={[19, 2, 13]} scale={0.096}>
     <group name="Table_D_grpPIV" position={[0, -21, 0]}>
       <group name="Table_D_Body" position={[0, 30.388, 0]}>
         <mesh

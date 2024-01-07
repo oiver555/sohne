@@ -8,11 +8,11 @@ export default function Storage_D(props) {
   const objRef = useRef();
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.001;
+    // objRef.current.rotation.y += 0.001;
   });
   return (
     <group ref={objRef} {...props} dispose={null}>
-      <group rotation={[Math.PI / 2, 0, 0]} scale={4}>
+      <group position={[20, 0, 15]} rotation={[Math.PI / 2, 0, -1.8]} scale={4}>
         <mesh
           castShadow
           receiveShadow

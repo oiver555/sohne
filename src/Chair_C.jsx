@@ -21,22 +21,21 @@ export default function Chair_C(props) {
     map: chairdiffuse,
     roughnessMap: chairglossiness,
     roughness: 0.5,
-  
-    // bumpMap: TheReaderarmchairbheight,
-    // bumpScale: 1,
+    envMapIntensity:.2,
+ 
     normalMap: chairnormalmap,
     normalScale: new THREE.Vector2(1.0, 1.0),
   });
 
   useFrame(() => {
-    objRef.current.rotation.y -= 0.001;
+    // objRef.current.rotation.y -= 0.001;
   });
   return (
     <group
       ref={objRef}
       name="Chair_C_grp"
-      position={[0, 0, 0]}
-      rotation={[-Math.PI, 0, -Math.PI]}
+      position={[19.8, 0, 14]}
+      rotation={[-Math.PI, -.4, -Math.PI]}
       scale={0.161}
     >
       <mesh

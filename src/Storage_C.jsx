@@ -12,7 +12,9 @@ export default function Storage_C(props) {
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
   const kitchenenv = textureLoader.load("./textures/kitchen_env.jpg");
-  const Wood027basecolor = textureLoader.load("./textures/Wood_027_basecolor.jpg")
+  const Wood027basecolor = textureLoader.load(
+    "./textures/Wood_027_basecolor.jpg"
+  );
   const Wood027normal = textureLoader.load("./textures/Wood_027_normal.jpg");
   const Wood027ambientOcclusion = textureLoader.load(
     "/textures/Wood_027_ambientOcclusion.jpg"
@@ -54,6 +56,7 @@ export default function Storage_C(props) {
     color: 0xc0c0c0, // Silver color
     metalness: 0.5, // Fully metallic
     roughness: 0.3,
+    envMapIntensity: 0.1,
     clearcoat: 0.2,
   });
   const tintedGlass = new THREE.MeshPhysicalMaterial({
@@ -70,18 +73,20 @@ export default function Storage_C(props) {
     clearcoat: 0.2,
     reflectivity: 1,
     specularIntensity: 1,
+    envMapIntensity: 0.1,
   });
 
   CALACATTABORGHIN.colorSpace = THREE.SRGBColorSpace;
   const woodMtl = new THREE.MeshPhysicalMaterial({
     // color: new THREE.Color(1, 1, 1),
     aoMap: Wood027ambientOcclusion,
-    aoMapIntensity: 0.1,
+    aoMapIntensity: 1,
     specularIntensity: 0.5,
     side: THREE.DoubleSide,
     normalMap: Wood027normal,
     normalMapType: THREE.TangentSpaceNormalMap,
     normalScale: new THREE.Vector2(0.2, 0.2),
+    envMapIntensity: 0.1,
   });
 
   const marbleMtl = new THREE.MeshPhysicalMaterial({
@@ -91,6 +96,7 @@ export default function Storage_C(props) {
     specularIntensity: 1,
     reflectivity: 0.7,
     clearcoat: 0.1,
+    envMapIntensity: 0.1,
   });
   const redMtl = new THREE.MeshPhysicalMaterial({
     color: new THREE.Color(1, 0, 0),
@@ -107,14 +113,15 @@ export default function Storage_C(props) {
     roughnessMap: MetalSteelBrushed001roughness,
     roughness: 0.8, // Adjust the roughness for a brushed appearance
     side: THREE.DoubleSide,
+    envMapIntensity: 0.1,
   });
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.001;
+    // objRef.current.rotation.y += 0.001;
   });
   return (
     <group ref={objRef} {...props} dispose={null}>
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+      <group position={[25, 0, 16]} rotation={[Math.PI / 2, 0, -1.8]} scale={0.03}>
         <mesh
           castShadow
           receiveShadow

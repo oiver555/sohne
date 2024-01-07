@@ -38,7 +38,7 @@ export default function Storage_B(props) {
     aoMap: Wood027ambientOcclusion,
     aoMapIntensity: 1,
     side: THREE.DoubleSide,
-
+    envMapIntensity: 0.2,
     normalMap: Wood027normal,
     normalMapType: THREE.TangentSpaceNormalMap,
     normalScale: new THREE.Vector2(0.2, 0.2),
@@ -53,29 +53,31 @@ export default function Storage_B(props) {
     clearcoat: 0.7, // Enable clearcoat
     transmission: 0.9, //
     normalMap: glassnormal,
+    envMapIntensity:1,
+    reflectivity: .8,
     normalMapType: THREE.TangentSpaceNormalMap,
     normalScale: new THREE.Vector2(0.4, 0.4),
   });
   const goldMtl = new THREE.MeshPhysicalMaterial({
     color: 0xffd700, // Gold color
-    metalness: .8, // Fully metallic
+    metalness: 0.8, // Fully metallic
     roughness: 0.2,
-    specularColor: new THREE.Color(3,1,1),
-    specularIntensity:3,
-    clearcoat: .2,
-    clearcoatRoughness: .2,
-    emissive: 1
+    specularColor: new THREE.Color(3, 1, 1),
+    specularIntensity: 3,
+    clearcoat: 0.2,
+    clearcoatRoughness: 0.2,
+    emissive: 1,
   });
 
   useFrame(() => {
-    objRef.current.rotation.z += 0.01;
+    // objRef.current.rotation.z += 0.01;
   });
   return (
     <group
       name="Storage_B_grp"
-      position={[0, 0, 0]}
-      rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-      scale={6.515}
+      position={[23, 0, 16]}
+      rotation={[-Math.PI / 2, 0, -1.4]}
+      scale={7.515}
       ref={objRef}
     >
       <mesh

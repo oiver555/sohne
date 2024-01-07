@@ -40,7 +40,7 @@ export default function Chair_B(props) {
   );
 
   wood_00_diff.flipY = false;
-  wood_00_diff.colorSpace = THREE.SRGBColorSpace;
+  // wood_00_diff.colorSpace = THREE.SRGBColorSpace;
 
  
   wood_00_norm.flipY = false;
@@ -71,10 +71,11 @@ export default function Chair_B(props) {
     map: wood_00_diff,
     normalMap: wood_00_norm,
     roughnessMap: wood_00_spec,
-    roughness: 0.8,
-    metalness: 0,
-    // specular: 1,
-    // shininess:.5,
+    roughness: .7,
+    metalness: .2,
+    specular: 0,
+    shininess:0,
+    envMapIntensity:.2,
 
     // normalScale: new THREE.Vector2( 10.0  , 10.0   ),
     bumpMap: wood_00_disp,
@@ -85,23 +86,25 @@ export default function Chair_B(props) {
     map: fabric_00_diff,
     roughnessMap: fabric_00_spec,
     displacementMap: fabric_00_disp,
-    displacementScale: 0.3,
+    displacementScale: 0,
     normalMap: fabric_00_nor,
     normalScale: new THREE.Vector2(1.0, 1.0),
     bumpMap: fabric_00_disp,
     bumpScale: 10,
+    envMapIntensity:.4,
+
   });
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.01
+    // objRef.current.rotation.y += 0.01
   });
 
   return (
     <group
       ref={objRef}
       name="Chair_B_grp"
-      position={[0, 0, 0]}
-      rotation={[0, 1.571, 0]}
+      position={[19.8, 0, 14]}
+      rotation={[0, 1.7, 0]}
       scale={0.104}
     >
       <mesh

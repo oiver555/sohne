@@ -3,108 +3,71 @@ import { useEffect } from "react";
 
 const Slider = (props) => {
   useEffect(() => {
-    if (props.category === "Seating") {
-      gsap.to("#seating", {
+    if (props.category === "Chairs") {
+      gsap.to("#chairs", {
         duration: 1.5,
         background: "black",
       });
       gsap.to("#storage", {
         duration: 1.5,
         background: "lightgrey",
-      });
-      gsap.to("#chair", {
+      });    
+      gsap.to("#tables", {
         duration: 1.5,
         background: "lightgrey",
       });
-      gsap.to("#table", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#sofa", {
+      gsap.to("#sofas", {
         duration: 1.5,
         background: "lightgrey",
       });
     } else if (props.category === "Storage") {
-      gsap.to("#seating", {
+      gsap.to("#chairs", {
         duration: 1.5,
         background: "lightgrey",
       });
       gsap.to("#storage", {
         duration: 1.5,
         background: "black",
-      });
-      gsap.to("#chair", {
+      }); 
+      gsap.to("#tables", {
         duration: 1.5,
         background: "lightgrey",
       });
-      gsap.to("#table", {
+      gsap.to("#sofas", {
         duration: 1.5,
         background: "lightgrey",
       });
-      gsap.to("#sofa", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-    } else if (props.category === "Chair") {
-      gsap.to("#seating", {
+    } else if (props.category === "Tables") {
+      gsap.to("#chairs", {
         duration: 1.5,
         background: "lightgrey",
       });
       gsap.to("#storage", {
         duration: 1.5,
         background: "lightgrey",
-      });
-      gsap.to("#chair", {
+      });      
+      gsap.to("#tables", {
         duration: 1.5,
         background: "black",
       });
-      gsap.to("#table", {
+      gsap.to("#sofas", {
         duration: 1.5,
         background: "lightgrey",
       });
-      gsap.to("#sofa", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-    } else if (props.category === "Table") {
-      gsap.to("#seating", {
+    } else if (props.category === "Sofas") {
+      gsap.to("#chairs", {
         duration: 1.5,
         background: "lightgrey",
       });
       gsap.to("#storage", {
         duration: 1.5,
         background: "lightgrey",
-      });
-      gsap.to("#chair", {
+      }); 
+      gsap.to("#tables", {
         duration: 1.5,
         background: "lightgrey",
       });
-      gsap.to("#table", {
-        duration: 1.5,
-        background: "black",
-      });
-      gsap.to("#sofa", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-    } else if (props.category === "Sofa") {
-      gsap.to("#seating", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#storage", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#chair", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#table", {
-        duration: 1.5,
-        background: "lightgrey",
-      });
-      gsap.to("#sofa", {
+      gsap.to("#sofas", {
         duration: 1.5,
         background: "black",
       });
@@ -134,9 +97,9 @@ const Slider = (props) => {
       >
         <div
           onClick={() => {
-            props.setCategory("Seating");
+            props.setCategory("Chairs");
           }}
-          id="seating"
+          id="chairs"
           style={{
             height: 10,
             width: 10,
@@ -156,10 +119,11 @@ const Slider = (props) => {
             backgroundColor: "lightgrey",
           }}
         />
+        
         <div
-          id="chair"
+          id="tables"
           onClick={() => {
-            props.setCategory("Chair");
+            props.setCategory("Tables");
           }}
           style={{
             height: 10,
@@ -169,21 +133,9 @@ const Slider = (props) => {
           }}
         />
         <div
-          id="table"
+          id="sofas"
           onClick={() => {
-            props.setCategory("Table");
-          }}
-          style={{
-            height: 10,
-            width: 10,
-            borderRadius: 5,
-            backgroundColor: "lightgrey",
-          }}
-        />
-        <div
-          id="sofa"
-          onClick={() => {
-            props.setCategory("Sofa");
+            props.setCategory("Sofas");
           }}
           style={{
             height: 10,

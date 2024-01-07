@@ -83,10 +83,12 @@ export default function Sofa_A(props) {
 
   const plaidMtl = new THREE.MeshStandardMaterial({
     map: plaidTexture1,
+    envMapIntensity:.5
   });
   const pillow1Mtl = new THREE.MeshStandardMaterial({
     map: ArmchairLeathePillow01Fabric,
     bumpMap: ArmchairLeatheFabricbump,
+    envMapIntensity:.2
   });
   const legMtl = new THREE.MeshStandardMaterial({
     color: new THREE.Color(0.2, 0.2, 0.2),
@@ -94,16 +96,17 @@ export default function Sofa_A(props) {
   });
   const blanketMtl = new THREE.MeshStandardMaterial({
     map: ArmchairLeathePlaidFabricDiffuse,
+    envMapIntensity:.2
   });
 
   useFrame(() => {
-    objRef.current.rotation.y += 0.01;
+    // objRef.current.rotation.y -= 0.001;
   });
   return (
     <group
       name="Sofa_A_grp"
-      position={[0, 0, 0]}
-      rotation={[-Math.PI, 0, -Math.PI]}
+      position={[19.8, 0, 14]}
+      rotation={[-Math.PI, 1.2, -Math.PI]}
       scale={0.104}
       ref={objRef}
     >
