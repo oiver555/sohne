@@ -35,7 +35,7 @@ export default function Chair_C(props) {
       ref={objRef}
       name="Chair_C_grp"
       position={[19.8, 0, 14]}
-      rotation={[-Math.PI, -.4, -Math.PI]}
+      rotation={[-Math.PI, 0, -Math.PI]}
       scale={0.161}
     >
       <mesh

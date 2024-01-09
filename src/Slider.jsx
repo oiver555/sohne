@@ -34,7 +34,7 @@ const Slider = (props) => {
         <div
           onClick={() => {
             console.log(props);
-            props.chairA_springRef.start({
+            props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 0],
               },
@@ -87,7 +87,7 @@ const Slider = (props) => {
         />
         <div
           onClick={() => { 
-            props.chairA_springRef.start({
+            props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 20],
               },
@@ -141,7 +141,7 @@ const Slider = (props) => {
           id="tables"
           onClick={() => {
           
-            props.chairA_springRef.start({
+            props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 40],
               },
@@ -193,7 +193,8 @@ const Slider = (props) => {
           id="sofas"
           onClick={() => {
             // props.setCategory("Sofas");
-            props.chairA_springRef.start({
+            props.chairA_spring_pos_Ref.start({
+              
               to: {
                 position: [0, 0, 60],
               },

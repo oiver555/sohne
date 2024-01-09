@@ -12,11 +12,12 @@ import Slider from "./Slider.jsx";
 import SliderProgress from "./SliderProgress.jsx";
 import TitleDrop from "./TitleDrop.jsx";
 import CategoryDrop from "./CategoryDrop.jsx";
-import { useSpringRef } from "@react-spring/three";
+import { useSpring, useSpringRef, Controller } from "@react-spring/three";
 
 export default () => {
   const tl = gsap.timeline({ repeat: 0 });
-  const chairA_springRef = useSpringRef();
+  const chairA_spring_pos_Ref = useSpringRef();
+  const chairA_spring_rot_Ref = useSpringRef();
   const storageA_springRef = useSpringRef();
   const tableA_springRef = useSpringRef();
   const sofaA_springRef = useSpringRef();
@@ -44,6 +45,21 @@ export default () => {
     tl.play(true);
   }, []);
 
+  const [rotation, api] = useSpring(() => {
+    return {
+      ref: chairA_spring_rot_Ref,
+      from: { rotation: 0 },
+      loop: true,
+      to: [
+        {
+          rotation: 6.25,
+        },
+      ],
+    };
+  });
+
+
+  
   return (
     <div
       style={{
@@ -76,7 +92,6 @@ export default () => {
           justifyContent: "center",
           margin: 0,
           textAlign: "center",
-          
         }}
       >
         <button
@@ -88,8 +103,28 @@ export default () => {
             padding: "10px 30px 10px 30px",
           }}
           onClick={() => {
-            
-            console.log(chairARef.current.position.z);
+            if (chairARef.current.position.z) {
+              console.log("Hey there");
+              api.start({
+                to: [
+                  {
+                    rotation: 6.25,
+                  },
+                ],
+                config: {
+                  mass: 5,
+                  tension: 1,
+                  friction: 0,
+                  duration: 50000,
+                },
+                loop: true, // Reset the animation when it reaches the end
+                immediate: false,
+                pause: false,
+              });
+            } else if (storageARef.current.position.z) {
+            } else if (tableARef.current.position.z) {
+            } else if (sofaARef.current.position.z) {
+            }
           }}
         >
           discover
@@ -98,7 +133,7 @@ export default () => {
 
       {/* Category Slider/Picker */}
       <Slider
-        chairA_springRef={chairA_springRef}
+        chairA_spring_pos_Ref={chairA_spring_pos_Ref}
         storageA_springRef={storageA_springRef}
         tableA_springRef={tableA_springRef}
         sofaA_springRef={sofaA_springRef}
@@ -109,14 +144,19 @@ export default () => {
       <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
         <Canvas style={{ flex: 1 }} shadows>
           <Experience
+            rotation={rotation}
             storageA_springRef={storageA_springRef}
             tableA_springRef={tableA_springRef}
             sofaA_springRef={sofaA_springRef}
-            chairA_springRef={chairA_springRef}
+            chairA_spring_pos_Ref={chairA_spring_pos_Ref}
             chairARef={chairARef}
             storageARef={storageARef}
             tableARef={tableARef}
             sofaARef={sofaARef}
+            chairAGroupRef={chairAGroupRef}
+            storageAGroupRef={storageAGroupRef}
+            tableAGroupRef={tableAGroupRef}
+            sofaAGroupRef={sofaAGroupRef}
           />
         </Canvas>
         <div style={{ flex: 1 }}>
@@ -126,8 +166,8 @@ export default () => {
           />
         </div>
       </div>
-      <TitleDrop />
-      <CategoryDrop />
+      {/* <TitleDrop />
+      <CategoryDrop /> */}
     </div>
   );
 };

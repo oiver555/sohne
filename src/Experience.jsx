@@ -41,9 +41,9 @@ import { Perf } from "r3f-perf";
 export default function Experience(props) {
   const camRef = useRef();
   const sceneRef = useRef();
-  const sunRef = useRef();
+ 
   const springsChair_A = useSpring({
-    ref: props.chairA_springRef,
+    ref: props.chairA_spring_pos_Ref,
     from: { position: [0, 0, 0] },
   });
   const springsStorage_A = useSpring({
@@ -158,7 +158,7 @@ export default function Experience(props) {
           ref={props.chairAGroupRef}
           position={springsChair_A.position}
         >
-          <Chair_A chairARef={props.chairARef} />
+          <Chair_A chairARef={props.chairARef} rotation={props.rotation} />
         </animated.group>
         <animated.group
           ref={props.storageAGroupRef}

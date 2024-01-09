@@ -11,8 +11,7 @@ export default function Chair_D(props) {
   const { nodes, materials } = useGLTF("./gltf/Chair_D.glb");
   const objRef = useRef();
   const textureLoader = new THREE.TextureLoader();
-  const chairglossiness = textureLoader.load("./textures/chair_glossiness.jpg");
-  const Chairpbrdiffuse = textureLoader.load(
+   const Chairpbrdiffuse = textureLoader.load(
     "./textures/Chair_pbr_diffuse.png"
   );
   Chairpbrdiffuse.flipY = false;
@@ -23,15 +22,10 @@ export default function Chair_D(props) {
     "/textures/Chair_pbr_roughness.png"
   );
   Chairpbrroughness.flipY = false;
-  const Chairpbrspecular = textureLoader.load(
-    "/textures/Chair_pbr_specular.png"
-  );
-  const chairreflection = textureLoader.load("./textures/chair_reflection.jpg");
-  const darkwooddiff2k = textureLoader.load("./textures/dark_wood_diff_2k.jpg");
+  
 
   const fabricMtl = new THREE.MeshStandardMaterial({
-    map: Chairpbrdiffuse,
-    
+    map: Chairpbrdiffuse, 
     roughnessMap: Chairpbrroughness,
     normalMap: Chairpbrnormal,
     roughness: 1,
@@ -48,7 +42,7 @@ export default function Chair_D(props) {
     <group
       name="Chair_D_grp"
       position={[19.8, 3.8, 14]}
-      rotation={[-Math.PI, 1.2, -Math.PI]}
+      rotation={[-Math.PI, 1.4, -Math.PI]}
       scale={0.011}
       ref={objRef}
     >
