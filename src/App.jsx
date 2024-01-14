@@ -164,7 +164,6 @@ export default () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            alignItems: "center",
             overflow: "hidden",
           }}
         >         

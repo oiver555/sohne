@@ -26,11 +26,9 @@ export default {
                     });
                 },
             },
-            "react-refresh"
+
         ],
-    rules: {
-        "react-refresh/only-export-components": "warn"
-    },
+
     server:
     {
         host: true, // Open to local network and display URL
