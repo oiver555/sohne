@@ -53,6 +53,10 @@ const Slider = (props) => {
               duration: 2,
               xPercent: 0,
             });
+            gsap.to(".categoryDrop", {
+              duration: 2,
+              y: 0,
+            });
             gsap.to("#chairs", {
               duration: 1.5,
               background: "black",
@@ -101,11 +105,16 @@ const Slider = (props) => {
               },
             });
             gsap.to(".imagesContainer", {
-              xPercent: -100
-             })
+              xPercent: -100,
+            });
             gsap.to(".slider-progress", {
               duration: 2,
               xPercent: 100,
+            });
+          
+            gsap.to(".categoryDrop", {
+              duration: 2,
+              y: -200,
             });
             gsap.to("#chairs", {
               duration: 1.5,
@@ -156,6 +165,14 @@ const Slider = (props) => {
                 position: [0, 0, -20],
               },
             });
+            gsap.to(".imagesContainer", {
+              xPercent: -200,
+            });
+       
+            gsap.to(".categoryDrop", {
+              duration: 2,
+              y: -400,
+            });
             gsap.to(".slider-progress", {
               duration: 2,
               xPercent: 200,
@@ -187,7 +204,6 @@ const Slider = (props) => {
         <div
           id="sofas"
           onClick={() => {
-            // props.setCategory("Sofas");
             props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 60],
@@ -207,6 +223,14 @@ const Slider = (props) => {
               to: {
                 position: [0, 0, 0],
               },
+            });
+           
+            gsap.to(".categoryDrop", {
+              duration: 2,
+              y: -600,
+            });
+            gsap.to(".imagesContainer", {
+              xPercent: -300,
             });
             gsap.to(".slider-progress", {
               duration: 2,

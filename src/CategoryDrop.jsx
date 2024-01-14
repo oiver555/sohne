@@ -43,25 +43,13 @@ const CategoryDrop = (props) => {
 
   useEffect(() => {
     if (props.category === "Chairs") {
-      gsap.to(".categoryDrop", {
-        duration: 2,
-        y: 0,
-      });
+     
     } else if (props.category === "Storage") {
-      gsap.to(".categoryDrop", {
-        duration: 2,
-        y: -200,
-      });
+     
     }   else if (props.category === "Tables") {
-      gsap.to(".categoryDrop", {
-        duration: 2,
-        y: -400,
-      });
+      
     } else if (props.category === "Sofas") {
-      gsap.to(".categoryDrop", {
-        duration: 2,
-        y: -600,
-      });
+    
     }
   }, [props.category]);
 

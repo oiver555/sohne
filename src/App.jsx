@@ -166,7 +166,7 @@ export default () => {
             justifyContent: "center",
             overflow: "hidden",
           }}
-        >         
+        >
           <div
             className="imagesContainer"
             style={{
@@ -280,8 +280,8 @@ export default () => {
           </div>
         </div>
       </div>
-      {/* <TitleDrop />
-      <CategoryDrop /> */}
+      <TitleDrop />
+      <CategoryDrop />
     </div>
   );
 };
