@@ -167,15 +167,7 @@ export default () => {
             alignItems: "center",
             overflow: "hidden",
           }}
-        >
-          {/* <div
-              style={{
-                backgroundColor: "pink",
-                width: "100%",
-                height: "100%",
-              }}
-            /> */}
-
+        >         
           <div
             className="imagesContainer"
             style={{
@@ -184,11 +176,12 @@ export default () => {
               display: "flex",
               flexDirection: "row",
               justifyItems: "flex-start",
+              backgroundColor: "red",
             }}
           >
             <img
               title="chair"
-              style={{ transform: "scaleX(-1)" }}
+              style={{ transform: "scaleX(-1)", opacity: 1 }}
               src="./images/Chairs.png"
               width={"100%"}
             />
