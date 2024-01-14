@@ -45,21 +45,25 @@ export default () => {
     tl.play(true);
   }, []);
 
-  const [rotation, api] = useSpring(() => {
-    return {
-      ref: chairA_spring_rot_Ref,
-      from: { rotation: 0 },
-      loop: true,
-      to: [
-        {
-          rotation: 6.25,
-        },
-      ],
-    };
+  const { rotation } = useSpring({
+    ref: chairA_spring_rot_Ref,
+    from: { rotation: 0 },
+    to: [
+      {
+        rotation: 6.25,
+      },
+    ],
+    config: {
+      mass: 5,
+      tension: 1,
+      friction: 0,
+      duration: 50000,
+    },
+    loop: true, // Reset the animation when it reaches the end
+    immediate: false,
+    pause: false,
   });
 
-
-  
   return (
     <div
       style={{
@@ -67,6 +71,7 @@ export default () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
+        userSelect: "none",
       }}
     >
       <h3
@@ -92,6 +97,7 @@ export default () => {
           justifyContent: "center",
           margin: 0,
           textAlign: "center",
+          pointerEvents: "none",
         }}
       >
         <button
@@ -101,25 +107,17 @@ export default () => {
             fontSize: 15,
             border: "0px solid grey",
             padding: "10px 30px 10px 30px",
+            pointerEvents: "all",
           }}
           onClick={() => {
             if (chairARef.current.position.z) {
               console.log("Hey there");
-              api.start({
-                to: [
-                  {
-                    rotation: 6.25,
-                  },
-                ],
-                config: {
-                  mass: 5,
-                  tension: 1,
-                  friction: 0,
-                  duration: 50000,
-                },
-                loop: true, // Reset the animation when it reaches the end
-                immediate: false,
-                pause: false,
+              chairA_spring_rot_Ref.start();
+
+              gsap.to(".chairSlider", {
+                duration: 4,
+                y: 0,
+                stagger: 0.05,
               });
             } else if (storageARef.current.position.z) {
             } else if (tableARef.current.position.z) {
@@ -159,11 +157,135 @@ export default () => {
             sofaAGroupRef={sofaAGroupRef}
           />
         </Canvas>
-        <div style={{ flex: 1 }}>
-          <img
-            style={{ width: "100%", height: "auto", transform: "scaleX(-1)" }}
-            src="./images/Chair_A.png"
-          />
+        <div
+          style={{
+            flex: 1,
+            backgroundColor: "pink",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+          }}
+        >
+          {/* <div
+              style={{
+                backgroundColor: "pink",
+                width: "100%",
+                height: "100%",
+              }}
+            /> */}
+
+          <div
+            className="imagesContainer"
+            style={{
+              position: "absolute",
+              transform: "translateX(-0%)",
+              display: "flex",
+              flexDirection: "row",
+              justifyItems: "flex-start",
+            }}
+          >
+            <img
+              title="chair"
+              style={{ transform: "scaleX(-1)" }}
+              src="./images/Chairs.png"
+              width={"100%"}
+            />
+            <img
+              title="storage"
+              style={{ transform: "scaleX(-1)" }}
+              src="./images/Storage.png"
+              width={"100%"}
+            />
+            <img
+              title="table"
+              style={{ transform: "scaleX(-1)" }}
+              src="./images/Table.png"
+              width={"100%"}
+            />
+            <img
+              title="sofa"
+              style={{ transform: "scaleX(-1)" }}
+              src="./images/Sofa.png"
+              width={"100%"}
+            />
+          </div>
+          <div
+            style={{
+              height: "80%",
+              display: "flex",
+              flexDirection: "column",
+              width: "80%",
+              backgroundColor: "lime",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ backgroundColor: "green", alignSelf: "flex-start" }}>
+              <div style={{ alignSelf: "flex-start", fontSize: 35 }}>
+                Seating
+              </div>
+            </div>
+            <div
+              style={{
+                backgroundColor: "red",
+                display: "flex",
+                flexWrap: "wrap",
+                flexDirection: "row",
+                WebkitFlexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              <figure
+                className="chairSlider"
+                style={{
+                  backgroundColor: "yellow",
+                  width: "40%",
+                  margin: 10,
+                  transform: "translateY(1000px)",
+                }}
+              >
+                <img width="100%" src="./images/Chair_A.png" />
+                <figcaption>Söhne Chair</figcaption>
+              </figure>
+              <figure
+                className="chairSlider"
+                style={{
+                  backgroundColor: "yellow",
+                  width: "40%",
+                  margin: 10,
+                  transform: "translateY(1000px)",
+                }}
+              >
+                <img width="100%" src="./images/Chair_B.png" />
+                <figcaption>Söhne Chair</figcaption>
+              </figure>
+              <figure
+                className="chairSlider"
+                style={{
+                  backgroundColor: "yellow",
+                  width: "40%",
+                  margin: 10,
+                  transform: "translateY(1000px)",
+                }}
+              >
+                <img width="100%" src="./images/Chair_C.png" />
+                <figcaption>Söhne Chair</figcaption>
+              </figure>
+              <figure
+                className="chairSlider"
+                style={{
+                  backgroundColor: "yellow",
+                  width: "40%",
+                  margin: 10,
+                  transform: "translateY(1000px)",
+                }}
+              >
+                <img width="100%" src="./images/Chair_D.png" />
+                <figcaption>Söhne Chair</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
       {/* <TitleDrop />

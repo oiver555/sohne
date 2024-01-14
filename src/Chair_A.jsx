@@ -58,7 +58,7 @@ export default function Chair_A_1(props) {
       name="Chair_A_grp"
       position={[20, -0.2, 14]}
       rotation={[0, 0, 0]}
-      rotation-y={props.rotation.rotation}
+      rotation-y={props.rotation}
       scale={0.056}
     >
       <animated.mesh

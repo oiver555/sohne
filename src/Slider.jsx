@@ -2,14 +2,6 @@ import gsap from "gsap";
 import { useEffect } from "react";
 
 const Slider = (props) => {
-  useEffect(() => {
-    if (props.category === "Chairs") {
-    } else if (props.category === "Storage") {
-    } else if (props.category === "Tables") {
-    } else if (props.category === "Sofas") {
-    }
-  }, [props.category]);
-
   return (
     <div
       style={{
@@ -33,7 +25,6 @@ const Slider = (props) => {
       >
         <div
           onClick={() => {
-            console.log(props);
             props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 0],
@@ -55,7 +46,9 @@ const Slider = (props) => {
               },
             });
 
-            // props.setCategory("Chairs");
+            gsap.to(".imagesContainer", {
+              xPercent: 0,
+            });
             gsap.to(".slider-progress", {
               duration: 2,
               xPercent: 0,
@@ -86,7 +79,7 @@ const Slider = (props) => {
           }}
         />
         <div
-          onClick={() => { 
+          onClick={() => {
             props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 20],
@@ -107,6 +100,9 @@ const Slider = (props) => {
                 position: [0, 0, -40],
               },
             });
+            gsap.to(".imagesContainer", {
+              xPercent: -100
+             })
             gsap.to(".slider-progress", {
               duration: 2,
               xPercent: 100,
@@ -140,7 +136,6 @@ const Slider = (props) => {
         <div
           id="tables"
           onClick={() => {
-          
             props.chairA_spring_pos_Ref.start({
               to: {
                 position: [0, 0, 40],
@@ -194,7 +189,6 @@ const Slider = (props) => {
           onClick={() => {
             // props.setCategory("Sofas");
             props.chairA_spring_pos_Ref.start({
-              
               to: {
                 position: [0, 0, 60],
               },

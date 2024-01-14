@@ -37,11 +37,12 @@ import { extend, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, memo, useEffect, useRef, useState } from "react";
 import { BKG_01 } from "./BKG_01";
 import { Perf } from "r3f-perf";
+import { Chair_E } from "./Chair_E";
 
 export default function Experience(props) {
   const camRef = useRef();
   const sceneRef = useRef();
- 
+
   const springsChair_A = useSpring({
     ref: props.chairA_spring_pos_Ref,
     from: { position: [0, 0, 0] },
@@ -164,7 +165,7 @@ export default function Experience(props) {
           ref={props.storageAGroupRef}
           position={springsStorage_A.position}
         >
-          <Storage_A storageARef={props.storageARef}  />
+          <Storage_A storageARef={props.storageARef} />
         </animated.group>
         <animated.group
           ref={props.tableAGroupRef}
@@ -182,6 +183,7 @@ export default function Experience(props) {
       {/* <Chair_B /> */}
       {/* <Chair_C /> */}
       {/* <Chair_D /> */}
+      {/* <Chair_E/> */}
       {/* <Sofa_B/>   */}
       {/* <Sofa_C/>  */}
       {/* <Sofa_D/> */}
