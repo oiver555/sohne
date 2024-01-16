@@ -4,6 +4,7 @@ import { useEffect } from "react";
 const Slider = (props) => {
   return (
     <div
+    className="slidersVis"
       style={{
         display: "flex",
         position: "absolute",

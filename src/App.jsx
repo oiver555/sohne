@@ -114,10 +114,24 @@ export default () => {
               console.log("Hey there");
               chairA_spring_rot_Ref.start();
 
-              gsap.to(".chairSlider", {
-                duration: 4,
+              gsap.to(".whiteCard", {
                 y: 0,
-                stagger: 0.05,
+                duration: 2,
+              });
+
+              gsap.to(".chairSlider", {
+                duration: 2.5,
+                y: 0,
+                stagger: 0.04,
+              });
+
+              gsap.to(".categoryContainer, .discover, .slidersVis", {
+                duration: 1.5,
+                opacity: 0,
+              });
+              gsap.to(".categoryLabel", {
+                duration: 1.5,
+                opacity: 1,
               });
             } else if (storageARef.current.position.z) {
             } else if (tableARef.current.position.z) {
@@ -130,14 +144,15 @@ export default () => {
       </div>
 
       {/* Category Slider/Picker */}
-      <Slider
-        chairA_spring_pos_Ref={chairA_spring_pos_Ref}
-        storageA_springRef={storageA_springRef}
-        tableA_springRef={tableA_springRef}
-        sofaA_springRef={sofaA_springRef}
-      />
-      <SliderProgress />
-
+     
+        <Slider
+          chairA_spring_pos_Ref={chairA_spring_pos_Ref}
+          storageA_springRef={storageA_springRef}
+          tableA_springRef={tableA_springRef}
+          sofaA_springRef={sofaA_springRef}
+        />
+        <SliderProgress />
+    
       <Nav />
       <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
         <Canvas style={{ flex: 1 }} shadows>
@@ -165,6 +180,8 @@ export default () => {
             alignItems: "center",
             justifyContent: "center",
             overflow: "hidden",
+            position: "relative",
+            flexDirection: "column",
           }}
         >
           <div
@@ -203,6 +220,29 @@ export default () => {
               width={"100%"}
             />
           </div>
+
+          <div
+            className="whiteCard"
+            style={{
+              backgroundColor: "white",
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              transform: `translateY(${window.outerHeight}px)`,
+            }}
+          />
+          <div
+            className="categoryLabel"
+            style={{
+              width: "100%",
+              paddingLeft: 50,
+              opacity: 0,
+              position: "relative",
+            }}
+          >
+            <div style={{ fontSize: 35 }}>Seating</div>
+          </div>
+
           <div
             style={{
               height: "80%",
@@ -211,13 +251,9 @@ export default () => {
               width: "80%",
               backgroundColor: "lime",
               alignItems: "center",
+              top: 30,
             }}
           >
-            <div style={{ backgroundColor: "green", alignSelf: "flex-start" }}>
-              <div style={{ alignSelf: "flex-start", fontSize: 35 }}>
-                Seating
-              </div>
-            </div>
             <div
               style={{
                 backgroundColor: "red",
@@ -231,50 +267,62 @@ export default () => {
               <figure
                 className="chairSlider"
                 style={{
-                  backgroundColor: "yellow",
                   width: "40%",
                   margin: 10,
                   transform: "translateY(1000px)",
                 }}
               >
                 <img width="100%" src="./images/Chair_A.png" />
-                <figcaption>Söhne Chair</figcaption>
+                <figcaption>
+                  Söhne Chair
+                  <br />
+                  500 &euro;
+                </figcaption>
               </figure>
               <figure
                 className="chairSlider"
                 style={{
-                  backgroundColor: "yellow",
                   width: "40%",
                   margin: 10,
                   transform: "translateY(1000px)",
                 }}
               >
                 <img width="100%" src="./images/Chair_B.png" />
-                <figcaption>Söhne Chair</figcaption>
+                <figcaption>
+                  Söhne Chair
+                  <br />
+                  500 &euro;
+                </figcaption>
               </figure>
               <figure
                 className="chairSlider"
                 style={{
-                  backgroundColor: "yellow",
                   width: "40%",
                   margin: 10,
                   transform: "translateY(1000px)",
                 }}
               >
                 <img width="100%" src="./images/Chair_C.png" />
-                <figcaption>Söhne Chair</figcaption>
+                <figcaption>
+                  Söhne Chair
+                  <br />
+                  500 &euro;
+                </figcaption>
               </figure>
               <figure
                 className="chairSlider"
                 style={{
-                  backgroundColor: "yellow",
                   width: "40%",
                   margin: 10,
                   transform: "translateY(1000px)",
                 }}
               >
                 <img width="100%" src="./images/Chair_D.png" />
-                <figcaption>Söhne Chair</figcaption>
+                <figcaption>
+                  Söhne Chair
+                  <br />
+                  500 &euro;
+                </figcaption>
               </figure>
             </div>
           </div>

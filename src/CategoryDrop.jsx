@@ -43,13 +43,9 @@ const CategoryDrop = (props) => {
 
   useEffect(() => {
     if (props.category === "Chairs") {
-     
     } else if (props.category === "Storage") {
-     
-    }   else if (props.category === "Tables") {
-      
+    } else if (props.category === "Tables") {
     } else if (props.category === "Sofas") {
-    
     }
   }, [props.category]);
 
@@ -65,9 +61,10 @@ const CategoryDrop = (props) => {
       }}
     >
       <div
+        className="categoryContainer"
         style={{
           // position: "absolute",
-          width: window.innerWidth,           
+          width: window.innerWidth,
           zIndex: 10,
           pointerEvents: "none",
           fontSize: 150,
@@ -100,7 +97,7 @@ const CategoryDrop = (props) => {
               {letter}
             </span>
           ))}
-        </div>       
+        </div>
 
         <div style={{ height: 200, background: "blue" }}>
           {"Tables".split("").map((letter, index) => (

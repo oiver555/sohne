@@ -6,10 +6,9 @@ const SliderProgress = (props) => {
     gsap.to(".slider-progress", { scaleX: 1, duration: 3 });
   });
 
-  
-
   return (
     <div
+      className="slidersVis"
       style={{
         display: "flex",
         position: "absolute",
