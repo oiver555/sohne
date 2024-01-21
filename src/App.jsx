@@ -1,335 +1,145 @@
-import { Canvas } from "@react-three/fiber";
-import "./style.css";
-import ReactDOM from "react-dom/client";
-import Furniture from "./Furniture.jsx";
-import { OrbitControls } from "@react-three/drei";
-import { useControls } from "leva";
-import Experience from "./Experience.jsx";
-import { gsap } from "gsap";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Nav from "./navigation.jsx";
-import Slider from "./Slider.jsx";
-import SliderProgress from "./SliderProgress.jsx";
-import TitleDrop from "./TitleDrop.jsx";
-import CategoryDrop from "./CategoryDrop.jsx";
-import { useSpring, useSpringRef, Controller } from "@react-spring/three";
+import { useRef } from "react";
+import Main from "./Main";
+import {
+  ChairsContext,
+  StorageContext,
+  TablesContext,
+  SofaContext,
+  SceneContext,
+} from "./ExpContext";
+import { useSpring, useSpringRef, easings } from "@react-spring/three";
 
 export default () => {
-  const tl = gsap.timeline({ repeat: 0 });
-  const chairA_spring_pos_Ref = useSpringRef();
-  const chairA_spring_rot_Ref = useSpringRef();
-  const storageA_springRef = useSpringRef();
-  const tableA_springRef = useSpringRef();
-  const sofaA_springRef = useSpringRef();
-  const chairAGroupRef = useRef();
-  const storageAGroupRef = useRef();
-  const tableAGroupRef = useRef();
-  const sofaAGroupRef = useRef();
   const chairARef = useRef();
+  const chairBRef = useRef();
+  const chairCRef = useRef();
+  const chairDRef = useRef();
+  const chairGroupRef = useRef();
   const storageARef = useRef();
+  const storageBRef = useRef();
+  const storageCRef = useRef();
+  const storageDRef = useRef();
+  const cameraRef = useRef();
   const tableARef = useRef();
   const sofaARef = useRef();
-
-  useEffect(() => {
-    tl.fromTo(
-      ".discover",
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 1,
-      },
-      5.2
-    );
-    tl.play(true);
-  }, []);
-
-  const { rotation } = useSpring({
-    ref: chairA_spring_rot_Ref,
-    from: { rotation: 0 },
+  const chair_spring_pos_ctl = useSpringRef();
+  const storage_spring_pos_ctl = useSpringRef();
+  const [chairGroupPosition, chairGroupPositionAPI] = useSpring(() => ({
+    from: { position: [0, 0, 0] },
+    config: {
+      mass: 1,
+      tension: 5,
+      friction: 3.5,
+    },
+  }));
+  const [chairRotation, chairRotaionAPI] = useSpring(() => ({
+    from: { rotate: 0 },
     to: [
       {
-        rotation: 6.25,
+        rotate: 6.25,
       },
     ],
     config: {
-      mass: 5,
-      tension: 1,
-      friction: 0,
       duration: 50000,
     },
     loop: true, // Reset the animation when it reaches the end
     immediate: false,
-    pause: false,
-  });
+    pause: true,
+  }));
+  const [storageGroupPosition, storageGroupAPI] = useSpring(() => ({
+    from: { position: [0, 0, -20] },
+    config: {
+      mass: 1,
+      tension: 5,
+      friction: 3.5,
+    },
+  }));
+
+  const [tableGroupPosition, tableGroupPositionAPI] = useSpring(() => ({
+    from: { position: [0, 0, -40] },
+    config: {
+      mass: 1,
+      tension: 5,
+      friction: 3.5,
+    },
+  }));
+  const [sofaGroupPosition, sofaGroupPositionAPI] = useSpring(() => ({
+    from: { position: [0, 0, -60] },
+    config: {
+      mass: 1,
+      tension: 5,
+      friction: 3.5,
+    },
+  }));
+
+  const [storageRotation, storageRotationAPI] = useSpring(() => ({
+    from: { rotate: 0 },
+    to: [
+      {
+        rotate: 6.25,
+      },
+    ],
+    config: {
+      duration: 50000,
+      precision: 0.0000001,
+    },
+    loop: true, // Reset the animation when it reaches the end
+    immediate: false,
+    pause: true,
+  }));
 
   return (
-    <div
-      style={{
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        userSelect: "none",
+    <ChairsContext.Provider
+      value={{
+        chairARef,
+        chairBRef,
+        chairCRef,
+        chairDRef,
+        chair_spring_pos_ctl,
+        chairGroupPosition,
+        chairRotation,
+        chairGroupRef,
+        chairGroupPositionAPI,
+        chairRotaionAPI,
       }}
     >
-      <h3
-        style={{
-          marginLeft: 40,
-          position: "absolute",
-          zIndex: 10,
+      <StorageContext.Provider
+        value={{
+          storageARef,
+          storageBRef,
+          storageCRef,
+          storageDRef,
+          storage_spring_pos_ctl,
+          storageRotation,
+          storageGroupAPI,
+          storageGroupPosition,
+          storageRotationAPI,
         }}
       >
-        Söhne
-      </h3>
-
-      {/* Button */}
-      <div
-        style={{
-          position: "absolute",
-          zIndex: 10,
-          top: 100,
-          display: "flex",
-          height: "100%",
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          margin: 0,
-          textAlign: "center",
-          pointerEvents: "none",
-        }}
-      >
-        <button
-          className="discover"
-          style={{
-            borderRadius: 20,
-            fontSize: 15,
-            border: "0px solid grey",
-            padding: "10px 30px 10px 30px",
-            pointerEvents: "all",
-          }}
-          onClick={() => {
-            if (chairARef.current.position.z) {
-              console.log("Hey there");
-              chairA_spring_rot_Ref.start();
-
-              gsap.to(".whiteCard", {
-                y: 0,
-                duration: 2,
-              });
-
-              gsap.to(".chairSlider", {
-                duration: 2.5,
-                y: 0,
-                stagger: 0.04,
-              });
-
-              gsap.to(".categoryContainer, .discover, .slidersVis", {
-                duration: 1.5,
-                opacity: 0,
-              });
-              gsap.to(".categoryLabel", {
-                duration: 1.5,
-                opacity: 1,
-              });
-            } else if (storageARef.current.position.z) {
-            } else if (tableARef.current.position.z) {
-            } else if (sofaARef.current.position.z) {
-            }
+        <TablesContext.Provider
+          value={{
+            tableARef,
+            tableGroupPosition,
+            tableGroupPositionAPI,
           }}
         >
-          discover
-        </button>
-      </div>
-
-      {/* Category Slider/Picker */}
-     
-        <Slider
-          chairA_spring_pos_Ref={chairA_spring_pos_Ref}
-          storageA_springRef={storageA_springRef}
-          tableA_springRef={tableA_springRef}
-          sofaA_springRef={sofaA_springRef}
-        />
-        <SliderProgress />
-    
-      <Nav />
-      <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
-        <Canvas style={{ flex: 1 }} shadows>
-          <Experience
-            rotation={rotation}
-            storageA_springRef={storageA_springRef}
-            tableA_springRef={tableA_springRef}
-            sofaA_springRef={sofaA_springRef}
-            chairA_spring_pos_Ref={chairA_spring_pos_Ref}
-            chairARef={chairARef}
-            storageARef={storageARef}
-            tableARef={tableARef}
-            sofaARef={sofaARef}
-            chairAGroupRef={chairAGroupRef}
-            storageAGroupRef={storageAGroupRef}
-            tableAGroupRef={tableAGroupRef}
-            sofaAGroupRef={sofaAGroupRef}
-          />
-        </Canvas>
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: "pink",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-            position: "relative",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            className="imagesContainer"
-            style={{
-              position: "absolute",
-              transform: "translateX(-0%)",
-              display: "flex",
-              flexDirection: "row",
-              justifyItems: "flex-start",
-              backgroundColor: "red",
+          <SofaContext.Provider
+            value={{
+              sofaARef,
+              sofaGroupPosition,
+              sofaGroupPositionAPI,
             }}
           >
-            <img
-              title="chair"
-              style={{ transform: "scaleX(-1)", opacity: 1 }}
-              src="./images/Chairs.png"
-              width={"100%"}
-            />
-            <img
-              title="storage"
-              style={{ transform: "scaleX(-1)" }}
-              src="./images/Storage.png"
-              width={"100%"}
-            />
-            <img
-              title="table"
-              style={{ transform: "scaleX(-1)" }}
-              src="./images/Table.png"
-              width={"100%"}
-            />
-            <img
-              title="sofa"
-              style={{ transform: "scaleX(-1)" }}
-              src="./images/Sofa.png"
-              width={"100%"}
-            />
-          </div>
-
-          <div
-            className="whiteCard"
-            style={{
-              backgroundColor: "white",
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              transform: `translateY(${window.outerHeight}px)`,
-            }}
-          />
-          <div
-            className="categoryLabel"
-            style={{
-              width: "100%",
-              paddingLeft: 50,
-              opacity: 0,
-              position: "relative",
-            }}
-          >
-            <div style={{ fontSize: 35 }}>Seating</div>
-          </div>
-
-          <div
-            style={{
-              height: "80%",
-              display: "flex",
-              flexDirection: "column",
-              width: "80%",
-              backgroundColor: "lime",
-              alignItems: "center",
-              top: 30,
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: "red",
-                display: "flex",
-                flexWrap: "wrap",
-                flexDirection: "row",
-                WebkitFlexWrap: "wrap",
-                justifyContent: "center",
+            <SceneContext.Provider
+              value={{
+                cameraRef,
               }}
             >
-              <figure
-                className="chairSlider"
-                style={{
-                  width: "40%",
-                  margin: 10,
-                  transform: "translateY(1000px)",
-                }}
-              >
-                <img width="100%" src="./images/Chair_A.png" />
-                <figcaption>
-                  Söhne Chair
-                  <br />
-                  500 &euro;
-                </figcaption>
-              </figure>
-              <figure
-                className="chairSlider"
-                style={{
-                  width: "40%",
-                  margin: 10,
-                  transform: "translateY(1000px)",
-                }}
-              >
-                <img width="100%" src="./images/Chair_B.png" />
-                <figcaption>
-                  Söhne Chair
-                  <br />
-                  500 &euro;
-                </figcaption>
-              </figure>
-              <figure
-                className="chairSlider"
-                style={{
-                  width: "40%",
-                  margin: 10,
-                  transform: "translateY(1000px)",
-                }}
-              >
-                <img width="100%" src="./images/Chair_C.png" />
-                <figcaption>
-                  Söhne Chair
-                  <br />
-                  500 &euro;
-                </figcaption>
-              </figure>
-              <figure
-                className="chairSlider"
-                style={{
-                  width: "40%",
-                  margin: 10,
-                  transform: "translateY(1000px)",
-                }}
-              >
-                <img width="100%" src="./images/Chair_D.png" />
-                <figcaption>
-                  Söhne Chair
-                  <br />
-                  500 &euro;
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-      <TitleDrop />
-      <CategoryDrop />
-    </div>
+              <Main />
+            </SceneContext.Provider>
+          </SofaContext.Provider>
+        </TablesContext.Provider>
+      </StorageContext.Provider>
+    </ChairsContext.Provider>
   );
 };

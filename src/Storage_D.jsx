@@ -1,18 +1,26 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { StorageContext } from "./ExpContext";
+import { animated } from "@react-spring/three";
 
 export default function Storage_D(props) {
   const { nodes, materials } = useGLTF("./gltf/Storage_D.glb");
+  const { storageDRef, storageRotation } = useContext(StorageContext);
 
-  const objRef = useRef();
-
-  useFrame(() => {
-    // objRef.current.rotation.y += 0.001;
-  });
   return (
-    <group ref={objRef} {...props} dispose={null}>
-      <group position={[20, 0, 15]} rotation={[Math.PI / 2, 0, -1.8]} scale={4}>
+    <animated.group
+      position={[30, 0, 21]}
+      rotation={[Math.PI / 2, 0, -1.8]}
+      scale={3.3}
+      visible={false}
+      ref={storageDRef}
+      {...props}
+      dispose={null}
+    >
+      <animated.group
+        rotation-z={storageRotation.rotate.interpolate((value) => value * -1)}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -157,8 +165,8 @@ export default function Storage_D(props) {
           geometry={nodes.polySurface9.geometry}
           material={materials.blinn1}
         />
-      </group>
-    </group>
+      </animated.group>
+    </animated.group>
   );
 }
 

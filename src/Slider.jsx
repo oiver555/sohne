@@ -1,10 +1,27 @@
 import gsap from "gsap";
-import { useEffect } from "react";
-
+import {
+  ChairsContext,
+  SceneContext,
+  SofaContext,
+  StorageContext,
+  TablesContext,
+} from "./ExpContext";
+import { useContext } from "react";
+import * as THREE from "three";
+import { useFrame } from "@react-three/fiber";
+ 
 const Slider = (props) => {
+  const { chairGroupPositionAPI, chairGroupRef, chairGroupPosition } =
+    useContext(ChairsContext);
+  const { storageGroupAPI, storageGroupPosition, storageCRef } =
+    useContext(StorageContext);
+  const { cameraRef } = useContext(SceneContext);
+  const { tableGroupPositionAPI } = useContext(TablesContext);
+  const { sofaGroupPositionAPI } = useContext(SofaContext);
+
   return (
     <div
-    className="slidersVis"
+      className="slidersVis"
       style={{
         display: "flex",
         position: "absolute",
@@ -26,26 +43,42 @@ const Slider = (props) => {
       >
         <div
           onClick={() => {
-            props.chairA_spring_pos_Ref.start({
-              to: {
-                position: [0, 0, 0],
-              },
+            console.log(
+              chairGroupPosition.position,
+              storageGroupPosition.position,
+              cameraRef.current.position
+            );
+            chairGroupPositionAPI.start({
+              position: [0, 0, 0],
             });
-            props.storageA_springRef.start({
-              to: {
-                position: [0, 0, -20],
-              },
+            storageGroupAPI.start({
+              position: [0, 0, -20],
             });
-            props.tableA_springRef.start({
-              to: {
-                position: [0, 0, -40],
-              },
+            tableGroupPositionAPI.start({
+              position: [0, 0, -40],
             });
-            props.sofaA_springRef.start({
-              to: {
-                position: [0, 0, -60],
-              },
+            sofaGroupPositionAPI.start({
+              position: [0, 0, -60],
             });
+
+            gsap.to(cameraRef.current.position, {
+              x: 100,
+              y: 15,
+              z: 70,
+              duration: 5,
+              // ease: 'power2.inOut',
+            });
+
+            // props.tableA_springRef.start({
+            //   to: {
+            //     position: [0, 0, -40],
+            //   },
+            // });
+            // props.sofaA_springRef.start({
+            //   to: {
+            //     position: [0, 0, -60],
+            //   },
+            // });
 
             gsap.to(".imagesContainer", {
               xPercent: 0,
@@ -85,26 +118,38 @@ const Slider = (props) => {
         />
         <div
           onClick={() => {
-            props.chairA_spring_pos_Ref.start({
-              to: {
-                position: [0, 0, 20],
-              },
+            console.log("[Slider.js]", storageCRef);
+            chairGroupPositionAPI.start({
+              position: [0, 0, 20],
             });
-            props.storageA_springRef.start({
-              to: {
-                position: [0, 0, 0],
-              },
+            storageGroupAPI.start({
+              position: [0, 0, 0],
             });
-            props.tableA_springRef.start({
-              to: {
-                position: [0, 0, -20],
-              },
+            tableGroupPositionAPI.start({
+              position: [0, 0, -20],
             });
-            props.sofaA_springRef.start({
-              to: {
-                position: [0, 0, -40],
-              },
+            sofaGroupPositionAPI.start({
+              position: [0, 0, -40],
             });
+            if (storageCRef.current.visible) {
+              gsap.to(cameraRef.current.position, {
+                x: 105,
+                y: 16,
+                z: 74,
+                duration: 5,
+                ease: "power2.inOut",
+              });
+            }
+            // props.tableA_springRef.start({
+            //   to: {
+            //     position: [0, 0, -20],
+            //   },
+            // });
+            // props.sofaA_springRef.start({
+            //   to: {
+            //     position: [0, 0, -40],
+            //   },
+            // });
             gsap.to(".imagesContainer", {
               xPercent: -100,
             });
@@ -112,7 +157,7 @@ const Slider = (props) => {
               duration: 2,
               xPercent: 100,
             });
-          
+
             gsap.to(".categoryDrop", {
               duration: 2,
               y: -200,
@@ -146,30 +191,37 @@ const Slider = (props) => {
         <div
           id="tables"
           onClick={() => {
-            props.chairA_spring_pos_Ref.start({
-              to: {
-                position: [0, 0, 40],
-              },
+            chairGroupPositionAPI.start({
+              position: [0, 0, 40],
             });
-            props.storageA_springRef.start({
-              to: {
-                position: [0, 0, 20],
-              },
+            storageGroupAPI.start({
+              position: [0, 0, 20],
             });
-            props.tableA_springRef.start({
-              to: {
-                position: [0, 0, 0],
-              },
+            tableGroupPositionAPI.start({
+              position: [0, 0, 0],
             });
-            props.sofaA_springRef.start({
-              to: {
-                position: [0, 0, -20],
-              },
+            sofaGroupPositionAPI.start({
+              position: [0, 0, -20],
             });
+            // storageGroupAPI.start({
+            //   to: {
+            //     position: [0, 0, 20],
+            //   },
+            // });
+            // props.tableA_springRef.start({
+            //   to: {
+            //     position: [0, 0, 0],
+            //   },
+            // });
+            // props.sofaA_springRef.start({
+            //   to: {
+            //     position: [0, 0, -20],
+            //   },
+            // });
             gsap.to(".imagesContainer", {
               xPercent: -200,
             });
-       
+
             gsap.to(".categoryDrop", {
               duration: 2,
               y: -400,
@@ -205,27 +257,34 @@ const Slider = (props) => {
         <div
           id="sofas"
           onClick={() => {
-            props.chairA_spring_pos_Ref.start({
-              to: {
-                position: [0, 0, 60],
-              },
+            chairGroupPositionAPI.start({
+              position: [0, 0, 60],
             });
-            props.storageA_springRef.start({
-              to: {
-                position: [0, 0, 40],
-              },
+            storageGroupAPI.start({
+              position: [0, 0, 40],
             });
-            props.tableA_springRef.start({
-              to: {
-                position: [0, 0, 20],
-              },
+            tableGroupPositionAPI.start({
+              position: [0, 0, 20],
             });
-            props.sofaA_springRef.start({
-              to: {
-                position: [0, 0, 0],
-              },
+            sofaGroupPositionAPI.start({
+              position: [0, 0, 0],
             });
-           
+            // storageGroupAPI.start({
+            //   to: {
+            //     position: [0, 0, 40],
+            //   },
+            // });
+            // props.tableA_springRef.start({
+            //   to: {
+            //     position: [0, 0, 20],
+            //   },
+            // });
+            // props.sofaA_springRef.start({
+            //   to: {
+            //     position: [0, 0, 0],
+            //   },
+            // });
+
             gsap.to(".categoryDrop", {
               duration: 2,
               y: -600,

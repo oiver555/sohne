@@ -86,19 +86,15 @@ export default function Sofa_C(props) {
     sheen: 0.6,
   });
   const { nodes, materials } = useGLTF("./gltf/Sofa_C.glb");
-  const objRef = useRef();
-  useFrame(() => {
-    objRef.current.rotation.y += 0.01;
-  });
-
-
+ 
   return (
     <group
       name="Sofa_C_grp"
       position={[0, 0, 0]}
       rotation={[0, 1.571, 0]}
       scale={0.008}
-      ref={objRef}
+       visible={false}
+
     >
       <mesh
         name="Sofa_C_Back"

@@ -9,10 +9,7 @@ import * as THREE from "three";
 
 export default function Table_B(props) {
   const { nodes, materials } = useGLTF("./gltf/Table_B.glb");
-  const objRef = useRef();
-  useFrame(() => {
-    // objRef.current.rotation.y += 0.001;
-  });
+  
   const textureLoader = new THREE.TextureLoader();
   const plywooddiff2k = textureLoader.load("./textures/plywood_diff_2k.jpg");
   const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
@@ -33,10 +30,12 @@ export default function Table_B(props) {
 
   return (
     <group
-      ref={objRef}
+      
       name="Table_B_grp"
       position={[19, 0, 13]}
       scale={0.08}
+
+      visible={false}
     >
       <group name="Table_B_Legs" position={[0.018, 31.773, 1.291]}>
         <mesh

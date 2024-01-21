@@ -72,7 +72,7 @@ export function Chair_E(props) {
     envMapIntensity: 0.2,
   });
 
-  const legs = new THREE.MeshStandardMaterial({
+  const legs = new THREE.MeshPhysicalMaterial({
     map: MKSmartMaterialVol13Wood10BC,
     roughnessMap: MKSmartMaterialVol13Wood10R,
     roughness: 0.5,
@@ -83,7 +83,7 @@ export function Chair_E(props) {
     envMapIntensity: 0.2,
   });
 
-  const stoppers = new THREE.MeshStandardMaterial({
+  const stoppers = new THREE.MeshPhysicalMaterial({
     color: "silver", 
     roughness: 0,
     aoMap: ChairEstoppersstoppersShape,
@@ -120,7 +120,7 @@ export function Chair_E(props) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null}  visible={false}>
       <group position={[19, 3.2, 14]} scale={8} rotation={[0, 1.5, 0]}>
         <group position={[0, -0.391, 0]}>
           <group position={[-0.008, 0.55, -0.023]}>

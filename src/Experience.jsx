@@ -16,10 +16,6 @@ import { SSAOPass } from "three-stdlib";
 
 import Furniture from "./Furniture";
 import { useControls } from "leva";
-import Chair_A from "./Chair_A";
-import Chair_B from "./Chair_B";
-import Chair_C from "./Chair_C";
-import Chair_D from "./Chair_D";
 import Sofa_A from "./Sofa_A";
 import Sofa_B from "./Sofa_B";
 import Sofa_C from "./Sofa_C";
@@ -28,43 +24,37 @@ import Storage_A from "./Storage_A";
 import Storage_B from "./Storage_B";
 import Storage_C from "./Storage_C";
 import Storage_D from "./Storage_D";
-import Table_A from "./Table_A";
-import Table_B from "./Table_B";
-import Table_C from "./Table_C";
-import Table_D from "./Table_D";
+
 import { useSpring, animated } from "@react-spring/three";
 import { extend, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, memo, useEffect, useRef, useState } from "react";
+import { Suspense, memo, useContext, useEffect, useRef, useState } from "react";
 import { BKG_01 } from "./BKG_01";
 import { Perf } from "r3f-perf";
 import { Chair_E } from "./Chair_E";
+import Chairs from "./Chairs";
+import Storages from "./Storages";
+import {
+  ChairsContext,
+  SceneContext,
+  SofaContext,
+  StorageContext,
+  TablesContext,
+} from "./ExpContext";
+import Tables from "./Tables";
+import Sofas from "./Sofas";
 
 export default function Experience(props) {
-  const camRef = useRef();
   const sceneRef = useRef();
-
-  const springsChair_A = useSpring({
-    ref: props.chairA_spring_pos_Ref,
-    from: { position: [0, 0, 0] },
-  });
-  const springsStorage_A = useSpring({
-    ref: props.storageA_springRef,
-    from: { position: [0, 0, -20] },
-  });
-  const springsTable_A = useSpring({
-    ref: props.tableA_springRef,
-    from: { position: [0, 0, -40] },
-  });
-  const springsSofa_A = useSpring({
-    ref: props.sofaA_springRef,
-    from: { position: [0, 0, -60] },
-  });
-
   const directionalLightRef1 = useRef();
   const directionalLightRef2 = useRef();
   const rectLightRef3 = useRef();
   const ambLightRef = useRef();
   const pointLightRef = useRef();
+  const { chairGroupPosition } = useContext(ChairsContext);
+  const { storageGroupPosition, storageCRef } = useContext(StorageContext);
+  const { tableGroupPosition } = useContext(TablesContext);
+  const { sofaGroupPosition } = useContext(SofaContext);
+  const { cameraRef } = useContext(SceneContext);
   // useHelper(directionalLightRef1, THREE.DirectionalLightHelper, 1, "red");
   // useHelper(directionalLightRef2, THREE.DirectionalLightHelper, 10, "red");
   // useHelper(rectLightRef3, RectAreaLightHelper, 10, "red");
@@ -94,9 +84,9 @@ export default function Experience(props) {
 
   return (
     <>
-      {/* <Perf /> */}
+      <Perf />
       <PerspectiveCamera
-        ref={camRef}
+        ref={cameraRef}
         fov={10}
         makeDefault
         left={-1}
@@ -152,38 +142,24 @@ export default function Experience(props) {
         intensity={0.5}
         color={"white"}
       />
-      <BKG_01 />
-
+      <Suspense>
+        <BKG_01 />
+      </Suspense>
       <group>
-        <animated.group
-          ref={props.chairAGroupRef}
-          position={springsChair_A.position}
-        >
-          <Chair_A chairARef={props.chairARef} rotation={props.rotation} />
+        <animated.group position={chairGroupPosition.position}>
+          <Chairs />
         </animated.group>
-        <animated.group
-          ref={props.storageAGroupRef}
-          position={springsStorage_A.position}
-        >
-          <Storage_A storageARef={props.storageARef} />
+        <animated.group position={storageGroupPosition.position}>
+          <Storages />
         </animated.group>
-        <animated.group
-          ref={props.tableAGroupRef}
-          position={springsTable_A.position}
-        >
-          <Table_A tableARef={props.tableARef} />
+        <animated.group position={tableGroupPosition.position}>
+          <Tables />
         </animated.group>
-        <animated.group
-          ref={props.sofaAGroupRef}
-          position={springsSofa_A.position}
-        >
-          <Sofa_A sofaARef={props.sofaARef} />
+        <animated.group position={sofaGroupPosition.position}>
+          <Sofas />
         </animated.group>
       </group>
-      {/* <Chair_B /> */}
-      {/* <Chair_C /> */}
-      {/* <Chair_D /> */}
-      {/* <Chair_E/> */}
+
       {/* <Sofa_B/>   */}
       {/* <Sofa_C/>  */}
       {/* <Sofa_D/> */}
@@ -193,7 +169,7 @@ export default function Experience(props) {
       {/* <Table_B /> */}
       {/* <Table_C /> */}
       {/* <Table_D /> */}
-      <axesHelper position={[0, 10, 0]} />
+      {/* <axesHelper position={[0, 10, 0]} /> */}
     </>
   );
 }

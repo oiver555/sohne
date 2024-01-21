@@ -12,7 +12,7 @@ const Nav = (props) => {
       }}
     >
       <div>
-        <a>colletion</a>
+        <a>collection</a>
       </div>
       <div>
         <a>about</a>

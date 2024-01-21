@@ -10,9 +10,7 @@ import * as THREE from "three";
 export default function Table_D(props) {
   const { nodes, materials } = useGLTF("./gltf/Table_D.glb");
   const objRef = useRef();
-  useFrame(() => {
-    objRef.current.rotation.y += 0.001;
-  });
+  
   const textureLoader = new THREE.TextureLoader();
   const plywooddiff2k = textureLoader.load("./textures/plywood_diff_2k.jpg");
   const plywoodnorgl2k = textureLoader.load("./textures/plywood_nor_gl_2k.jpg");
@@ -32,7 +30,7 @@ export default function Table_D(props) {
   });
 
   return (
-    <group ref={objRef} name="Table_D_grp" position={[19, 2, 13]} scale={0.096}>
+    <group   visible={false} name="Table_D_grp" position={[19, 2, 13]} scale={0.096}>
     <group name="Table_D_grpPIV" position={[0, -21, 0]}>
       <group name="Table_D_Body" position={[0, 30.388, 0]}>
         <mesh

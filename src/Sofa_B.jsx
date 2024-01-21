@@ -70,11 +70,7 @@ export default function Sofa_B(props) {
     // roughness: 1,
     envMapIntensity: .2
   })
-
-  useFrame(() => {
-    // objRef.current.rotation.z += 0.01;
-  });
-
+ 
   SofaBPlaidFabricDiffuse.wrapS = THREE.RepeatWrapping;
   SofaBPlaidFabricDiffuse.wrapT = THREE.RepeatWrapping;
   // SofaBPlaidFabricDiffuse.repeat.set(2,2)
@@ -117,6 +113,7 @@ export default function Sofa_B(props) {
       position={[19.8, 1.9, 14]}
       rotation={[-Math.PI / 2, 0, 1.7]}
       scale={0.007}
+      visible={false}
     >
       <mesh
         name="Sofa_B_Back"
