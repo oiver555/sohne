@@ -19,7 +19,7 @@ export default function Storage_D(props) {
       dispose={null}
     >
       <animated.group
-        rotation-z={storageRotation.rotate.interpolate((value) => value * -1)}
+        rotation-z={storageRotation.rotate.to((value) => value * -1)}
       >
         <mesh
           castShadow

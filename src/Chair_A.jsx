@@ -13,7 +13,7 @@ export default function Chair_A_1(props) {
   const { nodes } = useGLTF("./gltf/Chair_A.glb");
   const [wood_rough, Chair_A_AO, wood, wood_norm] = useTexture([
     "/textures/dark_wood_rough_2k.jpg",
-    "/textures/Chair_A.png",
+    "/textures/Chair_A.jpg",
     "/textures/dark_wood_diff_2k.jpg",
     "/textures/dark_wood_nor_gl_2k.jpg",
   ]);
@@ -48,6 +48,8 @@ export default function Chair_A_1(props) {
     envMapIntensity: 0.2,
   });
 
+
+ 
 
   return (
     <animated.group

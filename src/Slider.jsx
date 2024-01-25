@@ -19,6 +19,8 @@ const Slider = (props) => {
   const { tableGroupPositionAPI } = useContext(TablesContext);
   const { sofaGroupPositionAPI } = useContext(SofaContext);
 
+
+  
   return (
     <div
       className="slidersVis"

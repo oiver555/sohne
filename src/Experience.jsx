@@ -14,8 +14,7 @@ import * as THREE from "three";
 import { RectAreaLightHelper } from "three/addons/helpers/RectAreaLightHelper.js";
 import { SSAOPass } from "three-stdlib";
 
-import Furniture from "./Furniture";
-import { useControls } from "leva";
+ import { useControls } from "leva";
 import Sofa_A from "./Sofa_A";
 import Sofa_B from "./Sofa_B";
 import Sofa_C from "./Sofa_C";
@@ -60,8 +59,7 @@ export default function Experience(props) {
   // useHelper(rectLightRef3, RectAreaLightHelper, 10, "red");
   // useHelper(pointLightRef, THREE.PointLightHelper, 5, "red");
 
-  const textureLoader = new THREE.TextureLoader();
-  const targetObject = new THREE.Object3D();
+   const targetObject = new THREE.Object3D();
   const targetObject2 = new THREE.Object3D();
   targetObject.position.y = 5;
   targetObject.position.x = 20;
@@ -69,11 +67,8 @@ export default function Experience(props) {
   targetObject2.position.y = 5;
   targetObject2.position.x = 20;
   targetObject2.position.z = 14.3;
-  const Elsafabricref = textureLoader.load("/textures/Elsa_fabric_ref.jpg");
-
-  Elsafabricref.wrapS = THREE.RepeatWrapping;
-  Elsafabricref.wrapT = THREE.RepeatWrapping;
-  Elsafabricref.repeat.set(1, 1);
+ 
+ 
   useProgress((state) => {});
 
   useThree(({ camera, scene }) => {
@@ -82,9 +77,10 @@ export default function Experience(props) {
     camera.lookAt(new THREE.Vector3(0, 5, 0));
   });
 
-  return (
+
+   return (
     <>
-      <Perf />
+      {/* <Perf /> */}
       <PerspectiveCamera
         ref={cameraRef}
         fov={10}
@@ -103,8 +99,7 @@ export default function Experience(props) {
       <fog attach="fog" args={["orange", 40, 700]} />
       <SoftShadows size={5} samples={25} focus={2} />
       <OrbitControls makeDefault enabled={true} enableRotate />
-      {/* <Furniture/> */}
-      <ambientLight
+       <ambientLight
         ref={ambLightRef}
         intensity={0.4}
         color={"rgb(255,200,200)"}

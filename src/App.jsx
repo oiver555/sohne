@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Main from "./Main";
 import {
   ChairsContext,
@@ -6,14 +6,15 @@ import {
   TablesContext,
   SofaContext,
   SceneContext,
+  GlobalStateContext,
 } from "./ExpContext";
 import { useSpring, useSpringRef, easings } from "@react-spring/three";
 
 export default () => {
-  const chairARef = useRef();
-  const chairBRef = useRef();
-  const chairCRef = useRef();
-  const chairDRef = useRef();
+  const chairARef = useRef({visible:true});
+  const chairBRef = useRef({visible:true});
+  const chairCRef = useRef({visible:true});
+  const chairDRef = useRef({visible:true});
   const chairGroupRef = useRef();
   const storageARef = useRef();
   const storageBRef = useRef();
@@ -88,6 +89,9 @@ export default () => {
     pause: true,
   }));
 
+  const [currCategory, setCurrCategory] = useState("seating");
+  const [currChair, setCurrChair] = useState("a");
+
   return (
     <ChairsContext.Provider
       value={{
@@ -135,7 +139,11 @@ export default () => {
                 cameraRef,
               }}
             >
-              <Main />
+              <GlobalStateContext.Provider
+                value={{ currCategory, setCurrCategory, currChair, setCurrChair }}
+              >
+                <Main />
+              </GlobalStateContext.Provider>
             </SceneContext.Provider>
           </SofaContext.Provider>
         </TablesContext.Provider>

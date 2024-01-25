@@ -2,7 +2,12 @@ import gsap from "gsap";
 import Slider from "./Slider";
 import SliderProgress from "./SliderProgress";
 import { useContext } from "react";
-import { ChairsContext, StorageContext, TablesContext } from "./ExpContext";
+import {
+  ChairsContext,
+  GlobalStateContext,
+  StorageContext,
+  TablesContext,
+} from "./ExpContext";
 import Nav from "./navigation";
 import TitleDrop from "./TitleDrop";
 import CategoryDrop from "./CategoryDrop";
@@ -20,6 +25,8 @@ const OverlayHTML = () => {
 
   const { tableGroupPositionAPI, tableGroupPosition } =
     useContext(TablesContext);
+
+  const { setCurrCategory } = useContext(GlobalStateContext);
 
   return (
     <>
@@ -120,6 +127,7 @@ const OverlayHTML = () => {
           }}
           onClick={() => {
             if (chairGroupPosition.position.get()[2] === 0) {
+              console.log("Chair");
               chairRotaionAPI.update({
                 from: { rotate: chairARef.current.rotation.y },
                 to: [
@@ -153,12 +161,17 @@ const OverlayHTML = () => {
               });
 
               gsap.to(
-                ".categoryContainer, .discover, .slidersVis #seatingLabel",
+                ".categoryContainer, .discover, .slidersVis, #seatingLabel",
                 {
                   duration: 1.5,
                   opacity: 0,
                 }
               );
+              gsap.to("#seatingLabel", {
+                duration: 1.5,
+                opacity: 1,
+              });
+
               gsap.to("#storageLabel", {
                 duration: 1.5,
                 opacity: 0,
@@ -172,15 +185,20 @@ const OverlayHTML = () => {
                 opacity: 0,
               });
             } else if (storageGroupPosition.position.get()[2] === 0) {
+              console.log("Storage");
+              // gsap.to(".chairSlider", {
+              //   duration: 2.5,
+              //   y: window.outerHeight,
+              //   stagger: 0.04,
+              // });
               storageRotationAPI.update({
                 from: { rotate: storageARef.current.rotation.y },
                 to: [
                   {
                     rotate: 6.25,
-                  
                   },
                 ],
-                config: {                
+                config: {
                   duration: 50000,
                   precision: 0.0000001,
                 },
@@ -223,6 +241,7 @@ const OverlayHTML = () => {
                 opacity: 0,
               });
             } else if (tableGroupPosition.position.get()[2] === 0) {
+              setCurrCategory("table");
               storageRotationAPI.update({
                 from: { rotate: storageARef.current.rotation.y },
                 to: [
@@ -274,8 +293,12 @@ const OverlayHTML = () => {
                 duration: 1.5,
                 opacity: 0,
               });
-            } else if (sofaARef.current.position.z) {
             }
+
+            console.log(storageGroupPosition.position.get()[2]);
+            // else if (sofaARef.current.position.z) {
+
+            // }
           }}
         >
           discover

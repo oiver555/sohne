@@ -1,29 +1,24 @@
- 
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
- 
+
 export default function Sofa_D(props) {
   const { nodes, materials } = useGLTF("./gltf/Sofa_D.glb");
-  const textureLoader = new THREE.TextureLoader();
-  const sofftexturedivanNormal = textureLoader.load(
-    "/textures/sofftexture_divan_Normal.png"
-  );
-  const sofftexturedivanRoughness = textureLoader.load(
-    "/textures/sofftexture_divan_Roughness.png"
-  );
 
-  const sofftexturedivanBaseColor = textureLoader.load(
-    "/textures/sofftexture_divan_BaseColor.png"
-  );
-  const kitchenwooddiff2k = textureLoader.load(
-    "./textures/kitchen_wood_diff_2k.jpg"
-  );
-  const kitchenwoodnorgl2k = textureLoader.load(
-    "./textures/kitchen_wood_nor_gl_2k.jpg"
-  );
-  const kitchenwoodrough2k = textureLoader.load(
-    "./textures/kitchen_wood_rough_2k.jpg"
+  const [
+    sofftexturedivanNormal,
+    sofftexturedivanRoughness,
+    sofftexturedivanBaseColor,
+    kitchenwooddiff2k,
+    kitchenwoodnorgl2k,
+    kitchenwoodrough2k,
+  ] = useTexture(
+   [ "/textures/sofftexture_divan_Normal.jpg",
+    "/textures/sofftexture_divan_Roughness.jpg",
+    "/textures/sofftexture_divan_BaseColor.jpg",
+    "./textures/kitchen_wood_diff_2k.jpg",
+    "./textures/kitchen_wood_nor_gl_2k.jpg",
+    "./textures/kitchen_wood_rough_2k.jpg"]
   );
 
   kitchenwooddiff2k.wrapS = THREE.RepeatWrapping;
