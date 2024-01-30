@@ -11,11 +11,8 @@ import { animated } from "@react-spring/three";
 export default function Chair_D(props) {
   const { nodes } = useGLTF("./gltf/Chair_D.glb");
   const { chairDRef, chairRotation } = useContext(ChairsContext);
-  const [Chairpbrdiffuse, Chairpbrnormal, Chairpbrroughness] = useTexture([
-    "./textures/Chair_pbr_diffuse.jpg",
-    "./textures/Chair_pbr_normal.jpg",
-    "/textures/Chair_pbr_roughness.jpg",
-  ]);
+  const [Chairpbrdiffuse, Chairpbrnormal, Chairpbrroughness] = useTexture([  "./textures/Chair_pbr_diffuse.jpg",  "./textures/Chair_pbr_normal.jpg",  "/textures/Chair_pbr_roughness.jpg"]);
+  
   Chairpbrdiffuse.flipY = false;
   Chairpbrnormal.flipY = false;
   Chairpbrroughness.flipY = false;

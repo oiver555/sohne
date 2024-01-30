@@ -12,7 +12,6 @@ const Chairs = (props) => {
       <Suspense fallback={<Box position={[0, 2, 0]} />}>
         <Chair_A />
       </Suspense>
-
       <Suspense fallback={<Box position={[0, 2, 0]} />}>
         <Chair_B  />
       </Suspense>
