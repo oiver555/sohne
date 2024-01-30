@@ -7,15 +7,8 @@ import {
 import ChairSliders from "./ChairSliders";
 
 const ImageSliders = (props) => {
-  const { chairGroupPosition, chairARef, chairBRef, chairCRef, chairDRef } =
-    useContext(ChairsContext);
-  const {
-    storageGroupPosition,
-    storageARef,
-    storageCRef,
-    storageDRef,
-    storageBRef,
-  } = useContext(StorageContext);
+  const { chairARef, chairBRef, chairCRef, chairDRef } = useContext(ChairsContext);
+  const { storageARef, storageCRef, storageDRef, storageBRef, } = useContext(StorageContext);
 
   const { currCategory, setCurrCategory, currChair, setCurrChair } = useContext(GlobalStateContext);
 

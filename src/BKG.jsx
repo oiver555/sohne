@@ -4,20 +4,21 @@ Command: npx gltfjsx@6.2.15 BKG_01.gltf
 */
 
 import React, { useRef } from "react";
-import { Plane, useGLTF } from "@react-three/drei";
+import { Plane, useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { useControls } from "leva";
 
-export function BKG_01(props) {
+export function BKG(props) {
   const { nodes, materials } = useGLTF("./gltf/BKG_01.gltf");
-  const textureLoader = new THREE.TextureLoader();
-  const marble00 = textureLoader.load("./textures/marble_00.jpg");
-  const wall1LightMap = textureLoader.load("./textures/wall_1.jpg");
-  wall1LightMap.flipY = false;
-  const wall2LightMap = textureLoader.load("./textures/wall_2.jpg");
-  wall2LightMap.flipY = false;
+  const [marble00, wall1LightMap, wall2LightMap, floorLightMap] = useTexture([
+    "./textures/marble_00.jpg",
+    "./textures/wall_1.jpg",
+    "./textures/wall_2.jpg",
+    "./textures/floor.jpg",
+  ]);
 
-  const floorLightMap = textureLoader.load("./textures/floor.jpg");
+  wall1LightMap.flipY = false;
+  wall2LightMap.flipY = false;
   floorLightMap.flipY = false;
   floorLightMap.colorSpace = THREE.SRGBColorSpace;
 
@@ -36,15 +37,15 @@ export function BKG_01(props) {
   });
   const floor = new THREE.MeshPhysicalMaterial({
     map: marble00,
-    
+
     // aoMap: floorLightMap,
     color: new THREE.Color("rgba(240,245,255,1)"),
     lightMap: floorLightMap,
     lightMapIntensity: 1,
     side: THREE.DoubleSide,
-    envMapIntensity: .0,
+    envMapIntensity: 0.0,
   });
- 
+
   return (
     <group {...props} dispose={null}>
       <group position={[-5.427, 0.082, -21.46]}>
@@ -63,7 +64,7 @@ export function BKG_01(props) {
             geometry={nodes.Wall_1PIV.geometry}
             material={wall1}
             position={[0.5, 0, 0]}
-            scale={[1,5,1]}
+            scale={[1, 5, 1]}
           />
         </group>
         <mesh
@@ -75,20 +76,16 @@ export function BKG_01(props) {
         />
         <mesh
           receiveShadow
-          rotation={[
-            Math.PI * -0.5,
-            Math.PI * 0.0,
-            Math.PI * 0,
-          ]}
+          rotation={[Math.PI * -0.5, Math.PI * 0.0, Math.PI * 0]}
           position={[20, 0.01, 35]}
           scale={[50, 50, 1]}
         >
           <planeGeometry />
-          <shadowMaterial opacity={.04}/>
+          <shadowMaterial opacity={0.04} />
         </mesh>
       </group>
     </group>
   );
 }
 
-useGLTF.preload("./gltf/BKG_01.gltf");
+useGLTF.preload("./gltf/BKG.gltf");

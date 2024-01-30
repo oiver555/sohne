@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { ChairsContext, StorageContext } from "./ExpContext";
 import CategorySlider from "./CategorySlider";
 import ImageSliders from "./ImageSliders";
+import WhiteCard from "./WhiteCard";
+import CategoryLabels from "./CategoryLabels";
 
 const HTMLContent = (props) => {
   return (
@@ -18,80 +20,9 @@ const HTMLContent = (props) => {
       }}
     >
       <CategorySlider />
-
-     
-      <div
-        className="whiteCard"
-        style={{
-          backgroundColor: "white",
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          transform: `translateY(${window.outerHeight}px)`,
-        }}
-      />
-
-      <div
-        className="categoryLabel"
-        style={{
-          width: "100%",
-          paddingLeft: 50,
-          position: "relative",
-        }}
-      >
-        <div
-          id="seatingLabel"
-          style={{
-            fontSize: 35,
-            position: "absolute",
-            opacity: 0,
-          }}
-        >
-          Seating
-        </div>
-        <div
-          id="storageLabel"
-          style={{
-            fontSize: 35,
-            position: "absolute",
-            opacity: 0,
-          }}
-        >
-          Storage
-        </div>
-        <div
-          id="tableLabel"
-          style={{
-            fontSize: 35,
-            position: "absolute",
-            opacity: 0,
-          }}
-        >
-          Table
-        </div>
-        <div
-          id="sofaLabel"
-          style={{
-            fontSize: 35,
-            position: "absolute",
-            opacity: 0,
-          }}
-        >
-          Sofa
-        </div>
-        <div
-          id="sofaLabel"
-          style={{
-            fontSize: 35,
-            position: "relative",
-            opacity: 0,
-          }}
-        >
-          placeholder
-        </div>
-      </div>
-
-      <ImageSliders  />
+      <WhiteCard />
+      <CategoryLabels />
+      <ImageSliders />
     </div>
   );
 };
