@@ -44,7 +44,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 console.log("Chair A");
                 setCurrChair("a")
                 chairARef.current.visible = true;
@@ -71,7 +71,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 console.log("Chair B");
                 setCurrChair("b")
                 chairARef.current.visible = false;
@@ -98,7 +98,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 console.log("Chair C");
                 setCurrChair("c")
                 chairARef.current.visible = false;
@@ -125,7 +125,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 console.log("Chair D");
                 setCurrChair("d")
                 chairARef.current.visible = false;
@@ -168,7 +168,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 storageARef.current.visible = true;
                 storageBRef.current.visible = false;
                 storageCRef.current.visible = false;
@@ -193,7 +193,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 storageARef.current.visible = false;
                 storageBRef.current.visible = true;
                 storageCRef.current.visible = false;
@@ -218,7 +218,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 storageARef.current.visible = false;
                 storageBRef.current.visible = false;
                 storageCRef.current.visible = true;
@@ -243,7 +243,7 @@ const ImageSliders = (props) => {
             }}
           >
             <img
-              onMouseOver={() => {
+              onClick={() => {
                 storageARef.current.visible = false;
                 storageBRef.current.visible = false;
                 storageCRef.current.visible = false;

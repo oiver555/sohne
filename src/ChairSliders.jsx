@@ -29,7 +29,7 @@ const ChairSliders = (props) => {
           }}
         >
           <img
-            onMouseOver={() => {
+            onClick={() => {
               console.log("Chair A");
               chairARef.current.visible = true;
               chairBRef.current.visible = false;
@@ -55,7 +55,7 @@ const ChairSliders = (props) => {
           }}
         >
           <img
-            onMouseOver={() => {
+            onClick={() => {
               console.log("Chair B");
               chairARef.current.visible = false;
               chairBRef.current.visible = true;
@@ -81,7 +81,7 @@ const ChairSliders = (props) => {
           }}
         >
           <img
-            onMouseOver={() => {
+            onClick={() => {
               console.log("Chair C");
               chairARef.current.visible = false;
               chairBRef.current.visible = false;
@@ -107,7 +107,7 @@ const ChairSliders = (props) => {
           }}
         >
           <img
-            onMouseOver={() => {
+            onClick={() => {
               console.log("Chair D");
               chairARef.current.visible = false;
               chairBRef.current.visible = false;
