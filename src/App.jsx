@@ -23,6 +23,10 @@ export default () => {
   const cameraRef = useRef();
   const tableARef = useRef();
   const sofaARef = useRef();
+  const currObjMaterialRef = useRef()
+  const [objConfig, setobjConfig] = useState({baseTextures: [], cushionTextures:[]})
+  const [currBaseTexture, setCurrBaseTexture] = useState()
+  const [currCushionTexture1, setCurrCushionTexture1] = useState()
   const chair_spring_pos_ctl = useSpringRef();
   const storage_spring_pos_ctl = useSpringRef();
   const [chairGroupPosition, chairGroupPositionAPI] = useSpring(() => ({
@@ -140,7 +144,7 @@ export default () => {
               }}
             >
               <GlobalStateContext.Provider
-                value={{ currCategory, setCurrCategory, currChair, setCurrChair }}
+                value={{ currCategory, setCurrCategory, currChair, setCurrChair, objConfig, setobjConfig, currObjMaterialRef, currBaseTexture, setCurrBaseTexture, currCushionTexture1, setCurrCushionTexture1 }}
               >
                 <Main />
               </GlobalStateContext.Provider>

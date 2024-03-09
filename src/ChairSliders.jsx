@@ -37,7 +37,7 @@ const ChairSliders = (props) => {
               chairDRef.current.visible = false;
             }}
             width="100%"
-            src="./images/Chair_A.png"
+            src="./images/Chair_A_1.png"
             style={{ pointerEvents: "fill" }}
           />
           <figcaption>

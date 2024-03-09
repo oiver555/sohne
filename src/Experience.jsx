@@ -11,6 +11,7 @@ import { BKG } from "./BKG";
 import { SceneContext } from "./ExpContext";
 import Lights from "./Lights";
 import Furniture from "./Furniture";
+import { randFloatSpread } from "three/src/math/MathUtils";
 
 export default function Experience(props) {
   const sceneRef = useRef();
@@ -39,12 +40,12 @@ export default function Experience(props) {
         bottom={-1}
         near={0.1}
         far={400}
-        position={[100, 15, 70]}
+        position={[100, 15, 70]}  
       />
 
       <fog attach="fog" args={["orange", 40, 700]} />
       <SoftShadows size={5} samples={25} focus={2} />
-      <OrbitControls makeDefault enabled={true} enableRotate />
+      <OrbitControls makeDefault enabled={true} enableRotate={false} enableZoom={false} />
       <Lights targetObject={targetObject} />
       <Furniture />
       <BKG />

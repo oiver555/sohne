@@ -5,9 +5,12 @@ import ThreeContent from "./ThreeContent.jsx";
 
 const Body = (props) => {
   return (
-    <div style={{ flexDirection: "row", display: "flex", height: "100%" }}>
-      <ThreeContent />
-      <HTMLContent />
+    <div style={{height: 2000, overflow: "auto"}}>
+      <div style={{ flexDirection: "row", display: "flex", height: window.outerHeight }}>
+        <ThreeContent />
+        <HTMLContent />
+      </div>
+      <div style={{ width: 500, height: 800, backgroundColor: "red" }}></div>
     </div>
   );
 };

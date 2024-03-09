@@ -69,7 +69,7 @@ const Discover = (props) => {
             });
 
             gsap.to(
-              ".categoryContainer, .discover, .slidersVis, #seatingLabel",
+              ".categoryContainer, .discover, #seatingLabel, .slidersVis, .nav",
               {
                 duration: 1.5,
                 opacity: 0,
@@ -128,7 +128,7 @@ const Discover = (props) => {
               y: 0,
               stagger: 0.04,
             });
-            gsap.to(".categoryContainer, .discover, .slidersVis ", {
+            gsap.to(".categoryContainer, .discover, .slidersVis, .slidersVis ", {
               duration: 1.5,
               opacity: 0,
             });
@@ -181,7 +181,7 @@ const Discover = (props) => {
               y: 0,
               stagger: 0.04,
             });
-            gsap.to(".categoryContainer, .discover, .slidersVis ", {
+            gsap.to(".categoryContainer, .discover, .slidersVis, .slidersVis ", {
               duration: 1.5,
               opacity: 0,
             });
