@@ -3,6 +3,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 export function Chair_E(props) {
+  console.log("[Chair_E.js]");
   const { nodes } = useGLTF("./gltf/Chair_E.glb");
 
   const [

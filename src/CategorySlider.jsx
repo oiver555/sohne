@@ -2,8 +2,7 @@ import { useContext, useEffect, useState, fo } from "react";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 
 const CategorySlider = (props) => {
-  const { chairARef, chairBRef, chairCRef, chairDRef } =
-    useContext(ChairsContext);
+ 
   const { outerHeight } = window;
   const { currChair } = useContext(GlobalStateContext);
 

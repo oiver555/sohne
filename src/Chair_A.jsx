@@ -4,6 +4,7 @@ import * as THREE from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { useGesture } from "react-use-gesture";
+import { debounce } from "lodash";
 import {
   EffectComposer,
   Outline,
@@ -13,8 +14,9 @@ import {
 import { KernelSize } from "postprocessing";
 
 export default function Chair_A_1(props) {
+  console.log("[Chair_A.js]");
   const { nodes } = useMemo(() => useGLTF("./gltf/Chair_A.glb"));
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState(false);
   const [wood_rough, Chair_A_AO, wood1, wood_norm, ply_diff, wood2] =
     useTexture([
       "/textures/dark_wood_rough_2k.jpg",
@@ -24,7 +26,7 @@ export default function Chair_A_1(props) {
       "/textures/wood_diff_1.jpg",
       "/textures/wood_diff_2.jpg",
     ]);
-  const { chairARef, chairRotation } = useContext(ChairsContext);
+  const { chairARef, chairRotation, chairA } = useContext(ChairsContext);
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
@@ -34,7 +36,7 @@ export default function Chair_A_1(props) {
   });
   const { currChair, setobjConfig, currObjMaterialRef, currBaseTexture } =
     useContext(GlobalStateContext);
-
+  const listeners = {};
   Chair_A_AO.flipY = false;
   wood2.wrapS = THREE.RepeatWrapping;
   wood2.wrapT = THREE.RepeatWrapping;
@@ -79,6 +81,7 @@ export default function Chair_A_1(props) {
 
   useEffect(() => {
     if (currChair === "a") {
+      console.log(currChair);
       setobjConfig({
         baseTextures: [
           "/textures/dark_wood_diff_2k.jpg",
@@ -89,6 +92,31 @@ export default function Chair_A_1(props) {
       });
     }
   }, [currChair]);
+
+  useEffect(() => {
+    if (chairA) {
+      // Attach event handlers
+      listeners.onPointerOver = debounce(
+        (event) => {
+          console.log("Chair A hovered true", hovered);
+          setHovered(true);
+          event.stopPropagation();
+        },
+        500,
+        { leading: true }
+      );
+
+      listeners.onPointerOut = debounce((event) => {
+        console.log("Chair A hovered false", hovered);
+        setHovered(false);
+        event.stopPropagation();
+      }, 100);
+    } else {
+      // Remove event handlers
+      delete listeners.onPointerOver;
+      delete listeners.onPointerOut;
+    }
+  }, [chairA]);
 
   return (
     <animated.group
@@ -119,14 +147,15 @@ export default function Chair_A_1(props) {
               geometry={nodes.Chair_APIV.geometry}
               material={woodMat1}
               position={[-1.118, 0, -1.352]}
-              onPointerOver={() => {
-                console.log("Chair A");
-                if (hovered || chairARef.current.visible === false) return;
+              onPointerOver={(event) => {
+                console.log("Chair A hovered true", hovered);
                 setHovered(true);
+                event.stopPropagation();
               }}
-              onPointerOut={() => {
+              onPointerOut={(event) => {
                 setHovered(false);
-              }}
+                event.stopPropagation();
+              }} 
             />
           </Select>
         </EffectComposer>

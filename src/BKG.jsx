@@ -88,4 +88,4 @@ export function BKG(props) {
   );
 }
 
-useGLTF.preload("./gltf/BKG.gltf");
+useGLTF.preload("./gltf/BKG_01.gltf");

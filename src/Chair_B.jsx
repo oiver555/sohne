@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import {
   EffectComposer,
@@ -10,8 +10,9 @@ import * as THREE from "three";
 import { animated } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { KernelSize } from "postprocessing";
-
+import { debounce } from "lodash";
 export default function Chair_B(props) {
+  console.log("[Chair.B.js]");
   const { nodes } = useMemo(() => useGLTF("./gltf/Chair_B.glb"));
   const { chairBRef, chairRotation } = useContext(ChairsContext);
   const [baseHovered, setBaseHovered] = useState(false);
@@ -49,6 +50,8 @@ export default function Chair_B(props) {
     "/textures/red.jpg",
     "/textures/cyan.jpg",
   ]);
+  const cushionListeners = {};
+  const woodListeners = {};
 
   polkaDot.wrapS = THREE.RepeatWrapping;
   polkaDot.wrapT = THREE.RepeatWrapping;
@@ -117,6 +120,7 @@ export default function Chair_B(props) {
     }
   }, [currChair]);
 
+
   return (
     <animated.group
       ref={chairBRef}
@@ -124,7 +128,6 @@ export default function Chair_B(props) {
       position={[19.8, 0, 14]}
       rotation-y={chairRotation.rotate}
       scale={0.104}
-      visible={false}
     >
       <group rotation={[0, 1.4, 0]}>
         <Selection>
@@ -137,13 +140,7 @@ export default function Chair_B(props) {
               edgeStrength={2}
               width={500}
             />
-            <Select
-              enabled={cushionHovered}
-              backgroundColor="red"
-              onChange={(selected) => {
-                console.log(selected);
-              }}
-            >
+            <Select enabled={cushionHovered}>
               <mesh
                 name="Chair_B_Cushion"
                 castShadow
@@ -160,18 +157,17 @@ export default function Chair_B(props) {
                   });
                   event.stopPropagation();
                 }}
-                onPointerMove={(event) => {
-                  if (cushionHovered) return;
+                onPointerOver={(event) => {
                   setCushionHovered(true);
                   event.stopPropagation();
                 }}
-                onPointerOut={() => setCushionHovered(false)}
-              />
+                onPointerOut={(event) => {
+                  setCushionHovered(false);
+                  event.stopPropagation();
+                }}
+                />
             </Select>
-            <Select
-              enabled={baseHovered}
-             
-            >
+            <Select enabled={baseHovered}>
               <mesh
                 name="Chair_B_Wood"
                 castShadow
@@ -189,14 +185,14 @@ export default function Chair_B(props) {
                   });
                   event.stopPropagation();
                 }}
-                
-                onPointerMove={(event) => {
-                  console.log("Chair B");
-                  if (baseHovered) return;
+                onPointerOver={(event) => {
                   setBaseHovered(true);
                   event.stopPropagation();
                 }}
-                onPointerOut={() => setBaseHovered(false)}
+                onPointerOut={(event) => {
+                  setBaseHovered(false);
+                  event.stopPropagation();
+                }}
               />
             </Select>
           </EffectComposer>

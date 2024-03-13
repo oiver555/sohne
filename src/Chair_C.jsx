@@ -9,6 +9,7 @@ import { ChairsContext } from "./ExpContext";
 import { animated } from "@react-spring/three";
 
 export default function Chair_C(props) {
+  console.log("[Chair_C.js]");
   const { nodes } = useGLTF("./gltf/Chair_C.glb");
 
   const [chairdiffuse, chairglossiness, chairnormalmap] = useTexture([ "./textures/chair_diffuse.jpg", "./textures/chair_glossiness.jpg", "./textures/chair_normal_map.jpg"]);

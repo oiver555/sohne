@@ -1,13 +1,27 @@
 import { useContext } from "react";
-import { ChairsContext, GlobalStateContext, StorageContext, TablesContext } from "./ExpContext";
+import {
+  ChairsContext,
+  GlobalStateContext,
+  StorageContext,
+  TablesContext,
+} from "./ExpContext";
 import gsap from "gsap";
 
 const Discover = (props) => {
-    const { chairRotaionAPI, chairARef, chairGroupPosition } = useContext(ChairsContext);
-    const { tableGroupPosition } = useContext(TablesContext);
-    const { setCurrCategory } = useContext(GlobalStateContext);
-    const {storageARef, storageRotationAPI, storageGroupPosition } = useContext(StorageContext);
-    
+  const {
+    chairRotaionAPI,
+    chairARef,
+    chairGroupPosition,
+    chairBRef,
+    chairsVis,
+    chairCRef,
+    chairDRef,
+  } = useContext(ChairsContext);
+  const { tableGroupPosition } = useContext(TablesContext);
+  const { setCurrCategory } = useContext(GlobalStateContext);
+  const { storageARef, storageRotationAPI, storageGroupPosition } =
+    useContext(StorageContext);
+
   return (
     <div
       style={{
@@ -37,7 +51,15 @@ const Discover = (props) => {
           if (chairGroupPosition.position.get()[2] === 0) {
             console.log("Chair");
             chairRotaionAPI.update({
-              from: { rotate: chairARef.current.rotation.y },
+              from: {
+                rotate: chairsVis.a
+                  ? chairARef.current.rotation.y
+                  : chairsVis.b
+                  ? chairBRef.current.rotation.y
+                  : chairsVis.c
+                  ? chairCRef.current.rotation.y
+                  : chairDRef.current.rotation.y,
+              },
               to: [
                 {
                   rotate: 6.25,
@@ -94,11 +116,7 @@ const Discover = (props) => {
             });
           } else if (storageGroupPosition.position.get()[2] === 0) {
             console.log("Storage");
-            // gsap.to(".chairSlider", {
-            //   duration: 2.5,
-            //   y: window.outerHeight,
-            //   stagger: 0.04,
-            // });
+
             storageRotationAPI.update({
               from: { rotate: storageARef.current.rotation.y },
               to: [
@@ -128,10 +146,13 @@ const Discover = (props) => {
               y: 0,
               stagger: 0.04,
             });
-            gsap.to(".categoryContainer, .discover, .slidersVis, .slidersVis ", {
-              duration: 1.5,
-              opacity: 0,
-            });
+            gsap.to(
+              ".categoryContainer, .discover, .slidersVis, .slidersVis ",
+              {
+                duration: 1.5,
+                opacity: 0,
+              }
+            );
             gsap.to("#storageLabel", {
               duration: 1.5,
               opacity: 1,
@@ -181,10 +202,13 @@ const Discover = (props) => {
               y: 0,
               stagger: 0.04,
             });
-            gsap.to(".categoryContainer, .discover, .slidersVis, .slidersVis ", {
-              duration: 1.5,
-              opacity: 0,
-            });
+            gsap.to(
+              ".categoryContainer, .discover, .slidersVis, .slidersVis ",
+              {
+                duration: 1.5,
+                opacity: 0,
+              }
+            );
             gsap.to("#storageLabel", {
               duration: 1.5,
               opacity: 1,
@@ -203,7 +227,6 @@ const Discover = (props) => {
             });
           }
 
-           
           // else if (sofaARef.current.position.z) {
 
           // }
@@ -214,4 +237,4 @@ const Discover = (props) => {
     </div>
   );
 };
-export default Discover
+export default Discover;

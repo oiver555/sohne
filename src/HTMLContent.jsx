@@ -7,8 +7,7 @@ import CategoryLabels from "./CategoryLabels";
 import OverlayHTML from "./OverlayHTML";
 
 const HTMLContent = (props) => {
-  const { outerHeight } = window;
-  return (
+   return (
     <>
       <div
         style={{

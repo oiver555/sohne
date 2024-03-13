@@ -2,12 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { ChairsContext } from "./ExpContext";
 
 const ChairSliders = (props) => {
-  const { chairGroupPosition, chairARef, chairBRef, chairCRef, chairDRef } =
-    useContext(ChairsContext);
+  const {
+    chairGroupPosition,
+    chairARef,
+    setChairsVis,
+    chairBRef,
+    chairCRef,
+    chairDRef,
+  } = useContext(ChairsContext);
 
   const [currChair, setCurrChair] = useState("A");
 
- 
   return (
     <div style={{ position: "absolute", pointerEvents: "none" }}>
       <div
@@ -31,10 +36,12 @@ const ChairSliders = (props) => {
           <img
             onClick={() => {
               console.log("Chair A");
-              chairARef.current.visible = true;
-              chairBRef.current.visible = false;
-              chairCRef.current.visible = false;
-              chairDRef.current.visible = false;
+              setChairsVis({
+                a: true,
+                b: false,
+                c: false,
+                d: false,
+              });
             }}
             width="100%"
             src="./images/Chair_A_1.png"
@@ -56,11 +63,13 @@ const ChairSliders = (props) => {
         >
           <img
             onClick={() => {
-              console.log("Chair B");
-              chairARef.current.visible = false;
-              chairBRef.current.visible = true;
-              chairCRef.current.visible = false;
-              chairDRef.current.visible = false;
+              console.log("Chair B set true");
+              setChairsVis({
+                a: false,
+                b: true,
+                c: false,
+                d: false,
+              });
             }}
             width="100%"
             src="./images/Chair_B.png"
@@ -83,10 +92,12 @@ const ChairSliders = (props) => {
           <img
             onClick={() => {
               console.log("Chair C");
-              chairARef.current.visible = false;
-              chairBRef.current.visible = false;
-              chairCRef.current.visible = true;
-              chairDRef.current.visible = false;
+              setChairsVis({
+                a: false,
+                b: false,
+                c: true,
+                d: false,
+              }); 
             }}
             width="100%"
             src="./images/Chair_C.png"
@@ -109,10 +120,12 @@ const ChairSliders = (props) => {
           <img
             onClick={() => {
               console.log("Chair D");
-              chairARef.current.visible = false;
-              chairBRef.current.visible = false;
-              chairCRef.current.visible = false;
-              chairDRef.current.visible = true;
+              setChairsVis({
+                a: false,
+                b: false,
+                c: false,
+                d: true,
+              });
             }}
             width="100%"
             src="./images/Chair_D.png"

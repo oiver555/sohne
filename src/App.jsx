@@ -11,10 +11,16 @@ import {
 import { useSpring, useSpringRef, easings } from "@react-spring/three";
 
 export default () => {
-  const chairARef = useRef({visible:true});
-  const chairBRef = useRef({visible:true});
-  const chairCRef = useRef({visible:true});
-  const chairDRef = useRef({visible:true});
+  const [chairsVis, setChairsVis] = useState({
+    a: true,
+    b: false,
+    c: false,
+    d: false,
+  });
+  const chairARef = useRef();
+  const chairBRef = useRef();
+  const chairCRef = useRef();
+  const chairDRef = useRef();
   const chairGroupRef = useRef();
   const storageARef = useRef();
   const storageBRef = useRef();
@@ -23,10 +29,13 @@ export default () => {
   const cameraRef = useRef();
   const tableARef = useRef();
   const sofaARef = useRef();
-  const currObjMaterialRef = useRef()
-  const [objConfig, setobjConfig] = useState({baseTextures: [], cushionTextures:[]})
-  const [currBaseTexture, setCurrBaseTexture] = useState()
-  const [currCushionTexture1, setCurrCushionTexture1] = useState()
+  const currObjMaterialRef = useRef();
+  const [objConfig, setobjConfig] = useState({
+    baseTextures: [],
+    cushionTextures: [],
+  });
+  const [currBaseTexture, setCurrBaseTexture] = useState();
+  const [currCushionTexture1, setCurrCushionTexture1] = useState();
   const chair_spring_pos_ctl = useSpringRef();
   const storage_spring_pos_ctl = useSpringRef();
   const [chairGroupPosition, chairGroupPositionAPI] = useSpring(() => ({
@@ -100,6 +109,8 @@ export default () => {
     <ChairsContext.Provider
       value={{
         chairARef,
+        chairsVis,
+        setChairsVis,
         chairBRef,
         chairCRef,
         chairDRef,
@@ -144,7 +155,19 @@ export default () => {
               }}
             >
               <GlobalStateContext.Provider
-                value={{ currCategory, setCurrCategory, currChair, setCurrChair, objConfig, setobjConfig, currObjMaterialRef, currBaseTexture, setCurrBaseTexture, currCushionTexture1, setCurrCushionTexture1 }}
+                value={{
+                  currCategory,
+                  setCurrCategory,
+                  currChair,
+                  setCurrChair,
+                  objConfig,
+                  setobjConfig,
+                  currObjMaterialRef,
+                  currBaseTexture,
+                  setCurrBaseTexture,
+                  currCushionTexture1,
+                  setCurrCushionTexture1,
+                }}
               >
                 <Main />
               </GlobalStateContext.Provider>
