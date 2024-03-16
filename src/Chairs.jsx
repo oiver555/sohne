@@ -32,9 +32,11 @@ const Chairs = (props) => {
           <Chair_D />
         </Suspense>
       )}
-      {/* <Suspense fallback={<Box position={[0, 2, 0]} />}>
-        <Chair_E />
-      </Suspense> */}
+      {chairsVis.e && (
+        <Suspense fallback={<Box position={[0, 2, 0]} />}>
+          <Chair_E />
+        </Suspense>
+      )}
     </group>
   );
 };

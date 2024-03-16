@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Bird",
+            "children": [
+                1
+            ],
+            "translation": [
+                -62.60420608520508,
+                67.20589447021485,
+                -306.5707092285156
+            ]
+        },
+        {
+            "name": "Bird:PIV",
+            "mesh": 0,
+            "translation": [
+                62.60420608520508,
+                -67.20589447021485,
+                306.5707092285156
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "BirdShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "BirdShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 16512,
+            "max": [
+                11087
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BirdShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 11088,
+            "max": [
+                0.997060477733612,
+                0.9999940991401672,
+                0.9992367625236512
+            ],
+            "min": [
+                -0.9996727108955384,
+                -0.9980897903442384,
+                -0.9992929697036744
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BirdShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 133056,
+            "componentType": 5126,
+            "count": 11088,
+            "max": [
+                -51.9938850402832,
+                94.9069366455078,
+                -296.716796875
+            ],
+            "min": [
+                -70.94054412841797,
+                67.20589447021485,
+                -318.6885070800781
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BirdShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 11088,
+            "max": [
+                0.9240692257881165,
+                0.9999607801437378,
+                0.9998972415924072,
+                1.0
+            ],
+            "min": [
+                -0.9999964833259584,
+                -0.9992085695266724,
+                -0.9966278672218324,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BirdShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 11088,
+            "max": [
+                0.9662907123565674,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Bird/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 532224,
+            "byteLength": 33024,
+            "target": 34963
+        },
+        {
+            "name": "Bird/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 177408,
+            "byteLength": 266112,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Bird/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 177408,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Bird/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 443520,
+            "byteLength": 88704,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Bird/data",
+            "byteLength": 565248,
+            "uri": "Bird0.bin"
+        }
+    ]
+}

@@ -4,13 +4,16 @@ import {
   GlobalStateContext,
   StorageContext,
 } from "./ExpContext";
-import ChairSliders from "./ChairSliders";
 
 const ImageSliders = (props) => {
-  const { chairARef, chairBRef, chairCRef, chairDRef, setChairsVis } = useContext(ChairsContext);
-  const { storageARef, storageCRef, storageDRef, storageBRef, } = useContext(StorageContext);
+  const { chairARef, chairBRef, chairCRef, chairDRef, setChairsVis } =
+    useContext(ChairsContext);
+  const { storageARef, storageCRef, storageDRef, storageBRef } =
+    useContext(StorageContext);
 
-  const { currCategory, setCurrCategory, currChair, setCurrChair } = useContext(GlobalStateContext);
+  const { outerHeight, outerWidth } = window;
+  const { currCategory, setCurrCategory, currChair, setCurrChair } =
+    useContext(GlobalStateContext);
 
   return (
     <div
@@ -19,11 +22,11 @@ const ImageSliders = (props) => {
         display: "flex",
         flexDirection: "column",
         width: "80%",
-        backgroundColor: "lime",
+        backgroundColor: "red",
         alignItems: "center",
       }}
     >
-      <div style={{ position: "absolute", pointerEvents: "none" }}>
+      <div style={{ position: "absolute", pointerEvents: "none", height: "100%" }}>
         {/* SEATING */}
         <div
           style={{
@@ -33,6 +36,8 @@ const ImageSliders = (props) => {
             WebkitFlexWrap: "wrap",
             justifyContent: "center",
             pointerEvents: "none",
+            overflowY: "auto",
+            height: "100%"
           }}
         >
           <figure
@@ -46,12 +51,13 @@ const ImageSliders = (props) => {
             <img
               onClick={() => {
                 console.log("Chair A");
-                setCurrChair("a")
+                setCurrChair("a");
                 setChairsVis({
                   a: true,
                   b: false,
                   c: false,
                   d: false,
+                  e: false,
                 });
               }}
               width="100%"
@@ -75,13 +81,14 @@ const ImageSliders = (props) => {
             <img
               onClick={() => {
                 console.log("Chair B visible set to true");
-                setCurrChair("b")
+                setCurrChair("b");
                 setChairsVis({
                   a: false,
                   b: true,
                   c: false,
                   d: false,
-                }); 
+                  e: false,
+                });
               }}
               width="100%"
               src="./images/Chair_B.png"
@@ -104,13 +111,14 @@ const ImageSliders = (props) => {
             <img
               onClick={() => {
                 console.log("Chair C");
-                setCurrChair("c")
+                setCurrChair("c");
                 setChairsVis({
                   a: false,
                   b: false,
                   c: true,
                   d: false,
-                })
+                  e: false,
+                });
               }}
               width="100%"
               src="./images/Chair_C.png"
@@ -133,13 +141,14 @@ const ImageSliders = (props) => {
             <img
               onClick={() => {
                 console.log("Chair D");
-                setCurrChair("d")
+                setCurrChair("d");
                 setChairsVis({
                   a: false,
                   b: false,
                   c: false,
                   d: true,
-                }) 
+                  e: false,
+                });
               }}
               width="100%"
               src="./images/Chair_D.png"
@@ -151,11 +160,61 @@ const ImageSliders = (props) => {
               500 &euro;
             </figcaption>
           </figure>
-       
-
-    </div>
+          <figure
+            className="chairSlider"
+            style={{
+              width: "40%",
+              margin: 10,
+              transform: "translateY(1000px)",
+              
+            }}
+          >
+            <img
+              onClick={() => {
+                console.log("Chair E");
+                setCurrChair("e");
+                setChairsVis({
+                  a: false,
+                  b: false,
+                  c: false,
+                  d: false,
+                  e: true,
+                });
+              }}
+              width="100%"
+              src="./images/Chair_E.png"
+              style={{ pointerEvents: "fill", }}
+            />
+            <figcaption>
+              Söhne Chair
+              <br />
+              500 &euro;
+            </figcaption>
+          </figure>
+          <figure
+            className="chairSlider"
+            style={{
+              width: "40%",
+              margin: 10,
+              transform: "translateY(1000px)",
+              
+            }}
+          >
+            <img
+             
+              width="100%"
+              src="./images/Chair_E.png"
+              style={{ pointerEvents: "fill", opacity : 0}}
+            />
+            <figcaption>
+              Söhne Chair
+              <br />
+              500 &euro;
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <div style={{ position: "absolute", pointerEvents: "none" }}> 
+      <div style={{ position: "absolute", pointerEvents: "none" }}>
         {/* STORAGE */}
         <div
           style={{

@@ -1,0 +1,344 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                1,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "GramPhoneBox",
+            "mesh": 0,
+            "translation": [
+                120.91394805908205,
+                58.01155853271485,
+                -41.80485534667969
+            ],
+            "rotation": [
+                0.0,
+                0.2906681299209595,
+                0.0,
+                0.9568239450454712
+            ],
+            "scale": [
+                6.117580413818359,
+                4.5471577644348148,
+                12.398250579833985
+            ]
+        },
+        {
+            "name": "GramPhone",
+            "children": [
+                2
+            ],
+            "translation": [
+                120.9206314086914,
+                55.702762603759769,
+                -41.9496955871582
+            ]
+        },
+        {
+            "name": "GramPhone:PIV",
+            "mesh": 1,
+            "translation": [
+                -120.9206314086914,
+                -55.702762603759769,
+                41.9496955871582
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "GramPhoneBoxShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "GramPhoneShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9,
+                        "TEXCOORD_1": 10
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "GramPhoneBoxShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 564,
+            "max": [
+                175
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "GramPhoneBoxShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 176,
+            "max": [
+                0.9809001684188844,
+                0.9999985694885254,
+                0.9978055953979492
+            ],
+            "min": [
+                -0.9809134006500244,
+                -0.9999985694885254,
+                -0.9978055953979492
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "GramPhoneBoxShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2112,
+            "componentType": 5126,
+            "count": 176,
+            "max": [
+                0.5000019073486328,
+                0.5,
+                0.5
+            ],
+            "min": [
+                -0.5,
+                -0.5,
+                -0.5000004768371582
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "GramPhoneBoxShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 176,
+            "max": [
+                0.9889570474624634,
+                1.0,
+                0.9814927577972412,
+                1.0
+            ],
+            "min": [
+                -0.9890564680099488,
+                -1.0,
+                -0.981460213661194,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "GramPhoneBoxShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 176,
+            "max": [
+                0.946811854839325,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018898439593613148,
+                0.001992047065868974
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "GramPhoneShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 1128,
+            "componentType": 5123,
+            "count": 82944,
+            "max": [
+                55295
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "GramPhoneShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 4224,
+            "componentType": 5126,
+            "count": 55296,
+            "max": [
+                0.9999828934669496,
+                0.9995064735412598,
+                0.9999793767929076
+            ],
+            "min": [
+                -0.9999160170555116,
+                -0.9993510246276856,
+                -0.9999750256538392
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "GramPhoneShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 667776,
+            "componentType": 5126,
+            "count": 55296,
+            "max": [
+                127.75132751464844,
+                85.98110961914063,
+                -37.52190017700195
+            ],
+            "min": [
+                112.9221649169922,
+                59.97224807739258,
+                -53.108245849609378
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "GramPhoneShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 2816,
+            "componentType": 5126,
+            "count": 55296,
+            "max": [
+                0.9998871684074402,
+                0.9999948143959044,
+                0.9999675750732422,
+                1.0
+            ],
+            "min": [
+                -0.9999906420707704,
+                -0.9997551441192628,
+                -0.9996138215065002,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "GramPhoneShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 1408,
+            "componentType": 5126,
+            "count": 55296,
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.208101749420166
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "GramPhoneShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 443776,
+            "componentType": 5126,
+            "count": 55296,
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.208101749420166
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "GramPhone/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 3105024,
+            "byteLength": 167016,
+            "target": 34963
+        },
+        {
+            "name": "GramPhone/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 887552,
+            "byteLength": 1331328,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "GramPhone/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 887552,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "GramPhone/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 2218880,
+            "byteLength": 886144,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "GramPhone/data",
+            "byteLength": 3272040,
+            "uri": "GramPhone0.bin"
+        }
+    ]
+}

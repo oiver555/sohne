@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Areti_Triangle_Table",
+            "children": [
+                1
+            ],
+            "translation": [
+                76.48973083496094,
+                13.185622215270996,
+                -212.0492401123047
+            ]
+        },
+        {
+            "name": "Areti_Triangle_Table:PIV",
+            "mesh": 0,
+            "translation": [
+                -76.48973083496094,
+                -13.185622215270996,
+                212.0492401123047
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Areti_Triangle_TableShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Areti_Triangle_TableShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 192,
+            "max": [
+                143
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Areti_Triangle_TableShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 144,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -0.8682431578636169,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Areti_Triangle_TableShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1728,
+            "componentType": 5126,
+            "count": 144,
+            "max": [
+                121.4897232055664,
+                53.11120223999024,
+                -182.0492401123047
+            ],
+            "min": [
+                31.48973083496094,
+                13.185622215270996,
+                -242.0492401123047
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Areti_Triangle_TableShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 144,
+            "max": [
+                0.7071101665496826,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.7071138024330139,
+                -1.0,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Areti_Triangle_TableShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 144,
+            "max": [
+                0.9980079531669616,
+                0.9981995820999146
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.09799158573150636
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "AretiTable/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 6912,
+            "byteLength": 384,
+            "target": 34963
+        },
+        {
+            "name": "AretiTable/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 2304,
+            "byteLength": 3456,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "AretiTable/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2304,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "AretiTable/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 5760,
+            "byteLength": 1152,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "AretiTable/data",
+            "byteLength": 7296,
+            "uri": "AretiTable0.bin"
+        }
+    ]
+}

@@ -16,6 +16,7 @@ const Discover = (props) => {
     chairsVis,
     chairCRef,
     chairDRef,
+    chairERef
   } = useContext(ChairsContext);
   const { tableGroupPosition } = useContext(TablesContext);
   const { setCurrCategory } = useContext(GlobalStateContext);
@@ -58,7 +59,9 @@ const Discover = (props) => {
                   ? chairBRef.current.rotation.y
                   : chairsVis.c
                   ? chairCRef.current.rotation.y
-                  : chairDRef.current.rotation.y,
+                  :chairsVis.d 
+                  ? chairDRef.current.rotation.y
+                  : chairERef.current.rotation.y,
               },
               to: [
                 {

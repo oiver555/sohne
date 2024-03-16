@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "CanSoda",
+            "children": [
+                1
+            ],
+            "translation": [
+                52.76611328125,
+                53.0451889038086,
+                -201.7557830810547
+            ]
+        },
+        {
+            "name": "CanSoda:PIV",
+            "mesh": 0,
+            "translation": [
+                -52.76611328125,
+                -53.0451889038086,
+                201.7557830810547
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "CanSodaShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "CanSodaShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 15348,
+            "max": [
+                10064
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "CanSodaShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 10065,
+            "max": [
+                0.9995248913764954,
+                1.0,
+                0.9995248913764954
+            ],
+            "min": [
+                -0.9995248913764954,
+                -0.9994547963142396,
+                -0.9995248913764954
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "CanSodaShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 120780,
+            "componentType": 5126,
+            "count": 10065,
+            "max": [
+                56.03352737426758,
+                65.33255767822266,
+                -198.4883728027344
+            ],
+            "min": [
+                49.49869537353516,
+                53.0451889038086,
+                -205.0232086181641
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "CanSodaShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 10065,
+            "max": [
+                1.0,
+                0.999415636062622,
+                0.9999954104423524,
+                1.0
+            ],
+            "min": [
+                -0.9999954104423524,
+                -0.999415636062622,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "CanSodaShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 10065,
+            "max": [
+                0.9999255537986757,
+                0.9198474287986757
+            ],
+            "min": [
+                0.0000744499993743375,
+                0.0033664109650999309
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "CanSoda/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 483120,
+            "byteLength": 30696,
+            "target": 34963
+        },
+        {
+            "name": "CanSoda/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 161040,
+            "byteLength": 241560,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "CanSoda/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 161040,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "CanSoda/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 402600,
+            "byteLength": 80520,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "CanSoda/data",
+            "byteLength": 513816,
+            "uri": "CanSoda0.bin"
+        }
+    ]
+}

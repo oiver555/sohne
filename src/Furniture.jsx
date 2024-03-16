@@ -56,7 +56,7 @@ const Furniture = (props) => {
           </div>
         </Html>
       </animated.group>
-      <animated.group position={storageGroupPosition.position}>
+      {/* <animated.group position={storageGroupPosition.position}>
         <Storages />
       </animated.group>
       <animated.group position={tableGroupPosition.position}>
@@ -64,7 +64,7 @@ const Furniture = (props) => {
       </animated.group>
       <animated.group position={sofaGroupPosition.position}>
         <Sofas />
-      </animated.group>
+      </animated.group> */}
     </>
   );
 };

@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Plant_Leaves",
+            "children": [
+                1
+            ],
+            "translation": [
+                -114.93821716308594,
+                59.42351913452149,
+                -210.054931640625
+            ]
+        },
+        {
+            "name": "Plant_Leaves:PIV",
+            "mesh": 0,
+            "translation": [
+                114.93821716308594,
+                -59.42351913452149,
+                210.054931640625
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Plant_LeavesShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Plant_LeavesShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 200586,
+            "max": [
+                191165
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Plant_LeavesShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 191166,
+            "max": [
+                0.9999907612800598,
+                0.9999561309814452,
+                0.9999338388442992
+            ],
+            "min": [
+                -0.999995529651642,
+                -0.6417471170425415,
+                -0.9999530911445618
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_LeavesShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2293992,
+            "componentType": 5126,
+            "count": 191166,
+            "max": [
+                -103.65923309326172,
+                88.94739532470703,
+                -184.5087432861328
+            ],
+            "min": [
+                -126.21719360351564,
+                29.899639129638673,
+                -235.6011199951172
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_LeavesShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 191166,
+            "max": [
+                0.9999997615814208,
+                0.763905942440033,
+                0.9999954104423524,
+                1.0
+            ],
+            "min": [
+                -0.9999962449073792,
+                -0.7303907871246338,
+                -0.9999969601631165,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Plant_LeavesShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 191166,
+            "max": [
+                0.9884153008461,
+                0.9676182866096496
+            ],
+            "min": [
+                0.013783814385533333,
+                0.01399153470993042
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Plant_Leaves/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 9175968,
+            "byteLength": 802344,
+            "target": 34963
+        },
+        {
+            "name": "Plant_Leaves/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 3058656,
+            "byteLength": 4587984,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Leaves/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 3058656,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Leaves/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 7646640,
+            "byteLength": 1529328,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Plant_Leaves/data",
+            "byteLength": 9978312,
+            "uri": "Plant_Leaves0.bin"
+        }
+    ]
+}

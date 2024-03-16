@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Plant_Stand",
+            "children": [
+                1
+            ],
+            "translation": [
+                -114.75422668457033,
+                14.194917678833008,
+                -216.16880798339845
+            ]
+        },
+        {
+            "name": "Plant_Stand:PIV",
+            "mesh": 0,
+            "translation": [
+                114.75422668457033,
+                -14.194917678833008,
+                216.16880798339845
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Plant_StandShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Plant_StandShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 198,
+            "max": [
+                63
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Plant_StandShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 64,
+            "max": [
+                0.9999993443489076,
+                0.9999883770942688,
+                0.9999890327453612
+            ],
+            "min": [
+                -0.9999993443489076,
+                0.0,
+                -0.9999890327453612
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_StandShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 768,
+            "componentType": 5126,
+            "count": 64,
+            "max": [
+                -104.19415283203124,
+                13.870746612548829,
+                -187.22705078125
+            ],
+            "min": [
+                -125.31428527832033,
+                10.252044677734377,
+                -270.2548522949219
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_StandShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 64,
+            "max": [
+                0.9999889135360718,
+                1.0,
+                0.04888326674699783,
+                1.0
+            ],
+            "min": [
+                -0.3825802803039551,
+                -1.0,
+                -0.3824393153190613,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Plant_StandShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 64,
+            "max": [
+                0.44966286420822146,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0008975309901870787,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Plants_Stand/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 3072,
+            "byteLength": 396,
+            "target": 34963
+        },
+        {
+            "name": "Plants_Stand/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 1024,
+            "byteLength": 1536,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Plants_Stand/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1024,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Plants_Stand/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 2560,
+            "byteLength": 512,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Plants_Stand/data",
+            "byteLength": 3468,
+            "uri": "Plants_Stand0.bin"
+        }
+    ]
+}

@@ -21,18 +21,21 @@ export default () => {
   const chairBRef = useRef();
   const chairCRef = useRef();
   const chairDRef = useRef();
+  const chairERef = useRef();
   const chairGroupRef = useRef();
   const storageARef = useRef();
   const storageBRef = useRef();
   const storageCRef = useRef();
   const storageDRef = useRef();
   const cameraRef = useRef();
+  const livingRoomCam = useRef()
   const tableARef = useRef();
   const sofaARef = useRef();
   const currObjMaterialRef = useRef();
   const [objConfig, setobjConfig] = useState({
     baseTextures: [],
     cushionTextures: [],
+    legTextures: [],
   });
   const [currBaseTexture, setCurrBaseTexture] = useState();
   const [currCushionTexture1, setCurrCushionTexture1] = useState();
@@ -114,6 +117,7 @@ export default () => {
         chairBRef,
         chairCRef,
         chairDRef,
+        chairERef,
         chair_spring_pos_ctl,
         chairGroupPosition,
         chairRotation,
@@ -152,6 +156,7 @@ export default () => {
             <SceneContext.Provider
               value={{
                 cameraRef,
+                livingRoomCam
               }}
             >
               <GlobalStateContext.Provider

@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Suitcase_LP",
+            "children": [
+                1
+            ],
+            "translation": [
+                205.83656311035157,
+                8.987855911254883,
+                -322.0320739746094
+            ]
+        },
+        {
+            "name": "Suitcase_LP:PIV",
+            "mesh": 0,
+            "translation": [
+                -205.83656311035157,
+                -8.987855911254883,
+                322.0320739746094
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Suitcase_LPShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Suitcase_LPShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 6612,
+            "max": [
+                6581
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Suitcase_LPShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6582,
+            "max": [
+                0.9999986886978148,
+                1.0,
+                0.9999983310699464
+            ],
+            "min": [
+                -0.9999802112579346,
+                -0.9999961853027344,
+                -0.9999966025352478
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Suitcase_LPShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 78984,
+            "componentType": 5126,
+            "count": 6582,
+            "max": [
+                234.9104156494141,
+                56.53226089477539,
+                -300.6548767089844
+            ],
+            "min": [
+                177.66259765625,
+                9.098937034606934,
+                -321.7993774414063
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Suitcase_LPShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6582,
+            "max": [
+                1.0,
+                0.999999701976776,
+                0.9999997615814208,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -0.9999995231628418,
+                -0.996719777584076,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Suitcase_LPShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6582,
+            "max": [
+                0.9558330178260804,
+                0.9922552108764648
+            ],
+            "min": [
+                0.007884910330176354,
+                0.008540809154510498
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "SuitCase/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 315936,
+            "byteLength": 13224,
+            "target": 34963
+        },
+        {
+            "name": "SuitCase/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 105312,
+            "byteLength": 157968,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "SuitCase/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 105312,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "SuitCase/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 263280,
+            "byteLength": 52656,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "SuitCase/data",
+            "byteLength": 329160,
+            "uri": "SuitCase0.bin"
+        }
+    ]
+}

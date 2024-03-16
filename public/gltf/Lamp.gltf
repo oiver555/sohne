@@ -1,0 +1,1594 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                22,
+                20,
+                18,
+                16,
+                14,
+                12,
+                10,
+                8,
+                6,
+                4,
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Lamp_Shade_Trim_4",
+            "children": [
+                1
+            ],
+            "translation": [
+                -36.22175598144531,
+                149.74884033203126,
+                -122.00505828857422
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_4:PIV",
+            "mesh": 0,
+            "translation": [
+                36.22175598144531,
+                -149.74884033203126,
+                122.00505828857422
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_3",
+            "children": [
+                3
+            ],
+            "translation": [
+                -36.42228698730469,
+                172.10882568359376,
+                -122.00505065917968
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_3:PIV",
+            "mesh": 1,
+            "translation": [
+                36.42228698730469,
+                -172.10882568359376,
+                122.00505065917968
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_2",
+            "children": [
+                5
+            ],
+            "translation": [
+                -36.33048248291016,
+                162.8973388671875,
+                -122.00569152832033
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_2:PIV",
+            "mesh": 2,
+            "translation": [
+                36.33048248291016,
+                -162.8973388671875,
+                122.00569152832033
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_1",
+            "children": [
+                7
+            ],
+            "translation": [
+                -36.77259063720703,
+                162.92236328125,
+                -121.91448974609377
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_1:PIV",
+            "mesh": 3,
+            "translation": [
+                36.77259063720703,
+                -162.92236328125,
+                121.91448974609377
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Outter",
+            "children": [
+                9
+            ],
+            "translation": [
+                -36.331993103027347,
+                143.83071899414066,
+                -121.94676208496094
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Outter:PIV",
+            "mesh": 4,
+            "translation": [
+                36.331993103027347,
+                -143.83071899414066,
+                121.94676208496094
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Inner",
+            "children": [
+                11
+            ],
+            "translation": [
+                -36.281551361083987,
+                144.12652587890626,
+                -122.1092300415039
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Inner:PIV",
+            "mesh": 5,
+            "translation": [
+                36.281551361083987,
+                -144.12652587890626,
+                122.1092300415039
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Hinge",
+            "children": [
+                13
+            ],
+            "translation": [
+                -36.25038528442383,
+                166.5811004638672,
+                -121.88790893554688
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Hinge:PIV",
+            "mesh": 6,
+            "translation": [
+                36.25038528442383,
+                -166.5811004638672,
+                121.88790893554688
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Bracket",
+            "children": [
+                15
+            ],
+            "translation": [
+                -70.5773696899414,
+                166.15684509277345,
+                -143.398193359375
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Bracket:PIV",
+            "mesh": 7,
+            "translation": [
+                70.5773696899414,
+                -166.15684509277345,
+                143.398193359375
+            ]
+        },
+        {
+            "name": "Lamp_Leg",
+            "children": [
+                17
+            ],
+            "translation": [
+                -87.73271942138672,
+                88.84181213378906,
+                -121.945556640625
+            ]
+        },
+        {
+            "name": "Lamp_Leg:PIV",
+            "mesh": 8,
+            "translation": [
+                87.73271942138672,
+                -88.84181213378906,
+                121.945556640625
+            ]
+        },
+        {
+            "name": "Lamp_Joint",
+            "children": [
+                19
+            ],
+            "translation": [
+                -102.91807556152344,
+                84.92557525634766,
+                -122.39016723632813
+            ]
+        },
+        {
+            "name": "Lamp_Joint:PIV",
+            "mesh": 9,
+            "translation": [
+                102.91807556152344,
+                -84.92557525634766,
+                122.39016723632813
+            ]
+        },
+        {
+            "name": "Lamp_Bolts",
+            "children": [
+                21
+            ],
+            "translation": [
+                -94.49716186523438,
+                48.67761993408203,
+                -121.82945251464844
+            ]
+        },
+        {
+            "name": "Lamp_Bolts:PIV",
+            "mesh": 10,
+            "translation": [
+                94.49716186523438,
+                -48.67761993408203,
+                121.82945251464844
+            ]
+        },
+        {
+            "name": "Lamp_Base",
+            "children": [
+                23
+            ],
+            "translation": [
+                -85.92557525634766,
+                11.22780418395996,
+                -122.21733856201172
+            ]
+        },
+        {
+            "name": "Lamp_Base:PIV",
+            "mesh": 11,
+            "translation": [
+                85.92557525634766,
+                -11.22780418395996,
+                122.21733856201172
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Lamp_Shade_Trim_4Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 11,
+                        "POSITION": 12,
+                        "TANGENT": 13,
+                        "TEXCOORD_0": 14
+                    },
+                    "indices": 10,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 16,
+                        "POSITION": 17,
+                        "TANGENT": 18,
+                        "TEXCOORD_0": 19
+                    },
+                    "indices": 15,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_OutterShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 21,
+                        "POSITION": 22,
+                        "TANGENT": 23,
+                        "TEXCOORD_0": 24
+                    },
+                    "indices": 20,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_InnerShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 26,
+                        "POSITION": 27,
+                        "TANGENT": 28,
+                        "TEXCOORD_0": 29
+                    },
+                    "indices": 25,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_HingeShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 31,
+                        "POSITION": 32,
+                        "TANGENT": 33,
+                        "TEXCOORD_0": 34
+                    },
+                    "indices": 30,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_Shade_BracketShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 36,
+                        "POSITION": 37,
+                        "TANGENT": 38,
+                        "TEXCOORD_0": 39
+                    },
+                    "indices": 35,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_LegShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 41,
+                        "POSITION": 42,
+                        "TANGENT": 43,
+                        "TEXCOORD_0": 44
+                    },
+                    "indices": 40,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_JointShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 46,
+                        "POSITION": 47,
+                        "TANGENT": 48,
+                        "TEXCOORD_0": 49
+                    },
+                    "indices": 45,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_BoltsShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 51,
+                        "POSITION": 52,
+                        "TANGENT": 53,
+                        "TEXCOORD_0": 54
+                    },
+                    "indices": 50,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Lamp_BaseShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 56,
+                        "POSITION": 57,
+                        "TANGENT": 58,
+                        "TEXCOORD_0": 59
+                    },
+                    "indices": 55,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Lamp_Shade_Trim_4Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 73920,
+            "max": [
+                49279
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_Trim_4Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49280,
+            "max": [
+                0.9998915791511536,
+                0.9999951720237732,
+                0.9976261258125304
+            ],
+            "min": [
+                -0.9988741278648377,
+                -0.9999952912330629,
+                -0.9983879923820496
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_4Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 591360,
+            "componentType": 5126,
+            "count": 49280,
+            "max": [
+                -38.507171630859378,
+                149.8360595703125,
+                -100.63280487060549
+            ],
+            "min": [
+                -57.99687194824219,
+                148.60797119140626,
+                -143.4165802001953
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_4Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49280,
+            "max": [
+                0.9999938011169434,
+                0.996992528438568,
+                0.9999953508377076,
+                1.0
+            ],
+            "min": [
+                -0.9999949932098388,
+                -0.9987717270851136,
+                -0.9999886751174928,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_Trim_4Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49280,
+            "max": [
+                0.968005895614624,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 147840,
+            "componentType": 5123,
+            "count": 68124,
+            "max": [
+                45415
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1182720,
+            "componentType": 5126,
+            "count": 45416,
+            "max": [
+                0.9993816614151,
+                0.9999898076057434,
+                0.995050847530365
+            ],
+            "min": [
+                -0.9975192546844482,
+                -0.9999902844429016,
+                -0.9949032068252564
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1727712,
+            "componentType": 5126,
+            "count": 45416,
+            "max": [
+                -16.709609985351564,
+                172.196044921875,
+                -102.67452239990236
+            ],
+            "min": [
+                -34.30496978759766,
+                170.96786499023438,
+                -141.38412475585938
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 788480,
+            "componentType": 5126,
+            "count": 45416,
+            "max": [
+                0.9999942183494568,
+                0.819631040096283,
+                0.9999931454658508,
+                1.0
+            ],
+            "min": [
+                -0.9999914765357972,
+                -0.7439228296279907,
+                -0.999994158744812,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_Trim_3Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 394240,
+            "componentType": 5126,
+            "count": 45416,
+            "max": [
+                0.955865740776062,
+                0.952416718006134
+            ],
+            "min": [
+                0.10894156247377396,
+                0.04114925861358643
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 284088,
+            "componentType": 5123,
+            "count": 38400,
+            "max": [
+                25566
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2272704,
+            "componentType": 5126,
+            "count": 25567,
+            "max": [
+                0.9961626529693604,
+                0.9999625086784364,
+                0.9961169362068176
+            ],
+            "min": [
+                -0.996152639389038,
+                -0.999962568283081,
+                -0.99619722366333
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2579508,
+            "componentType": 5126,
+            "count": 25567,
+            "max": [
+                -13.788118362426758,
+                185.18646240234376,
+                -99.4633331298828
+            ],
+            "min": [
+                -58.872840881347659,
+                140.6082000732422,
+                -144.54806518554688
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1515136,
+            "componentType": 5126,
+            "count": 25567,
+            "max": [
+                1.0,
+                0.9961662292480468,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9999643564224244,
+                -0.9961971044540404,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_Trim_2Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 757568,
+            "componentType": 5126,
+            "count": 25567,
+            "max": [
+                0.9027370810508728,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018018699483945969,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 360888,
+            "componentType": 5123,
+            "count": 81408,
+            "max": [
+                52303
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2886312,
+            "componentType": 5126,
+            "count": 52304,
+            "max": [
+                0.9999794960021972,
+                1.0,
+                0.9993844032287598
+            ],
+            "min": [
+                -0.9998840093612672,
+                -1.0,
+                -0.9993855357170104
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 3513960,
+            "componentType": 5126,
+            "count": 52304,
+            "max": [
+                -33.29328918457031,
+                185.2584686279297,
+                -99.08386993408205
+            ],
+            "min": [
+                -40.355255126953128,
+                140.58627319335938,
+                -144.7451171875
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1924208,
+            "componentType": 5126,
+            "count": 52304,
+            "max": [
+                0.999998927116394,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9392918348312378,
+                -0.999937891960144,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_Trim_1Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 962104,
+            "componentType": 5126,
+            "count": 52304,
+            "max": [
+                0.9980080127716065,
+                0.9981143474578856
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.05529952049255371
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_OutterShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 523704,
+            "componentType": 5123,
+            "count": 2400,
+            "max": [
+                1599
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_OutterShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 4141608,
+            "componentType": 5126,
+            "count": 1600,
+            "max": [
+                0.996093213558197,
+                1.0,
+                0.9961217641830444
+            ],
+            "min": [
+                -0.9961782693862916,
+                -1.0,
+                -0.9961497783660888
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_OutterShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 4160808,
+            "componentType": 5126,
+            "count": 1600,
+            "max": [
+                -14.223550796508788,
+                185.07557678222657,
+                -99.8239288330078
+            ],
+            "min": [
+                -58.48336410522461,
+                141.25140380859376,
+                -144.083740234375
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_OutterShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 2761072,
+            "componentType": 5126,
+            "count": 1600,
+            "max": [
+                1.0,
+                0.3546782433986664,
+                0.968019962310791,
+                1.0
+            ],
+            "min": [
+                -0.9934024810791016,
+                -0.4206309318542481,
+                -0.9998960494995116,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_OutterShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 1380536,
+            "componentType": 5126,
+            "count": 1600,
+            "max": [
+                0.8760865330696106,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_InnerShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 115200,
+            "max": [
+                76757
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_InnerShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 4180008,
+            "componentType": 5126,
+            "count": 76758,
+            "max": [
+                0.9969684481620788,
+                1.0,
+                0.9969114661216736
+            ],
+            "min": [
+                -0.997004806995392,
+                -1.0,
+                -0.9970608949661256
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_InnerShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 5101104,
+            "componentType": 5126,
+            "count": 76758,
+            "max": [
+                -14.858827590942385,
+                184.20721435546876,
+                -100.71847534179688
+            ],
+            "min": [
+                -57.72490692138672,
+                141.62075805664066,
+                -143.58456420898438
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_InnerShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 2786672,
+            "componentType": 5126,
+            "count": 76758,
+            "max": [
+                0.9999570250511168,
+                0.960928738117218,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9999745488166808,
+                -0.9795563817024232,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_InnerShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 1393336,
+            "componentType": 5126,
+            "count": 76758,
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.005504726897925139
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_HingeShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 528504,
+            "componentType": 5123,
+            "count": 3828,
+            "max": [
+                3778
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_HingeShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 6022200,
+            "componentType": 5126,
+            "count": 3779,
+            "max": [
+                0.9941078424453737,
+                0.9998003840446472,
+                0.9999619722366332
+            ],
+            "min": [
+                -0.9941081404685974,
+                -0.9808776378631592,
+                -0.9999619722366332
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_HingeShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 6067548,
+            "componentType": 5126,
+            "count": 3779,
+            "max": [
+                -33.88765716552735,
+                168.84976196289066,
+                -99.78115844726564
+            ],
+            "min": [
+                -38.61311340332031,
+                164.14285278320313,
+                -143.98568725585938
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_HingeShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 4014800,
+            "componentType": 5126,
+            "count": 3779,
+            "max": [
+                0.9999997615814208,
+                1.0,
+                0.9980390667915344,
+                1.0
+            ],
+            "min": [
+                -0.8939506411552429,
+                -1.0,
+                -0.9998003244400024,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_HingeShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 2007400,
+            "componentType": 5126,
+            "count": 3779,
+            "max": [
+                0.934869110584259,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018660059431567789,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_Shade_BracketShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 460800,
+            "componentType": 5125,
+            "count": 657408,
+            "max": [
+                437902
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_Shade_BracketShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 6112896,
+            "componentType": 5126,
+            "count": 437903,
+            "max": [
+                1.0,
+                1.0,
+                0.9999995231628418
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -0.9999992847442628
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_BracketShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 11367732,
+            "componentType": 5126,
+            "count": 437903,
+            "max": [
+                -35.79233932495117,
+                166.93182373046876,
+                -95.69342803955078
+            ],
+            "min": [
+                -70.98469543457031,
+                166.156982421875,
+                -148.26841735839845
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_Shade_BracketShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 4075264,
+            "componentType": 5126,
+            "count": 437903,
+            "max": [
+                1.0,
+                1.0,
+                0.8805340528488159,
+                1.0
+            ],
+            "min": [
+                -0.8790290355682373,
+                -1.0,
+                -0.8805238008499146,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_Shade_BracketShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 2037632,
+            "componentType": 5126,
+            "count": 437903,
+            "max": [
+                0.9980080127716065,
+                0.9987059235572816
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.3516726493835449
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_LegShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 3090432,
+            "componentType": 5125,
+            "count": 353280,
+            "max": [
+                234538
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_LegShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 16622568,
+            "componentType": 5126,
+            "count": 234539,
+            "max": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_LegShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 19437036,
+            "componentType": 5126,
+            "count": 234539,
+            "max": [
+                -70.84781646728516,
+                166.7266387939453,
+                -120.99552154541016
+            ],
+            "min": [
+                -104.61761474609377,
+                10.956979751586914,
+                -122.89559173583985
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_LegShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 11081712,
+            "componentType": 5126,
+            "count": 234539,
+            "max": [
+                1.0,
+                0.9996905326843262,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9998431205749512,
+                -0.9979616403579712,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_LegShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 5540856,
+            "componentType": 5126,
+            "count": 234539,
+            "max": [
+                0.6808384656906128,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0013589590089395645,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_JointShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 536160,
+            "componentType": 5123,
+            "count": 92160,
+            "max": [
+                61220
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_JointShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 22251504,
+            "componentType": 5126,
+            "count": 61221,
+            "max": [
+                1.0,
+                0.9997615218162536,
+                1.0
+            ],
+            "min": [
+                -0.9973958134651184,
+                -0.992897629737854,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_JointShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 22986156,
+            "componentType": 5126,
+            "count": 61221,
+            "max": [
+                -101.92001342773438,
+                86.20378875732422,
+                -121.44001007080078
+            ],
+            "min": [
+                -104.1700668334961,
+                83.67577362060547,
+                -122.38998413085938
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_JointShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 14834336,
+            "componentType": 5126,
+            "count": 61221,
+            "max": [
+                0.8298795223236084,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.8300234079360962,
+                -1.0,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_JointShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 7417168,
+            "componentType": 5126,
+            "count": 61221,
+            "max": [
+                0.9470267295837402,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001890272949822247,
+                0.001992047065868974
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_BoltsShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 720480,
+            "componentType": 5123,
+            "count": 8220,
+            "max": [
+                7857
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_BoltsShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 23720808,
+            "componentType": 5126,
+            "count": 7858,
+            "max": [
+                0.9900389909744264,
+                0.9874567985534668,
+                1.0
+            ],
+            "min": [
+                -0.9900391101837158,
+                -0.987456738948822,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_BoltsShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 23815104,
+            "componentType": 5126,
+            "count": 7858,
+            "max": [
+                -84.99464416503906,
+                85.8819580078125,
+                -119.98920440673828
+            ],
+            "min": [
+                -103.99967956542968,
+                11.47327995300293,
+                -123.6697006225586
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_BoltsShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 15813872,
+            "componentType": 5126,
+            "count": 7858,
+            "max": [
+                1.0,
+                0.8978421092033386,
+                0.9900391697883606,
+                1.0
+            ],
+            "min": [
+                -0.888446033000946,
+                -0.8825393319129944,
+                -0.9900389909744264,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_BoltsShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 7906936,
+            "componentType": 5126,
+            "count": 7858,
+            "max": [
+                0.9428033232688904,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018818429671227933,
+                0.001991868019104004
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Lamp_BaseShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 4503552,
+            "componentType": 5125,
+            "count": 177600,
+            "max": [
+                118095
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Lamp_BaseShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 23909400,
+            "componentType": 5126,
+            "count": 118096,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_BaseShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 25326552,
+            "componentType": 5126,
+            "count": 118096,
+            "max": [
+                -71.13552856445313,
+                11.22780418395996,
+                -107.42728424072266
+            ],
+            "min": [
+                -100.7156219482422,
+                10.497021675109864,
+                -137.00738525390626
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Lamp_BaseShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 15939600,
+            "componentType": 5126,
+            "count": 118096,
+            "max": [
+                1.0,
+                1.0,
+                0.8793398141860962,
+                1.0
+            ],
+            "min": [
+                -0.8793365955352783,
+                -1.0,
+                -0.8793397545814514,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Lamp_BaseShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 7969800,
+            "componentType": 5126,
+            "count": 118096,
+            "max": [
+                0.918588638305664,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001833510003052652,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Lamp/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 58701360,
+            "byteLength": 736920,
+            "target": 34963
+        },
+        {
+            "name": "Lamp/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 17829136,
+            "byteLength": 26743704,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Lamp/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 17829136,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Lamp/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 44572840,
+            "byteLength": 8914568,
+            "byteStride": 8,
+            "target": 34962
+        },
+        {
+            "name": "Lamp/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 53487408,
+            "byteLength": 5213952,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Lamp/data",
+            "byteLength": 59438280,
+            "uri": "Lamp0.bin"
+        }
+    ]
+}

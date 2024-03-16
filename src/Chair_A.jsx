@@ -26,7 +26,7 @@ export default function Chair_A_1(props) {
       "/textures/wood_diff_1.jpg",
       "/textures/wood_diff_2.jpg",
     ]);
-  const { chairARef, chairRotation, chairA } = useContext(ChairsContext);
+  const { chairARef, chairRotation, } = useContext(ChairsContext);
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
@@ -36,7 +36,7 @@ export default function Chair_A_1(props) {
   });
   const { currChair, setobjConfig, currObjMaterialRef, currBaseTexture } =
     useContext(GlobalStateContext);
-  const listeners = {};
+
   Chair_A_AO.flipY = false;
   wood2.wrapS = THREE.RepeatWrapping;
   wood2.wrapT = THREE.RepeatWrapping;
@@ -92,32 +92,7 @@ export default function Chair_A_1(props) {
       });
     }
   }, [currChair]);
-
-  useEffect(() => {
-    if (chairA) {
-      // Attach event handlers
-      listeners.onPointerOver = debounce(
-        (event) => {
-          console.log("Chair A hovered true", hovered);
-          setHovered(true);
-          event.stopPropagation();
-        },
-        500,
-        { leading: true }
-      );
-
-      listeners.onPointerOut = debounce((event) => {
-        console.log("Chair A hovered false", hovered);
-        setHovered(false);
-        event.stopPropagation();
-      }, 100);
-    } else {
-      // Remove event handlers
-      delete listeners.onPointerOver;
-      delete listeners.onPointerOut;
-    }
-  }, [chairA]);
-
+ 
   return (
     <animated.group
       {...spring}
@@ -147,8 +122,7 @@ export default function Chair_A_1(props) {
               geometry={nodes.Chair_APIV.geometry}
               material={woodMat1}
               position={[-1.118, 0, -1.352]}
-              onPointerOver={(event) => {
-                console.log("Chair A hovered true", hovered);
+              onPointerOver={(event) => { 
                 setHovered(true);
                 event.stopPropagation();
               }}

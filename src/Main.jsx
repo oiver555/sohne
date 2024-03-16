@@ -11,6 +11,8 @@ import AdBlock from "./AdBlock.jsx";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { Canvas } from "@react-three/fiber";
+import LivingRoom from "./LivingRoom.jsx";
 
 export default () => {
   const { outerHeight, outerWidth } = window;
@@ -46,7 +48,7 @@ export default () => {
         userSelect: "none",
       }}
     >
-      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden" }}>
+      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden",  }}>
         <div
           style={{
             flexDirection: "row",
@@ -280,7 +282,16 @@ export default () => {
             <div>STORAGE & CLOSET</div>
           </div>
         </div>
-
+        <div style={{display: "flex", justifyContent: "center", height: 600,}}>
+          <Canvas
+          shadows
+            style={{ height: "100%", flex:.6,alignSelf: "center",  }}
+          >
+            <LivingRoom/>
+          </Canvas>
+          <div style={{flex:.3, height: "100%" ,backgroundColor: "lime"}}></div>
+          </div>
+         
         <div style={{ margin: "50px 0px" }}>
           <BannerAd
             contentWidth={outerWidth * 0.8}

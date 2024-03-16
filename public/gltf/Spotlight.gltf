@@ -1,0 +1,1203 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                11,
+                9,
+                7,
+                5,
+                4,
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Spotlight_Wire1",
+            "children": [
+                1
+            ],
+            "translation": [
+                75.08216094970703,
+                264.1246337890625,
+                -264.5816040039063
+            ]
+        },
+        {
+            "name": "Spotlight_Wire1:PIV",
+            "mesh": 0,
+            "translation": [
+                -75.08216094970703,
+                -264.1246337890625,
+                264.5816040039063
+            ]
+        },
+        {
+            "name": "Spotlight_Screws",
+            "children": [
+                3
+            ],
+            "translation": [
+                79.81486511230469,
+                268.5423583984375,
+                -264.1705627441406
+            ]
+        },
+        {
+            "name": "Spotlight_Screws:PIV",
+            "mesh": 1,
+            "translation": [
+                -79.81486511230469,
+                -268.5423583984375,
+                264.1705627441406
+            ]
+        },
+        {
+            "name": "Spotlight_Inner",
+            "mesh": 2
+        },
+        {
+            "name": "Spotlight_Housing",
+            "children": [
+                6
+            ],
+            "translation": [
+                75.46172332763672,
+                254.8189697265625,
+                -264.2423095703125
+            ]
+        },
+        {
+            "name": "Spotlight_Housing:PIV",
+            "mesh": 3,
+            "translation": [
+                -75.46172332763672,
+                -254.8189697265625,
+                264.2423095703125
+            ]
+        },
+        {
+            "name": "Spotlight_Filament",
+            "children": [
+                8
+            ],
+            "translation": [
+                78.95762634277344,
+                249.56430053710936,
+                -264.1016540527344
+            ]
+        },
+        {
+            "name": "Spotlight_Filament:PIV",
+            "mesh": 4,
+            "translation": [
+                -78.95762634277344,
+                -249.56430053710936,
+                264.1016540527344
+            ]
+        },
+        {
+            "name": "Spotlight_Bracket",
+            "children": [
+                10
+            ],
+            "translation": [
+                78.25983428955078,
+                259.3263244628906,
+                -264.27752685546877
+            ]
+        },
+        {
+            "name": "Spotlight_Bracket:PIV",
+            "mesh": 5,
+            "translation": [
+                -78.25983428955078,
+                -259.3263244628906,
+                264.27752685546877
+            ]
+        },
+        {
+            "name": "Spotlight_Base",
+            "children": [
+                12
+            ],
+            "translation": [
+                75.542236328125,
+                268.4859619140625,
+                -264.2904052734375
+            ]
+        },
+        {
+            "name": "Spotlight_Base:PIV",
+            "mesh": 6,
+            "translation": [
+                -75.542236328125,
+                -268.4859619140625,
+                264.2904052734375
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Spotlight_Wire1Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_ScrewsShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_InnerShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 11,
+                        "POSITION": 12,
+                        "TANGENT": 13,
+                        "TEXCOORD_0": 14,
+                        "TEXCOORD_1": 15
+                    },
+                    "indices": 10,
+                    "mode": 4,
+                    "material": 0
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 17,
+                        "POSITION": 18,
+                        "TANGENT": 19,
+                        "TEXCOORD_0": 20
+                    },
+                    "indices": 16,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_HousingShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 22,
+                        "POSITION": 23,
+                        "TANGENT": 24,
+                        "TEXCOORD_0": 25
+                    },
+                    "indices": 21,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_FilamentShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 27,
+                        "POSITION": 28,
+                        "TANGENT": 29,
+                        "TEXCOORD_0": 30,
+                        "TEXCOORD_1": 31
+                    },
+                    "indices": 26,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_BracketShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 33,
+                        "POSITION": 34,
+                        "TANGENT": 35,
+                        "TEXCOORD_0": 36,
+                        "TEXCOORD_1": 37
+                    },
+                    "indices": 32,
+                    "mode": 4,
+                    "material": 0
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 39,
+                        "POSITION": 40,
+                        "TANGENT": 41,
+                        "TEXCOORD_1": 42
+                    },
+                    "indices": 38,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Spotlight_BaseShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 44,
+                        "POSITION": 45,
+                        "TANGENT": 46,
+                        "TEXCOORD_0": 47,
+                        "TEXCOORD_1": 48
+                    },
+                    "indices": 43,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Spotlight_Wire1Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 26676,
+            "max": [
+                17782
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_Wire1Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 17783,
+            "max": [
+                0.9999690651893616,
+                0.999836266040802,
+                0.9984570145606996
+            ],
+            "min": [
+                -0.9998956322669984,
+                -0.999830424785614,
+                -0.9991546869277954
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_Wire1Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 213396,
+            "componentType": 5126,
+            "count": 17783,
+            "max": [
+                189.86668395996098,
+                269.4460754394531,
+                -250.12478637695313
+            ],
+            "min": [
+                -38.52793884277344,
+                258.8032531738281,
+                -279.7950439453125
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_Wire1Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 17783,
+            "max": [
+                0.9999294877052308,
+                0.9999999403953552,
+                0.9999024868011476,
+                1.0
+            ],
+            "min": [
+                -0.9999321103096008,
+                -0.9803704023361206,
+                -0.9999054074287416,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_Wire1Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 17783,
+            "max": [
+                0.9980079531669616,
+                0.9982213377952576
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.108903706073761
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_ScrewsShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 53352,
+            "componentType": 5123,
+            "count": 9324,
+            "max": [
+                9313
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_ScrewsShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 426792,
+            "componentType": 5126,
+            "count": 9314,
+            "max": [
+                1.0,
+                0.9997894763946532,
+                0.999789535999298
+            ],
+            "min": [
+                -0.657306969165802,
+                -0.999789535999298,
+                -0.999789535999298
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_ScrewsShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 538560,
+            "componentType": 5126,
+            "count": 9314,
+            "max": [
+                190.1045074462891,
+                268.7181091308594,
+                -263.1587219238281
+            ],
+            "min": [
+                -30.4418888092041,
+                268.3589477539063,
+                -265.2431335449219
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_ScrewsShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 284528,
+            "componentType": 5126,
+            "count": 9314,
+            "max": [
+                1.0,
+                0.9999999403953552,
+                0.999677836894989,
+                1.0
+            ],
+            "min": [
+                -0.8976545333862305,
+                -0.747948408126831,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_ScrewsShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 142264,
+            "componentType": 5126,
+            "count": 9314,
+            "max": [
+                0.9980080127716065,
+                0.998041331768036
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.018722057342529298
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 72000,
+            "componentType": 5123,
+            "count": 6732,
+            "max": [
+                4547
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 650328,
+            "componentType": 5126,
+            "count": 4548,
+            "max": [
+                0.9996063709259032,
+                0.890424907207489,
+                0.9973876476287842
+            ],
+            "min": [
+                -0.9996063113212586,
+                -0.99259614944458,
+                -0.9988133311271668
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 704904,
+            "componentType": 5126,
+            "count": 4548,
+            "max": [
+                190.23989868164066,
+                250.70758056640626,
+                -258.6482849121094
+            ],
+            "min": [
+                -31.859682083129884,
+                247.37583923339845,
+                -269.7791748046875
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 433552,
+            "componentType": 5126,
+            "count": 4548,
+            "max": [
+                0.9999790191650392,
+                0.999991536140442,
+                0.9999982118606569,
+                1.0
+            ],
+            "min": [
+                -0.8531918525695801,
+                -1.0,
+                -0.999998152256012,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 216776,
+            "componentType": 5126,
+            "count": 4548,
+            "max": [
+                0.9980080723762512,
+                0.6709913015365601
+            ],
+            "min": [
+                0.002054797019809485,
+                0.03806138038635254
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_InnerShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 253160,
+            "componentType": 5126,
+            "count": 4548,
+            "max": [
+                0.9399428963661194,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018761339597404004,
+                0.001992047065868974
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_InnerShape#1/indices",
+            "bufferView": 0,
+            "byteOffset": 85464,
+            "componentType": 5123,
+            "count": 15552,
+            "max": [
+                15500
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_InnerShape#1/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 759480,
+            "componentType": 5126,
+            "count": 15501,
+            "max": [
+                0.999625325202942,
+                0.7881448864936829,
+                0.9994569420814514
+            ],
+            "min": [
+                -0.9999731183052064,
+                -0.9977654814720154,
+                -0.9977456331253052
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_InnerShape#1/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 945492,
+            "componentType": 5126,
+            "count": 15501,
+            "max": [
+                191.47799682617188,
+                251.56932067871098,
+                -256.8380126953125
+            ],
+            "min": [
+                -32.94658660888672,
+                245.58273315429688,
+                -271.5138244628906
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_InnerShape#1/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 506320,
+            "componentType": 5126,
+            "count": 15501,
+            "max": [
+                0.999980092048645,
+                0.9999956488609314,
+                0.9999988675117492,
+                1.0
+            ],
+            "min": [
+                -0.8927154541015625,
+                -0.9999850392341614,
+                -0.9999931454658508,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_InnerShape#1/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 289544,
+            "componentType": 5126,
+            "count": 15501,
+            "max": [
+                0.9980065822601318,
+                0.9980756044387816
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.03586757183074951
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_HousingShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 116568,
+            "componentType": 5123,
+            "count": 11160,
+            "max": [
+                7557
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_HousingShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1131504,
+            "componentType": 5126,
+            "count": 7558,
+            "max": [
+                0.9994577169418336,
+                0.9918873310089112,
+                0.9998087882995606
+            ],
+            "min": [
+                -0.9994576573371888,
+                -0.991887390613556,
+                -0.9998087882995606
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_HousingShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1222200,
+            "componentType": 5126,
+            "count": 7558,
+            "max": [
+                192.67417907714845,
+                264.9268798828125,
+                -250.9781951904297
+            ],
+            "min": [
+                -40.8828010559082,
+                244.73822021484376,
+                -278.5423889160156
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_HousingShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 754336,
+            "componentType": 5126,
+            "count": 7558,
+            "max": [
+                0.9999980330467224,
+                0.9999979734420776,
+                0.9999727010726928,
+                1.0
+            ],
+            "min": [
+                -0.8588842749595642,
+                -0.9999727606773377,
+                -0.9999728798866272,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_HousingShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 413552,
+            "componentType": 5126,
+            "count": 7558,
+            "max": [
+                0.9963210821151732,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0019886649679392578,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 138888,
+            "componentType": 5123,
+            "count": 8640,
+            "max": [
+                5951
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1312896,
+            "componentType": 5126,
+            "count": 5952,
+            "max": [
+                0.999772012233734,
+                0.9923827648162842,
+                0.9995477199554445
+            ],
+            "min": [
+                -0.999772012233734,
+                -0.9923827648162842,
+                -0.9995477795600892
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1384320,
+            "componentType": 5126,
+            "count": 5952,
+            "max": [
+                188.3938751220703,
+                249.9721832275391,
+                -260.1949768066406
+            ],
+            "min": [
+                -30.478614807128908,
+                249.1564178466797,
+                -268.00830078125
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 875264,
+            "componentType": 5126,
+            "count": 5952,
+            "max": [
+                0.9545629024505616,
+                0.9995787739753724,
+                0.999254584312439,
+                1.0
+            ],
+            "min": [
+                -0.9999536871910096,
+                -0.999579906463623,
+                -0.999264359474182,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 474016,
+            "componentType": 5126,
+            "count": 5952,
+            "max": [
+                0.3828811943531037,
+                0.4948984384536743
+            ],
+            "min": [
+                0.07096763700246811,
+                0.42380744218826296
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_FilamentShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 521632,
+            "componentType": 5126,
+            "count": 5952,
+            "max": [
+                0.9781873226165772,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0019524700473994017,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 156168,
+            "componentType": 5123,
+            "count": 2844,
+            "max": [
+                2817
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1455744,
+            "componentType": 5126,
+            "count": 2818,
+            "max": [
+                0.9994576573371888,
+                0.999104917049408,
+                0.9990209341049194
+            ],
+            "min": [
+                -0.9994576573371888,
+                -0.9991049766540529,
+                -0.9990209341049194
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1489560,
+            "componentType": 5126,
+            "count": 2818,
+            "max": [
+                192.35562133789066,
+                253.4976043701172,
+                -260.6897583007813
+            ],
+            "min": [
+                -35.84849548339844,
+                251.4174957275391,
+                -267.8653259277344
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 970496,
+            "componentType": 5126,
+            "count": 2818,
+            "max": [
+                0.4598252177238465,
+                0.999345600605011,
+                0.9988044500350952,
+                1.0
+            ],
+            "min": [
+                -0.7319366931915283,
+                -0.9813935160636902,
+                -0.8918449878692627,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 569248,
+            "componentType": 5126,
+            "count": 2818,
+            "max": [
+                0.9980080127716065,
+                0.9981794953346252
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.08792072534561157
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_BracketShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 591792,
+            "componentType": 5126,
+            "count": 2818,
+            "max": [
+                0.9460670948028565,
+                0.4682692289352417
+            ],
+            "min": [
+                0.12400948256254196,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_BracketShape#1/indices",
+            "bufferView": 0,
+            "byteOffset": 161856,
+            "componentType": 5123,
+            "count": 8172,
+            "max": [
+                8063
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_BracketShape#1/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1523376,
+            "componentType": 5126,
+            "count": 8064,
+            "max": [
+                0.9997461438179016,
+                1.0,
+                0.9994914531707764
+            ],
+            "min": [
+                -0.9997819066047669,
+                -1.0,
+                -0.9994817972183228
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BracketShape#1/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1620144,
+            "componentType": 5126,
+            "count": 8064,
+            "max": [
+                192.69744873046876,
+                267.6575927734375,
+                -260.4017333984375
+            ],
+            "min": [
+                -36.17778396606445,
+                251.4839782714844,
+                -268.1252136230469
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BracketShape#1/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1015584,
+            "componentType": 5126,
+            "count": 8064,
+            "max": [
+                1.0,
+                0.8416470289230347,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.7953660488128662,
+                -0.8430628776550293,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_BracketShape#1/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 614336,
+            "componentType": 5126,
+            "count": 8064,
+            "max": [
+                0.9460671544075012,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001888358034193516,
+                0.10474252700805664
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 178200,
+            "componentType": 5123,
+            "count": 34155,
+            "max": [
+                22535
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1716912,
+            "componentType": 5126,
+            "count": 22536,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 1987344,
+            "componentType": 5126,
+            "count": 22536,
+            "max": [
+                190.3305206298828,
+                271.14764404296877,
+                -262.2809753417969
+            ],
+            "min": [
+                -39.24604415893555,
+                265.8242797851563,
+                -266.2998046875
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1144608,
+            "componentType": 5126,
+            "count": 22536,
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 678848,
+            "componentType": 5126,
+            "count": 22536,
+            "max": [
+                1.0,
+                1.0049163103103638
+            ],
+            "min": [
+                -0.02499997615814209,
+                -0.004916309844702482
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Spotlight_BaseShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 859136,
+            "componentType": 5126,
+            "count": 22536,
+            "max": [
+                0.9681655168533324,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001932466053403914,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Spotlight/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 4802384,
+            "byteLength": 246510,
+            "target": 34963
+        },
+        {
+            "name": "Spotlight/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 1505184,
+            "byteLength": 2257776,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Spotlight/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1505184,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Spotlight/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 3762960,
+            "byteLength": 1039424,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Spotlight/data",
+            "byteLength": 5048894,
+            "uri": "Spotlight0.bin"
+        }
+    ]
+}

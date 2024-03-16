@@ -1,0 +1,334 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Vase_3_Main",
+            "children": [
+                1
+            ],
+            "translation": [
+                -115.9687728881836,
+                21.8762149810791,
+                -223.69894409179688
+            ]
+        },
+        {
+            "name": "Vase_3_Main:PIV",
+            "mesh": 0,
+            "translation": [
+                115.9687728881836,
+                -21.8762149810791,
+                223.69894409179688
+            ]
+        },
+        {
+            "name": "Vase_3_Beads",
+            "children": [
+                3
+            ],
+            "translation": [
+                -115.96868896484377,
+                21.75913429260254,
+                -223.69973754882813
+            ]
+        },
+        {
+            "name": "Vase_3_Beads:PIV",
+            "mesh": 1,
+            "translation": [
+                115.96868896484377,
+                -21.75913429260254,
+                223.69973754882813
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Vase_3_MainShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "Vase_3_BeadsShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Vase_3_MainShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 70272,
+            "max": [
+                63965
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Vase_3_MainShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 63966,
+            "max": [
+                1.0,
+                0.999972403049469,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Vase_3_MainShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 767592,
+            "componentType": 5126,
+            "count": 63966,
+            "max": [
+                -112.82064819335938,
+                29.722278594970704,
+                -220.5508270263672
+            ],
+            "min": [
+                -119.1168975830078,
+                14.03015422821045,
+                -226.84706115722657
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Vase_3_MainShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 63966,
+            "max": [
+                1.0,
+                0.9999736547470092,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -0.9999731779098512,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Vase_3_MainShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 63966,
+            "max": [
+                0.9413415789604188,
+                0.9980199933052064
+            ],
+            "min": [
+                0.001878925017081201,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Vase_3_BeadsShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 302784,
+            "max": [
+                301163
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Vase_3_BeadsShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1535184,
+            "componentType": 5126,
+            "count": 301164,
+            "max": [
+                0.9999998211860656,
+                0.9999666213989258,
+                0.9999905228614808
+            ],
+            "min": [
+                -0.9999998211860656,
+                -0.999972641468048,
+                -0.9999905824661256
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Vase_3_BeadsShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 5149152,
+            "componentType": 5126,
+            "count": 301164,
+            "max": [
+                -112.52816009521485,
+                29.59688949584961,
+                -220.2600860595703
+            ],
+            "min": [
+                -119.40921020507813,
+                13.921380043029786,
+                -227.13937377929688
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Vase_3_BeadsShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1023456,
+            "componentType": 5126,
+            "count": 301164,
+            "max": [
+                1.0,
+                0.9999998807907105,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9818097949028016,
+                -0.9999998807907105,
+                -0.9999998807907105,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Vase_3_BeadsShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 511728,
+            "componentType": 5126,
+            "count": 301164,
+            "max": [
+                0.9507042169570924,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001897613052278757,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Plant_Vase_3/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 18737376,
+            "byteLength": 140544,
+            "target": 34963
+        },
+        {
+            "name": "Plant_Vase_3/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 5842080,
+            "byteLength": 8763120,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Vase_3/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 5842080,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Vase_3/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 14605200,
+            "byteLength": 2921040,
+            "byteStride": 8,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Vase_3/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 17526240,
+            "byteLength": 1211136,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Plant_Vase_3/data",
+            "byteLength": 18877920,
+            "uri": "Plant_Vase_30.bin"
+        }
+    ]
+}

@@ -4,9 +4,8 @@ Command: npx gltfjsx@6.2.15 BKG_01.gltf
 */
 
 import React, { useRef } from "react";
-import { Plane, useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
-import { useControls } from "leva";
 
 export function BKG(props) {
   const { nodes, materials } = useGLTF("./gltf/BKG_01.gltf");

@@ -1,0 +1,1342 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                18,
+                16,
+                14,
+                12,
+                10,
+                8,
+                6,
+                4,
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "BeoPlay_Strap_1",
+            "children": [
+                1
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Strap_1:PIV",
+            "mesh": 0,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_2",
+            "children": [
+                3
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_2:PIV",
+            "mesh": 1,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_1",
+            "children": [
+                5
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_1:PIV",
+            "mesh": 2,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_2",
+            "children": [
+                7
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_2:PIV",
+            "mesh": 3,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_1",
+            "children": [
+                9
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_1:PIV",
+            "mesh": 4,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_5",
+            "children": [
+                11
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_5:PIV",
+            "mesh": 5,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_3",
+            "children": [
+                13
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_3:PIV",
+            "mesh": 6,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_2",
+            "children": [
+                15
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_2:PIV",
+            "mesh": 7,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_1",
+            "children": [
+                17
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_1:PIV",
+            "mesh": 8,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Back",
+            "children": [
+                19
+            ],
+            "translation": [
+                32.67455291748047,
+                57.54108047485352,
+                -48.453399658203128
+            ]
+        },
+        {
+            "name": "BeoPlay_Back:PIV",
+            "mesh": 9,
+            "translation": [
+                -32.67455291748047,
+                -57.54108047485352,
+                48.453399658203128
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "BeoPlay_Strap_Shape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_Shape2",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Front_1Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 11,
+                        "POSITION": 12,
+                        "TANGENT": 13,
+                        "TEXCOORD_0": 14
+                    },
+                    "indices": 10,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 16,
+                        "POSITION": 17,
+                        "TANGENT": 18,
+                        "TEXCOORD_0": 19
+                    },
+                    "indices": 15,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 21,
+                        "POSITION": 22,
+                        "TANGENT": 23,
+                        "TEXCOORD_0": 24
+                    },
+                    "indices": 20,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_Shape5",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 26,
+                        "POSITION": 27,
+                        "TANGENT": 28,
+                        "TEXCOORD_0": 29
+                    },
+                    "indices": 25,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_Shape3",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 31,
+                        "POSITION": 32,
+                        "TANGENT": 33,
+                        "TEXCOORD_0": 34
+                    },
+                    "indices": 30,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_Shape2",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 36,
+                        "POSITION": 37,
+                        "TANGENT": 38,
+                        "TEXCOORD_0": 39
+                    },
+                    "indices": 35,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_Button_Shape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 41,
+                        "POSITION": 42,
+                        "TANGENT": 43,
+                        "TEXCOORD_0": 44
+                    },
+                    "indices": 40,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "BeoPlay_BackShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 46,
+                        "POSITION": 47,
+                        "TANGENT": 48,
+                        "TEXCOORD_0": 49
+                    },
+                    "indices": 45,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "BeoPlay_Strap_Shape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 20304,
+            "max": [
+                13512
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Strap_Shape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 13513,
+            "max": [
+                0.9999182820320128,
+                0.9999959468841552,
+                0.9999823570251464
+            ],
+            "min": [
+                -0.9996702075004578,
+                -0.999997079372406,
+                -0.9999980926513672
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Strap_Shape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 162156,
+            "componentType": 5126,
+            "count": 13513,
+            "max": [
+                33.68372344970703,
+                58.46575927734375,
+                -31.31037712097168
+            ],
+            "min": [
+                22.29730033874512,
+                56.158817291259769,
+                -43.13827133178711
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Strap_Shape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 13513,
+            "max": [
+                0.9999825358390808,
+                0.9999969601631165,
+                0.9984959363937378,
+                1.0
+            ],
+            "min": [
+                -0.999935507774353,
+                -1.0,
+                -0.7279592156410217,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Strap_Shape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 13513,
+            "max": [
+                0.9980080723762512,
+                0.9981507062911988
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.07350760698318482
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Front_Shape2#0/indices",
+            "bufferView": 0,
+            "byteOffset": 40608,
+            "componentType": 5123,
+            "count": 4248,
+            "max": [
+                2795
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Front_Shape2#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 324312,
+            "componentType": 5126,
+            "count": 2796,
+            "max": [
+                0.0778084248304367,
+                0.9999940991401672,
+                0.1247592866420746
+            ],
+            "min": [
+                -0.0957971289753914,
+                0.988143265247345,
+                -0.120048925280571
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Front_Shape2#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 357864,
+            "componentType": 5126,
+            "count": 2796,
+            "max": [
+                51.40747833251953,
+                59.63216400146485,
+                -32.44017791748047
+            ],
+            "min": [
+                25.654312133789064,
+                58.97171401977539,
+                -55.50724411010742
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Front_Shape2#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 216208,
+            "componentType": 5126,
+            "count": 2796,
+            "max": [
+                0.578450083732605,
+                0.15328243374824525,
+                0.8161545991897583,
+                1.0
+            ],
+            "min": [
+                0.5701838135719299,
+                -0.14672675728797913,
+                0.8063734769821167,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Front_Shape2#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 108104,
+            "componentType": 5126,
+            "count": 2796,
+            "max": [
+                0.5435793399810791,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001084989053197205,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Front_1Shape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 719277,
+            "max": [
+                470806
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Front_1Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 391416,
+            "componentType": 5126,
+            "count": 470807,
+            "max": [
+                0.9998266100883484,
+                0.9999994039535524,
+                0.99986469745636
+            ],
+            "min": [
+                -0.999826431274414,
+                -0.999800741672516,
+                -0.99986469745636
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Front_1Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 6041100,
+            "componentType": 5126,
+            "count": 470807,
+            "max": [
+                51.73295974731445,
+                59.718292236328128,
+                -32.18830871582031
+            ],
+            "min": [
+                25.344207763671876,
+                58.751220703125,
+                -55.91329574584961
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Front_1Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 260944,
+            "componentType": 5126,
+            "count": 470807,
+            "max": [
+                0.811005711555481,
+                0.9999735951423644,
+                0.8681581020355225,
+                1.0
+            ],
+            "min": [
+                -0.8890536427497864,
+                -0.9999711513519288,
+                -0.832130491733551,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Front_1Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 130472,
+            "componentType": 5126,
+            "count": 470807,
+            "max": [
+                0.9385003447532654,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001873253961093724,
+                0.001992047065868974
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2#0/indices",
+            "bufferView": 0,
+            "byteOffset": 49104,
+            "componentType": 5123,
+            "count": 29994,
+            "max": [
+                6096
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 11690784,
+            "componentType": 5126,
+            "count": 6097,
+            "max": [
+                0.9997974038124085,
+                0.9999997615814208,
+                0.9999983310699464
+            ],
+            "min": [
+                -0.9998854398727416,
+                -0.9999986290931702,
+                -0.9996951818466188
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 11763948,
+            "componentType": 5126,
+            "count": 6097,
+            "max": [
+                51.25320816040039,
+                58.66079330444336,
+                -33.01220703125
+            ],
+            "min": [
+                26.191537857055665,
+                56.50930404663086,
+                -55.39899444580078
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 7793856,
+            "componentType": 5126,
+            "count": 6097,
+            "max": [
+                0.9999632835388184,
+                0.9999971389770508,
+                0.9999756813049316,
+                1.0
+            ],
+            "min": [
+                -0.9999367594718932,
+                -0.9999947547912598,
+                -0.9497032761573792,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Frame_Shape2#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 3896928,
+            "componentType": 5126,
+            "count": 6097,
+            "max": [
+                0.9545652270317078,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001905319979414344,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 109092,
+            "componentType": 5123,
+            "count": 7812,
+            "max": [
+                2233
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 11837112,
+            "componentType": 5126,
+            "count": 2234,
+            "max": [
+                0.940453052520752,
+                0.9975810647010804,
+                0.9998161792755128
+            ],
+            "min": [
+                -0.957547664642334,
+                -0.9983959794044496,
+                -0.9999430179595948
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 11863920,
+            "componentType": 5126,
+            "count": 2234,
+            "max": [
+                51.7061882019043,
+                59.06134033203125,
+                -32.23442459106445
+            ],
+            "min": [
+                25.41426277160645,
+                56.10821914672852,
+                -55.84939193725586
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 7891408,
+            "componentType": 5126,
+            "count": 2234,
+            "max": [
+                0.9999037981033324,
+                0.9168200492858888,
+                0.9772748351097108,
+                1.0
+            ],
+            "min": [
+                -0.9999138116836548,
+                -0.9177250266075134,
+                -0.8703400492668152,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Frame_1Shape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 3945704,
+            "componentType": 5126,
+            "count": 2234,
+            "max": [
+                0.9051913022994996,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018067690543830397,
+                0.001991868019104004
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Button_Shape5#0/indices",
+            "bufferView": 0,
+            "byteOffset": 124716,
+            "componentType": 5123,
+            "count": 9720,
+            "max": [
+                6467
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Button_Shape5#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 11890728,
+            "componentType": 5126,
+            "count": 6468,
+            "max": [
+                0.9970337748527528,
+                0.99973064661026,
+                0.9955052137374878
+            ],
+            "min": [
+                -0.9970346093177797,
+                -0.9997302293777466,
+                -0.9955053329467772
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape5#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 11968344,
+            "componentType": 5126,
+            "count": 6468,
+            "max": [
+                24.62957191467285,
+                57.663761138916019,
+                -35.34917068481445
+            ],
+            "min": [
+                23.454240798950197,
+                56.61280822753906,
+                -36.553741455078128
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape5#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 7927152,
+            "componentType": 5126,
+            "count": 6468,
+            "max": [
+                0.9971506595611572,
+                0.999992609024048,
+                0.9991661310195924,
+                1.0
+            ],
+            "min": [
+                -0.9975640773773192,
+                -0.999992609024048,
+                -0.8287769556045532,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Button_Shape5#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 3963576,
+            "componentType": 5126,
+            "count": 6468,
+            "max": [
+                0.9980080723762512,
+                0.9981284737586976
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.06235331296920777
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Button_Shape3#0/indices",
+            "bufferView": 0,
+            "byteOffset": 144156,
+            "componentType": 5123,
+            "count": 1794,
+            "max": [
+                1188
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Button_Shape3#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 12045960,
+            "componentType": 5126,
+            "count": 1189,
+            "max": [
+                0.9915157556533814,
+                0.9982255697250366,
+                0.9934088587760924
+            ],
+            "min": [
+                -0.8159220814704895,
+                -0.9982249736785888,
+                -0.5780954360961914
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape3#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 12060228,
+            "componentType": 5126,
+            "count": 1189,
+            "max": [
+                36.71489715576172,
+                58.04401779174805,
+                -34.271095275878909
+            ],
+            "min": [
+                35.67359924316406,
+                57.04124450683594,
+                -35.1662712097168
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape3#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 8030640,
+            "componentType": 5126,
+            "count": 1189,
+            "max": [
+                0.993371844291687,
+                0.24483945965766908,
+                0.9938180446624756,
+                1.0
+            ],
+            "min": [
+                -0.9933640956878662,
+                -0.4704707860946655,
+                -0.8383297920227051,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Button_Shape3#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 4015320,
+            "componentType": 5126,
+            "count": 1189,
+            "max": [
+                0.9442355036735536,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018847020110115409,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Button_Shape2#0/indices",
+            "bufferView": 0,
+            "byteOffset": 147744,
+            "componentType": 5123,
+            "count": 2454,
+            "max": [
+                1607
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Button_Shape2#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 12074496,
+            "componentType": 5126,
+            "count": 1608,
+            "max": [
+                0.9915180802345276,
+                0.9999558329582214,
+                0.993414580821991
+            ],
+            "min": [
+                -0.8159223198890686,
+                -0.9999558329582214,
+                -0.5780946016311646
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape2#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 12093792,
+            "componentType": 5126,
+            "count": 1608,
+            "max": [
+                39.7802734375,
+                58.075233459472659,
+                -35.667991638183597
+            ],
+            "min": [
+                37.64644241333008,
+                57.0606689453125,
+                -37.33636093139649
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape2#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 8049664,
+            "componentType": 5126,
+            "count": 1608,
+            "max": [
+                0.9933775663375856,
+                0.24532786011695865,
+                0.99379962682724,
+                1.0
+            ],
+            "min": [
+                -0.6110470294952393,
+                -0.9999953508377076,
+                -0.8381080627441406,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Button_Shape2#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 4024832,
+            "componentType": 5126,
+            "count": 1608,
+            "max": [
+                0.9980080127716065,
+                0.998043417930603
+            ],
+            "min": [
+                0.0019920319318771364,
+                0.019765377044677736
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_Button_Shape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 152652,
+            "componentType": 5123,
+            "count": 1794,
+            "max": [
+                1200
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_Button_Shape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 12113088,
+            "componentType": 5126,
+            "count": 1201,
+            "max": [
+                0.9915129542350768,
+                0.9982253909111024,
+                0.9934155344963074
+            ],
+            "min": [
+                -0.8159230947494507,
+                -0.9982261657714844,
+                -0.578094482421875
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 12127500,
+            "componentType": 5126,
+            "count": 1201,
+            "max": [
+                41.768192291259769,
+                58.09677505493164,
+                -37.8514404296875
+            ],
+            "min": [
+                40.72607421875,
+                57.093994140625,
+                -38.74776840209961
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_Button_Shape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 8075392,
+            "componentType": 5126,
+            "count": 1201,
+            "max": [
+                0.9933713674545288,
+                0.2448769807815552,
+                0.993795931339264,
+                1.0
+            ],
+            "min": [
+                -0.9933769702911376,
+                -0.47044020891189577,
+                -0.8383314609527588,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_Button_Shape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 4037696,
+            "componentType": 5126,
+            "count": 1201,
+            "max": [
+                0.9444571137428284,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018851440399885176,
+                0.001992047065868974
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "BeoPlay_BackShape#0/indices",
+            "bufferView": 4,
+            "byteOffset": 2877108,
+            "componentType": 5125,
+            "count": 719277,
+            "max": [
+                462738
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "BeoPlay_BackShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 12141912,
+            "componentType": 5126,
+            "count": 462739,
+            "max": [
+                0.9998265504837036,
+                0.9998008012771606,
+                0.99986469745636
+            ],
+            "min": [
+                -0.9998264908790588,
+                -0.9999986886978148,
+                -0.99986469745636
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_BackShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 17694780,
+            "componentType": 5126,
+            "count": 462739,
+            "max": [
+                51.75910949707031,
+                56.416873931884769,
+                -32.19516372680664
+            ],
+            "min": [
+                25.37034797668457,
+                55.44990158081055,
+                -55.92013931274414
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "BeoPlay_BackShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 8094608,
+            "componentType": 5126,
+            "count": 462739,
+            "max": [
+                0.8887062668800354,
+                0.999968409538269,
+                0.8318848013877869,
+                1.0
+            ],
+            "min": [
+                -0.8108228445053101,
+                -0.999971330165863,
+                -0.8690306544303894,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "BeoPlay_BackShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 4047304,
+            "componentType": 5126,
+            "count": 462739,
+            "max": [
+                0.938503921031952,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0018732609460130337,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "BeoPlay/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 52249512,
+            "byteLength": 156240,
+            "target": 34963
+        },
+        {
+            "name": "BeoPlay/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 15498432,
+            "byteLength": 23247648,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "BeoPlay/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 15498432,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "BeoPlay/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 38746080,
+            "byteLength": 7749216,
+            "byteStride": 8,
+            "target": 34962
+        },
+        {
+            "name": "BeoPlay/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 46495296,
+            "byteLength": 5754216,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "name": "BeoPlay/data",
+            "byteLength": 52405752,
+            "uri": "BeoPlay0.bin"
+        }
+    ]
+}

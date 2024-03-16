@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Plant_Grass_Straws",
+            "children": [
+                1
+            ],
+            "translation": [
+                -118.23660278320313,
+                62.38864135742188,
+                -248.30577087402345
+            ]
+        },
+        {
+            "name": "Plant_Grass_Straws:PIV",
+            "mesh": 0,
+            "translation": [
+                118.23660278320313,
+                -62.38864135742188,
+                248.30577087402345
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Plant_Grass_StrawsShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Plant_Grass_StrawsShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 82692,
+            "max": [
+                82672
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Plant_Grass_StrawsShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 82673,
+            "max": [
+                0.999999701976776,
+                0.4253076016902924,
+                0.9999998807907105
+            ],
+            "min": [
+                -0.9999998807907105,
+                -0.45583269000053408,
+                -0.9999999403953552
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_Grass_StrawsShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 992076,
+            "componentType": 5126,
+            "count": 82673,
+            "max": [
+                -106.30799102783205,
+                102.32160186767578,
+                -231.4319610595703
+            ],
+            "min": [
+                -130.1652069091797,
+                22.45568084716797,
+                -265.1795959472656
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Plant_Grass_StrawsShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 82673,
+            "max": [
+                0.9999996423721314,
+                0.6292359232902527,
+                0.9999996423721314,
+                1.0
+            ],
+            "min": [
+                -0.9999998211860656,
+                -0.6651990413665772,
+                -0.9999995827674866,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Plant_Grass_StrawsShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 82673,
+            "max": [
+                0.9258880019187928,
+                0.9980079531669616
+            ],
+            "min": [
+                0.001848079962655902,
+                0.0019919280894100668
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Plant_Straws/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 3968304,
+            "byteLength": 330768,
+            "target": 34963
+        },
+        {
+            "name": "Plant_Straws/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 1322768,
+            "byteLength": 1984152,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Straws/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1322768,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Plant_Straws/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 3306920,
+            "byteLength": 661384,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Plant_Straws/data",
+            "byteLength": 4299072,
+            "uri": "Plant_Straws0.bin"
+        }
+    ]
+}

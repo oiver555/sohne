@@ -1,0 +1,357 @@
+{
+    "asset": {
+        "copyright": "(C)2024 osain",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Window_Glass",
+            "children": [
+                1
+            ],
+            "translation": [
+                -130.53475952148438,
+                142.75840759277345,
+                34.60515594482422
+            ]
+        },
+        {
+            "name": "Window_Glass:PIV",
+            "mesh": 0,
+            "translation": [
+                130.53475952148438,
+                -142.75840759277345,
+                -34.60515594482422
+            ]
+        },
+        {
+            "name": "Window",
+            "children": [
+                3
+            ],
+            "translation": [
+                74.64459228515625,
+                129.13072204589845,
+                -1.351769208908081
+            ]
+        },
+        {
+            "name": "Window:PIV",
+            "mesh": 1,
+            "translation": [
+                -74.64459228515625,
+                -129.13072204589845,
+                1.351769208908081
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Window_GlassShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "WindowShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9,
+                        "TEXCOORD_1": 10
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 1
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert2",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "name": "lambert1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Window_GlassShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 72,
+            "max": [
+                47
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Window_GlassShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 48,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Window_GlassShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 576,
+            "componentType": 5126,
+            "count": 48,
+            "max": [
+                -127.68734741210938,
+                258.3949890136719,
+                323.2632141113281
+            ],
+            "min": [
+                -133.38217163085938,
+                27.12182998657227,
+                -254.05288696289066
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Window_GlassShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 48,
+            "max": [
+                1.0,
+                1.0,
+                0.4109924733638764,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -0.41086483001708987,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Window_GlassShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 48,
+            "max": [
+                0.7944720983505249,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "WindowShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 144,
+            "componentType": 5123,
+            "count": 1512,
+            "max": [
+                1189
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "WindowShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 1152,
+            "componentType": 5126,
+            "count": 1190,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "WindowShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 15432,
+            "componentType": 5126,
+            "count": 1190,
+            "max": [
+                -125.60887908935549,
+                265.5901489257813,
+                330.8176574707031
+            ],
+            "min": [
+                -135.5850830078125,
+                19.082826614379884,
+                -263.521240234375
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "WindowShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 768,
+            "componentType": 5126,
+            "count": 1190,
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "WindowShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 384,
+            "componentType": 5126,
+            "count": 1190,
+            "max": [
+                0.8938758969306946,
+                0.9980079531669616
+            ],
+            "min": [
+                0.0017841840162873269,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "WindowShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 9904,
+            "componentType": 5126,
+            "count": 1190,
+            "max": [
+                383.8743286132813,
+                23.665307998657228
+            ],
+            "min": [
+                -383.8743286132813,
+                -131.19961547851566
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Windows/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 68944,
+            "byteLength": 3168,
+            "target": 34963
+        },
+        {
+            "name": "Windows/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 19808,
+            "byteLength": 29712,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Windows/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 19808,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Windows/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 49520,
+            "byteLength": 19424,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Windows/data",
+            "byteLength": 72112,
+            "uri": "Windows0.bin"
+        }
+    ]
+}

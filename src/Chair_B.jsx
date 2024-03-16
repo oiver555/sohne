@@ -7,10 +7,11 @@ import {
   Selection,
 } from "@react-three/postprocessing";
 import * as THREE from "three";
-import { animated } from "@react-spring/three";
+import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { KernelSize } from "postprocessing";
-import { debounce } from "lodash";
+import { useGesture } from "react-use-gesture";
+
 export default function Chair_B(props) {
   console.log("[Chair.B.js]");
   const { nodes } = useMemo(() => useGLTF("./gltf/Chair_B.glb"));
@@ -49,9 +50,7 @@ export default function Chair_B(props) {
     "/textures/polka_dot.jpg",
     "/textures/red.jpg",
     "/textures/cyan.jpg",
-  ]);
-  const cushionListeners = {};
-  const woodListeners = {};
+  ]); 
 
   polkaDot.wrapS = THREE.RepeatWrapping;
   polkaDot.wrapT = THREE.RepeatWrapping;
@@ -106,6 +105,14 @@ export default function Chair_B(props) {
     envMapIntensity: 0.4,
   });
 
+  const [spring, set] = useSpring(() => ({
+    rotation: [0, 0, 0],
+    config: { friction: 10 },
+  }));
+  const bind = useGesture({
+    onDrag: ({ offset: [x] }) => (chairBRef.current.rotation.y = x * 0.01),
+  });
+
   useEffect(() => {
     if (currChair === "b") {
       setobjConfig({
@@ -128,6 +135,8 @@ export default function Chair_B(props) {
       position={[19.8, 0, 14]}
       rotation-y={chairRotation.rotate}
       scale={0.104}
+      {...spring}
+      {...bind()}
     >
       <group rotation={[0, 1.4, 0]}>
         <Selection>
