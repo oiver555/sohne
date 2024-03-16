@@ -56,12 +56,7 @@ const LivingRoom = (props) => {
   const aspect = size.width / size.height;
   const { livingRoomCam } = useContext(SceneContext);
   const controls = useRef();
-
-  //{x: 47.01568612562875, y: 132.1859616066085, z: 177.64551262466014}
-  //{isQuaternion: true, _x: -0.06812430197974613, _y: -0.012731799266604484, _z: -0.0008694357388396729, _w: 0.9975952209431955, …}
-  //rotation _Euler {isEuler: true, _x: -0.13640921360881023, _y: -0.02528659947261034, _z: -0.0034704961958778365, _order: 'XYZ', …}
-
-  //target  _Vector3 {x: 52.74883963717333, y: 101.36071370982877, z: -46.92741879163709}
+ 
   return (
       <>
         <PerspectiveCamera
@@ -138,20 +133,21 @@ const LivingRoom = (props) => {
 };
 export default LivingRoom;
 //{x:65, y:137, z:153}
+//52, 101, -46
 function Effects() {
   const { size } = useThree();
   useFrame((state, delta) => {
     easing.damp3(
       state.camera.position,
       [
-        state.pointer.x ,
-        1 + state.pointer.y / 2,
-        8 + Math.atan(state.pointer.x * 2),
+        state.pointer.x + 65,
+         state.pointer.y + 137  ,
+         state.pointer.x + 153,
       ],
       0.3,
       delta
     );
-    state.camera.lookAt(state.camera.position.x * 0.9, 0, -4);
+    state.camera.lookAt(state.camera.position.x * 1, 135, -4);
   });
   return (
     <EffectComposer
