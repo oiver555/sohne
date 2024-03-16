@@ -56,31 +56,31 @@ const LivingRoom = (props) => {
   const aspect = size.width / size.height;
   const { livingRoomCam } = useContext(SceneContext);
   const controls = useRef();
- 
+
   return (
-      <>
-        <PerspectiveCamera
-          ref={livingRoomCam}
-          fov={50}
-          filmGauge={135}
-          makeDefault
-          aspect={size.width / size.height}
-          left={-1}
-          right={1}
-          top={1}
-          bottom={-1}
-          near={0.1}
-          far={3000}
-          position={[65, 137, 153]}
-          rotation={[-0.2, -0, -0]}
-        /> 
-        <OrbitControls
-          makeDefault
-          ref={controls}
-          position={[65, 137, 153]}
-          target={[52, 101, -46]} 
-        />
-        <Effects />
+    <>
+      <PerspectiveCamera
+        ref={livingRoomCam}
+        fov={50}
+        filmGauge={135}
+        makeDefault
+        aspect={size.width / size.height}
+        left={-1}
+        right={1}
+        top={1}
+        bottom={-1}
+        near={0.1}
+        far={3000}
+        position={[65, 137, 153]}
+        rotation={[-0.2, -0, -0]}
+      />
+      <OrbitControls
+        makeDefault
+        ref={controls}
+        position={[65, 137, 153]}
+        target={[52, 101, -46]}
+      />
+      <Effects />
       <axesHelper args={[5]} />
       <directionalLight
         castShadow
@@ -139,15 +139,15 @@ function Effects() {
   useFrame((state, delta) => {
     easing.damp3(
       state.camera.position,
-      [
-        state.pointer.x + 65,
-         state.pointer.y + 137  ,
-         state.pointer.x + 153,
-      ],
+      [state.pointer.x + 65, state.pointer.y + 153, state.pointer.x + 153],
       0.3,
       delta
     );
-    state.camera.lookAt(state.camera.position.x * 1, 135, -4);
+    state.camera.lookAt(
+      state.camera.position.x * (state.pointer.x * 0.8) + 50,
+      state.camera.position.y * (state.pointer.y * 0.1) + 135,
+      -4
+    );
   });
   return (
     <EffectComposer
@@ -156,12 +156,12 @@ function Effects() {
       autoClear={false}
       multisampling={4}
     >
-      {/* <N8AO
+      <N8AO
         halfRes
         aoSamples={5}
         aoRadius={0.4}
         distanceFalloff={0.75}
-        intensity={1}
+        intensity={0}
       />
       <Outline
         visibleEdgeColor="white"
@@ -170,8 +170,8 @@ function Effects() {
         width={size.width * 1.25}
         edgeStrength={10}
       />
-      <TiltShift2 samples={5} blur={0.1} />
-      <ToneMapping /> */}
+      <TiltShift2 samples={5} blur={0} />
+      <ToneMapping />
     </EffectComposer>
   );
 }
