@@ -9,13 +9,14 @@ import * as THREE from "three";
 export function AretiTable(props) {
   const { nodes, materials } = useGLTF("./gltf/AretiTable.glb");
   const [table] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Areti_Triangle_Table_Areti_Triangle_TableShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Areti_Triangle_Table_Areti_Triangle_TableShape_rmanDefaultBakeDisplay.png",
   ]);
 
   table.flipY = false;
 
   const TableMat = new THREE.MeshStandardMaterial({
-    lightMap: table,
+    map: table,
+    envMapIntensity: 0
   });
   return (
     <group {...props} dispose={null}>

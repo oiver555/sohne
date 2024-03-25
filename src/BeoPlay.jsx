@@ -6,16 +6,16 @@ import * as THREE from "three";
 export function BeoPlay(props) {
   const { nodes, materials } = useGLTF("/gltf/BeoPlay.glb");
   const [front1,  strap, button3, frame1, button5, front2, button1, button2, back, frame2 ] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Front_1_BeoPlay_Front_1Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Strap_1_BeoPlay_Strap_Shape1_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Button_3_BeoPlay_Button_Shape3_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Frame_1_BeoPlay_Frame_1Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Button_5_BeoPlay_Button_Shape5_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Front_2_BeoPlay_Front_Shape2_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Button_1_BeoPlay_Button_Shape1_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Button_2_BeoPlay_Button_Shape2_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Back_BeoPlay_BackShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__BeoPlay_Frame_2_BeoPlay_Frame_Shape2_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Front_1_BeoPlay_Front_1Shape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Strap_1_BeoPlay_Strap_Shape1_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Button_3_BeoPlay_Button_Shape3_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Frame_1_BeoPlay_Frame_1Shape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Button_5_BeoPlay_Button_Shape5_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Front_2_BeoPlay_Front_Shape2_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Button_1_BeoPlay_Button_Shape1_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Button_2_BeoPlay_Button_Shape2_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Back_BeoPlay_BackShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__BeoPlay_Frame_2_BeoPlay_Frame_Shape2_rmanDefaultBakeDisplay.png",
   ]);
 
   front1.flipY = false;
@@ -30,35 +30,45 @@ export function BeoPlay(props) {
   frame2.flipY = false;
 
   const front1Mat = new THREE.MeshStandardMaterial({
-    lightMap: front1,
+    map: front1,
+    envMapIntensity:0
     
   });
   const front2Mat = new THREE.MeshStandardMaterial({
-    lightMap: front2,
+    map: front2,
+    envMapIntensity:0
   });
   const backMat = new THREE.MeshStandardMaterial({
-    lightMap: back,
+    map: back,
+    envMapIntensity:0
   });
   const strapMat = new THREE.MeshStandardMaterial({
-    lightMap: strap,
+    map: strap,
+    envMapIntensity:0
   });
   const button1Mat = new THREE.MeshStandardMaterial({
-    lightMap: button1,
+    map: button1,
+    envMapIntensity:0
   });
   const button2Mat = new THREE.MeshStandardMaterial({
-    lightMap: button2,
+    map: button2,
+    envMapIntensity:0
   });
   const button3Mat = new THREE.MeshStandardMaterial({
-    lightMap: button3,
+    map: button3,
+    envMapIntensity:0
   });
   const button5Mat = new THREE.MeshStandardMaterial({
-    lightMap: button5,
+    map: button5,
+    envMapIntensity:0
   });
   const frame1Mat = new THREE.MeshStandardMaterial({
-    lightMap: frame1,
+    map: frame1,
+    envMapIntensity:0
   });
   const frame2Mat = new THREE.MeshStandardMaterial({
-    lightMap: frame2,
+    map: frame2,
+    envMapIntensity:0
   });
   return (
     <group {...props} dispose={null}>

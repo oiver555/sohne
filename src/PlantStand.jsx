@@ -13,6 +13,11 @@ export function PlantStand(props) {
   
   const standMat = new THREE.MeshStandardMaterial({
     lightMap: stand,
+    color: 'rgb(10,10,50)',
+    metalness: 0,
+    roughness: .2,
+    side: THREE.DoubleSide,
+    envMapIntensity: 1
   });
    
 

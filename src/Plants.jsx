@@ -16,10 +16,15 @@ export function Plants(props) {
     
   
   const plantStrawsMat = new THREE.MeshStandardMaterial({
-    lightMap: plantStraws,
+    color : "lime",
+    envMapIntensity: .1,
+    // emissive: .1,
+
   });
   const plantStemsMat = new THREE.MeshStandardMaterial({
-    lightMap: plantStems,
+    color : "brown",
+    envMapIntensity: .1,
+    // emissive: .1
   });
    
   return (
@@ -42,7 +47,7 @@ export function Plants(props) {
           position={[114.978, -56.717, 209.881]}
         />
       </group>
-      <group position={[-114.938, 59.424, -210.055]}>
+      {/* <group position={[-114.938, 59.424, -210.055]}>
         <mesh
           castShadow
           receiveShadow
@@ -50,7 +55,7 @@ export function Plants(props) {
           material={materials["lambert1.033"]}
           position={[114.938, -59.424, 210.055]}
         />
-      </group>
+      </group> */}
     </group>
   );
 }

@@ -19,10 +19,18 @@ export function PlantVase6(props) {
   
   const plantVaseMainMat = new THREE.MeshStandardMaterial({
     lightMap: plantVaseMain,
+    color: 'blue',
+    metalness: .3,
+    roughness: .2,
+    side: THREE.DoubleSide
   });
   
   const plantVaseBeadsMat = new THREE.MeshStandardMaterial({
     lightMap: plantVaseBeads,
+    color: 'blue',
+    metalness: .3,
+    roughness: .2,
+    side: THREE.DoubleSide
   });
   return (
     <group {...props} dispose={null}>

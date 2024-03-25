@@ -21,10 +21,21 @@ export function PlantVase5(props) {
   
   const plantVaseMainMat = new THREE.MeshStandardMaterial({
     lightMap: plantVaseMain,
+    color: 'pink',
+    metalness: .3,
+    roughness: .2,
+    side: THREE.DoubleSide,
+    envMapIntensity: .2
   });
   
   const plantVaseBeadsMat = new THREE.MeshStandardMaterial({
     lightMap: plantVaseBeads,
+    color: 'gold',
+    metalness: .3,
+    roughness: .2,
+    side: THREE.DoubleSide,
+    envMapIntensity: .2
+
   });
 
   return (

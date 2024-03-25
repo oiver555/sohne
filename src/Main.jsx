@@ -29,7 +29,6 @@ export default () => {
 
       if (isEndReach) {
         // You have reached the bottom of the container
-
         rightCheveron.current.style.opacity = 0;
         leftCheveron.current.style.opacity = 1;
       } else if (scrollLeft === 0) {
@@ -48,7 +47,7 @@ export default () => {
         userSelect: "none",
       }}
     >
-      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden",  }}>
+      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden" }}>
         <div
           style={{
             flexDirection: "row",
@@ -282,16 +281,122 @@ export default () => {
             <div>STORAGE & CLOSET</div>
           </div>
         </div>
-        <div style={{display: "flex", justifyContent: "center", height: 600,}}>
+        <div style={{ display: "flex", justifyContent: "center", height: 600 }}>
           <Canvas
-          shadows
-            style={{ height: "100%", flex:.6,alignSelf: "center",  }}
+            shadows
+            style={{ height: "100%", flex: 0.6, alignSelf: "center" }}
           >
-            <LivingRoom/>
+            <LivingRoom  />
           </Canvas>
-          <div style={{flex:.3, height: "100%" ,backgroundColor: "lime"}}></div>
+          <div
+            style={{
+              flex: 0.3,
+              height: "100%",
+              // backgroundColor: "lime",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/sofa_calypso.jpeg"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/Sofa_rubyGordon.jpg"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/Sofa_velvet.webp"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/Sofa_6.jpg"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/Sofa_artVan.jpg"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
+            <div
+              style={{
+                flexBasis: "calc(50% - 10px)",
+                justifyContent: "center",
+                display: "flex",
+                height: "30%",
+                // background: "red",
+                padding: 5,
+              }}
+            >
+              <img
+                src="./images/sofa_5.jpeg"
+                width={"100%"}
+                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+              />
+            </div>
           </div>
-         
+        </div>
+
         <div style={{ margin: "50px 0px" }}>
           <BannerAd
             contentWidth={outerWidth * 0.8}

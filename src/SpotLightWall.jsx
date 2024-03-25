@@ -11,10 +11,10 @@ import * as THREE from "three";
 export function SpotLightWall(props) {
   const { nodes, materials } = useGLTF('./gltf/SpotLightWall.glb')
   const [spotlightHousing, spotlightScrews, spotlightMain, wire] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Spotlight_Housing_Spotlight_HousingShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Spotlight_Screws_Spotlight_ScrewsShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Spotlight_Main_Spotlight_MainShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Spotlight_Wire_Spotlight_WireShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Spotlight_Housing_Spotlight_HousingShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Spotlight_Screws_Spotlight_ScrewsShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Spotlight_Main_Spotlight_MainShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Spotlight_Wire_Spotlight_WireShape_rmanDefaultBakeDisplay.png",
   ]);
 
   spotlightHousing.flipY = false;
@@ -22,13 +22,19 @@ export function SpotLightWall(props) {
   spotlightMain.flipY = false;
   wire.flipY = false;
   const spotlightWireMat = new THREE.MeshStandardMaterial({
-    lightMap: wire,
+    map: wire,
+    metalness: 1,
+    envMapIntensity: .5
   });
   const spotlightMainMat = new THREE.MeshStandardMaterial({
-    lightMap: spotlightMain,
+    map: spotlightMain,
+    metalness: 1,
+    envMapIntensity: .5
   });
   const spotlightScrewsMat = new THREE.MeshStandardMaterial({
-    lightMap: spotlightScrews,
+    map: spotlightScrews,
+    metalness: 1,
+    envMapIntensity: .5
   });
   return (
     <group {...props} dispose={null}>

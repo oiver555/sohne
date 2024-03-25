@@ -23,15 +23,23 @@ export function Shades(props) {
   shadesBelt.flipY = false;
   const shadesBeltMat = new THREE.MeshStandardMaterial({
     lightMap: shadesBelt,
+    envMapIntensity: .2,
+    color: "tan"
   });
   const shadesStrapMat = new THREE.MeshStandardMaterial({
     lightMap: shadesStrap,
+    envMapIntensity: .2,
+    color: "tan"
   });
   const shadesMat = new THREE.MeshStandardMaterial({
     lightMap: shades,
+    envMapIntensity: .2,
+    color: "tan"
   });
   const shadesComponetMat = new THREE.MeshStandardMaterial({
     lightMap: shadesComponet,
+    envMapIntensity: .2,
+    color: "tan"
   });
   return (
     <group {...props} dispose={null}>

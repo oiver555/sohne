@@ -37,8 +37,9 @@ import { PlantVase6 } from "./PlantsVase6";
 import { Plants } from "./Plants";
 import { SpotlightCeiling } from "./SpotlightCeiling";
 import { Sofa } from "./Sofa";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { PortraitFrames } from "./PortraitFrames";
+import { Perf } from "r3f-perf";
 import {
   EffectComposer,
   Selection,
@@ -48,6 +49,8 @@ import {
   ToneMapping,
 } from "@react-three/postprocessing";
 import { easing } from "maath";
+import { RGBELoader } from "three-stdlib";
+import { BKG_Outside_Matte } from "./BKG_Outside_matte";
 
 const LivingRoom = (props) => {
   const { nodes, materials } = useGLTF("./gltf/Room.gltf");
@@ -56,10 +59,14 @@ const LivingRoom = (props) => {
   const aspect = size.width / size.height;
   const { livingRoomCam } = useContext(SceneContext);
   const controls = useRef();
-
+  const envTexture = useLoader(
+    RGBELoader,
+    "/textures/photo_studio_loft_hall_1k.hdr"
+  );
   return (
     <>
       <PerspectiveCamera
+        envMap={envTexture}
         ref={livingRoomCam}
         fov={50}
         filmGauge={135}
@@ -74,12 +81,14 @@ const LivingRoom = (props) => {
         position={[65, 137, 153]}
         rotation={[-0.2, -0, -0]}
       />
+      <Perf/>
       <OrbitControls
         makeDefault
         ref={controls}
         position={[65, 137, 153]}
         target={[52, 101, -46]}
       />
+       <Environment files="/textures/photo_studio_loft_hall_1k.hdr" background blur={0.5} />
       <Effects />
       <axesHelper args={[5]} />
       <directionalLight
@@ -104,8 +113,7 @@ const LivingRoom = (props) => {
       <SpotlightCeiling />
       <SpotLightWall />
       <Suitcase />
-      <Table />
-      <Trim />
+      <Table /> 
       <TV />
       <PlantVase6 />
       <PlantVase5 />
@@ -127,6 +135,7 @@ const LivingRoom = (props) => {
       <Xbox />
       <Vases />
       <Windows />
+      <BKG_Outside_Matte/>
       <Room />
     </>
   );

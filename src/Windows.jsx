@@ -16,15 +16,19 @@ export function Windows(props) {
  
   const windowMat = new THREE.MeshStandardMaterial({
     lightMap: window,
+    envMapIntensity: .1,
+    color: "white"
   });
-  const glassMAt = new THREE.MeshStandardMaterial({
+  const glassMAt = new THREE.MeshPhysicalMaterial({
  
     color: 0xffffff, // Color of the glass
-    opacity: 0.5,    // Opacity (transparency) of the glass (0 = fully transparent, 1 = fully opaque)
+        // Opacity (transparency) of the glass (0 = fully transparent, 1 = fully opaque)
     transparent: true, // Enable transparency
     metalness: 0,     // Metalness of the material (0 for non-metallic surfaces)
-    roughness: 0.1,   // Roughness of the material (0 for perfectly smooth)
-    side: THREE.DoubleSide, // Ensure both sides of the mesh are rendered
+    roughness:.2,   // Roughness of the material (0 for perfectly smooth)
+    
+    transmission: 1,
+    
     
   });
 

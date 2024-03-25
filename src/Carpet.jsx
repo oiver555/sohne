@@ -6,13 +6,15 @@ import * as THREE from "three";
 export function Carpet(props) {
   const { nodes, materials } = useGLTF("./gltf/Carpet.glb");
   const [carpet] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Carpet_CarpetShape_rmanDefaultBakeDisplay.png", 
+    "/textures/livingroom/Living_Room_3_Shaded__Carpet_CarpetShape_rmanDefaultBakeDisplay.png", 
   ]);
 
   carpet.flipY = false; 
 
   const carpetMat = new THREE.MeshStandardMaterial({
-    lightMap: carpet,
+    map: carpet,
+    envMapIntensity:0
+
   });
   return (
     <group {...props} dispose={null}>

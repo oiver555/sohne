@@ -10,13 +10,14 @@ import * as THREE from "three";
 export function Suitcase(props) {
   const { nodes, materials } = useGLTF('./gltf/Suitcase.glb')
   const [suitcase, ] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Suitcase_LP_Suitcase_LPShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Suitcase_LP_Suitcase_LPShape_rmanDefaultBakeDisplay.png",
    ]);
 
    suitcase.flipY = false;
   
   const suitcaseMat = new THREE.MeshStandardMaterial({
-    lightMap: suitcase,
+    map: suitcase,
+    envMapIntensity: 0
   });
 
   return (

@@ -5,13 +5,16 @@ import * as THREE from "three";
 export function Xbox(props) {
   const { nodes, materials } = useGLTF("./gltf/Xbox.glb");
   const [xbox] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Xbox1_Xbox1Shape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Xbox1_Xbox1Shape_rmanDefaultBakeDisplay.png",
   ]);
 
   xbox.flipY = false;
 
   const xboxMat = new THREE.MeshStandardMaterial({
-    lightMap: xbox,
+    map: xbox,
+    envMapIntensity: .5,
+    metalness: .5,
+    roughness: .1
   });
   return (
     <group {...props} dispose={null}>

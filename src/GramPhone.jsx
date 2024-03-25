@@ -1,26 +1,46 @@
 import React, { useRef } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import {
+  useGLTF,
+  useTexture,
+  CubeCamera,
+  Reflector,
+  MeshReflectorMaterial,
+  Environment,
+} from "@react-three/drei";
 import * as THREE from "three";
+import { useLoader } from "@react-three/fiber";
+import { RGBELoader } from "three-stdlib";
 
 export function GramPhone(props) {
   const { nodes, materials } = useGLTF("./gltf/GramPhone.glb");
   const [gramPhone, gramPhoneBox] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__GramPhone_GramPhoneShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__GramPhoneBox_GramPhoneBoxShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__GramPhone_GramPhoneShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__GramPhoneBox_GramPhoneBoxShape_rmanDefaultBakeDisplay.png",
   ]);
+  const envTexture = useLoader(
+    RGBELoader,
+    "/textures/photo_studio_loft_hall_1k.hdr"
+  );
 
   gramPhone.flipY = false;
   gramPhoneBox.flipY = false;
 
-  const gramPhoneMat = new THREE.MeshStandardMaterial({
+  const gramPhoneMat =  new THREE.MeshStandardMaterial({
     lightMap: gramPhone,
+    metalness: 1,
+    color: '#ffd700', // Gold color
+    roughness: 0.4, // Adjust the roughness for a realistic appearance
+    envMapIntensity: 1,
   });
   const gramPhoneBoxMat = new THREE.MeshStandardMaterial({
-    lightMap: gramPhoneBox,
+    map: gramPhoneBox,
+    envMapIntensity:0
+
   });
 
   return (
     <group {...props} dispose={null}>
+     
       <mesh
         castShadow
         receiveShadow

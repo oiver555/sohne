@@ -8,73 +8,49 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 export function Room(props) {
-  const [wall0, wall1, wall2, floor] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Wall_0_Wall_0Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Wall_1_Wall_1Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Wall_2_Wall_2Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Floor_FloorShape_rmanDefaultBakeDisplay.png",
+  const [wall, ceiling, floor, trims] = useTexture([
+    "/textures/livingroom/Living_Room_3_Shaded__Walls_WallsShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Ceiling_CeilingShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Floor_FloorShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Trims_TrimsShape_rmanDefaultBakeDisplay.png",
   ]);
 
-
-  wall0.flipY = false
-  wall1.flipY = false
-  wall2.flipY = false
+  wall.flipY = false
+  ceiling.flipY = false
   floor.flipY = false
- 
+  trims.flipY = false
 
+  const wallMat = new THREE.MeshStandardMaterial({
+    map: wall,
+    envMapIntensity:0
 
-  const wall0Mat = new THREE.MeshStandardMaterial({
-    lightMap: wall0,
   });
-  const wall1Mat = new THREE.MeshStandardMaterial({
-    lightMap: wall1,
+
+  const ceilingMat = new THREE.MeshStandardMaterial({
+    map: ceiling,
+    envMapIntensity:0
+
   });
-  const wall2Mat = new THREE.MeshStandardMaterial({
-    lightMap: wall2,
-  });
+
   const floorMat = new THREE.MeshStandardMaterial({
-    lightMap: floor,
+    map: floor,
+    envMapIntensity:0
+
   });
 
+  const trimsMat = new THREE.MeshStandardMaterial({
+    map: trims,
+    envMapIntensity:0
+
+  });
   const { nodes, materials } = useGLTF("./gltf/Room.glb");
   return (
     <group {...props} dispose={null}>
-      <group position={[74.645, 129.131, -1.352]}>
-        <mesh
-          geometry={nodes.Wall_2PIV.geometry}
-          material={wall2Mat}
-          position={[-74.645, -129.131, 1.352]}
-        />
-      </group>
-      <group position={[74.645, 129.131, -2.352]}>
-        <mesh
-          geometry={nodes.Wall_1PIV.geometry}
-          material={wall1Mat}
-          position={[-74.645, -129.131, 1.352]}
-        />
-      </group>
-      <group position={[74.645, 129.131, -1.352]}>
-        <mesh
-          geometry={nodes.Wall_0PIV.geometry}
-          material={wall0Mat}
-          position={[-74.645, -129.131, 1.352]}
-        />
-      </group>
-      <group position={[74.645, 129.131, -1.352]}>
-        <mesh
-          geometry={nodes.FloorPIV.geometry}
-          material={floorMat}
-          position={[-74.645, -129.131, 1.352]}
-        />
-      </group>
-      <group position={[85.698, 277.961, -3.429]}>
-        <mesh
-          geometry={nodes.CeilingPIV.geometry}
-          material={materials.lambert1}
-          position={[-85.698, -277.961, 3.429]}
-        />
-      </group>
-    </group>
+    <mesh geometry={nodes.Walls.geometry} material={wallMat} />
+    <mesh geometry={nodes.Ceiling.geometry} material={ceilingMat} />
+    <mesh geometry={nodes.Floor.geometry} material={floorMat} />
+    <mesh geometry={nodes.Trims.geometry} material={trimsMat} />
+  </group>
   );
 }
 

@@ -9,36 +9,18 @@ import * as THREE from "three";
 
 export function Trim(props) {
   const { nodes, materials } = useGLTF('./gltf/Trim.glb')
-  const [trim, trim1, trim2,] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__Trim_TrimShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Trim1_Trim1Shape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__Trim2_Trim2Shape_rmanDefaultBakeDisplay.png", 
+  const [trim,  ] = useTexture([
+    "/textures/livingroom/Living_Room_3_Shaded__Trims_TrimsShape_rmanDefaultBakeDisplay.png", 
   ]); 
 
-  trim.flipY = false
-  trim1.flipY = false
-  trim2.flipY = false
-
+  trim.flipY = false  
   const trimMat = new THREE.MeshStandardMaterial({
-    lightMap: trim,
-  });
-  const trim1Mat = new THREE.MeshStandardMaterial({
-    lightMap: trim1,
-  });
-  const trim2Mat = new THREE.MeshStandardMaterial({
-    lightMap: trim2,
-  });
+    map: trim,
+    envMapIntensity: 0
+  }); 
   return (
     <group {...props} dispose={null}>
-      <group position={[74.599, 10.273, -333.023]}>
-        <mesh geometry={nodes.Trim2PIV.geometry} material={trim2Mat} position={[-74.599, -10.273, 333.023]} />
-      </group>
-      <group position={[-125.107, 10.273, -31.622]}>
-        <mesh geometry={nodes.Trim1PIV.geometry} material={trim1Mat} position={[125.107, -10.273, 31.622]} />
-      </group>
-      <group position={[274.4, 10.273, -31.622]}>
-        <mesh geometry={nodes.TrimPIV.geometry} material={trimMat} position={[-274.4, -10.273, 31.622]} />
-      </group>
+      {/* <mesh geometry={nodes.Trims.geometry} material={trimMat} /> */}
     </group>
   )
 }

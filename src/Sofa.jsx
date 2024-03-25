@@ -9,20 +9,36 @@ import * as THREE from "three";
 
 export function Sofa(props) {
   const { nodes, materials } = useGLTF("./gltf/Sofa.glb");
-  const [sofa, sofaLegs, sofaButton] = useTexture([
+  const [sofa, sofaLegs, sofaButton, fabricDiff, fabricBump] = useTexture([
     "/textures/livingroom/Living_Room_2_Shaded__Sofa1_Sofa1Shape_rmanDefaultBakeDisplay.png",
     "/textures/livingroom/Living_Room_2_Shaded__Sofa_Legs_Sofa_LegsShape_rmanDefaultBakeDisplay.png",
     "/textures/livingroom/Living_Room_2_Shaded__Sofa_buttons_Sofa_buttonsShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__Sofa1_Sofa1Shape_rmanDefaultBakeDisplay.png",
+    "/textures/sofaDepth.png",
   ]);
 
+ 
+  fabricDiff.flipY = false;
   sofa.flipY = false;
   sofaLegs.flipY = false;
   sofaButton.flipY = false;
   const sofaMat = new THREE.MeshStandardMaterial({
-    lightMap: sofa,
+    map: fabricDiff,
+    // lightMap: sofa,
+    bumpMap: fabricBump,
+    bumpScale: 1,
+    envMapIntensity:0
   });
-  const sofaLegsMat = new THREE.MeshStandardMaterial({
+  const sofaLegsMat = new THREE.MeshPhysicalMaterial({
     lightMap: sofaLegs,
+    color: 'silver', // Gold color
+    envMapIntensity:.5,
+    metalness: 1,
+    clearcoat: 1,
+    clearcoatRoughness: 0,
+   reflectivity: 1,
+iridescence: 1,
+    roughness: 0.5, 
   });
   const sofaButtonMat = new THREE.MeshStandardMaterial({
     lightMap: sofaButton,

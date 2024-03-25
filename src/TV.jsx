@@ -11,18 +11,25 @@ import * as THREE from "three";
 export function TV(props) {
   const { nodes, materials } = useGLTF('./gltf/TV.glb')
   const [tvHousing, tvScreen] = useTexture([
-    "/textures/livingroom/Living_Room_2_Shaded__TV_Housing_TV_HousingShape_rmanDefaultBakeDisplay.png",
-    "/textures/livingroom/Living_Room_2_Shaded__TV_Screen_TV_ScreenShape_rmanDefaultBakeDisplay.png", 
+    "/textures/livingroom/Living_Room_3_Shaded__TV_Housing_TV_HousingShape_rmanDefaultBakeDisplay.png",
+    "/textures/livingroom/Living_Room_3_Shaded__TV_Screen_TV_ScreenShape_rmanDefaultBakeDisplay.png", 
   ]);
 
 
   tvHousing.flipY = false
   tvScreen.flipY = false
   const tvHousingMat = new THREE.MeshStandardMaterial({
-    lightMap: tvHousing,
+    map: tvHousing,
+    envMapIntensity: 0
   });
-  const tvScreenMat = new THREE.MeshStandardMaterial({
-    lightMap: tvScreen,
+  const tvScreenMat = new THREE.MeshPhysicalMaterial({
+    map: tvScreen,
+    color: "gray",
+   anisotropy: 5,
+   iridescence: 8,
+    envMapIntensity: .1,
+    reflectivity: 1,
+    clearcoat: 1
   });
   return (
     <group {...props} dispose={null}>
