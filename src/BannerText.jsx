@@ -13,7 +13,7 @@ const BannerText = (props) => {
           style={{
             width: props.contentWidth,
             height: props.contentHeight,
-            backgroundImage: "url(./images/sofa_banner_placeholder.jpeg)",
+            backgroundImage: "url(./images/sofa_banner_placeholder.webp)",
             backgroundSize: "cover",
             backgroundBlendMode: "overlay",
             backgroundPosition: "0px -50px",

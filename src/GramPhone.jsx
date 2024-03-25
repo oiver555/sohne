@@ -63,4 +63,4 @@ export function GramPhone(props) {
   );
 }
 
-useGLTF.preload("./gltf/GramPhone.glb");
+// useGLTF.preload("./gltf/GramPhone.glb");

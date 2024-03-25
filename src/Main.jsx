@@ -13,11 +13,13 @@ import "simplebar-react/dist/simplebar.min.css";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Canvas } from "@react-three/fiber";
 import LivingRoom from "./LivingRoom.jsx";
+import { Trim } from "./html/Trim.jsx";
+import { AdSlider } from "./html/AdSlider.jsx";
+import { Menu } from "./html/Menu.jsx";
 
 export default () => {
   const { outerHeight, outerWidth } = window;
-  const { adBlocksData } = useConstant();
-
+  const { productCat } = useConstant();
   const scrollRef = useRef();
   const leftCheveron = useRef();
   const rightCheveron = useRef();
@@ -60,78 +62,7 @@ export default () => {
           <ThreeContent outerHeight={outerHeight} />
           <HTMLContent outerHeight={outerHeight} />
         </div>
-        <div
-          style={{
-            height: 50,
-            background: "orange",
-            color: "white",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingLeft: 50,
-            // paddingRight: 50,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              flex: 0.68,
-              height: "100%",
-              alignItems: "center",
-              flexDirection: "row",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "arial",
-                fontSize: 25,
-                fontWeight: "bold",
-                verticalAlign: "baseline",
-                letterSpacing: -2,
-              }}
-            >
-              <span
-                style={{
-                  background: "white",
-                  letterSpacing: 0,
-                  color: "orange",
-                  fontSize: 18,
-                }}
-              >
-                THE
-              </span>
-              orange event
-            </div>
-            <div style={{ fontSize: 25 }}>|</div>
-            <div
-              style={{
-                fontSize: 22,
-                fontFamily: "arial",
-                fontWeight: "bold",
-                letterSpacing: 3,
-              }}
-            >
-              OUR BIGGEST EVENT OF THE YEAR
-            </div>
-            <div
-              style={{
-                letterSpacing: 3,
-                fontWeight: "bold",
-                fontFamily: "arial",
-                textTransform: "uppercase",
-                fontSize: 15,
-              }}
-            >
-              Coming Soon! March 8 - 10
-            </div>
-          </div>
-          <div style={{ display: "flex", flex: 0.2, justifyContent: "center" }}>
-            <div style={{ fontFamily: "arial", letterSpacing: 2 }}>
-              PREVIEW DEALS
-            </div>
-          </div>
-        </div>
+        <Trim />
 
         <div style={{ width: outerWidth, marginTop: 20 }}>
           <img
@@ -175,119 +106,21 @@ export default () => {
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
-          <div
-            style={{
-              width: "90%",
-              height: 200,
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "relative",
-            }}
-          >
-            <SimpleBar
-              ref={scrollRef}
-              onLoad={() => {
-                console.log(scrollRef.current);
-              }}
-              onScroll={(event) => {
-                console.log(event);
-              }}
-              autoHide={false}
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-              }}
-            >
-              <div
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  backgroundColor: "green",
-                  flexShrink: 0,
-                  justifyContent: "flex-start",
-                  position: "relative",
-                  alignItems: "center",
-                }}
-              >
-                {adBlocksData.map((data, index) => {
-                  return (
-                    <AdBlock
-                      key={data.title}
-                      title={data.title}
-                      linkText={data.linkText}
-                      left={50 * index}
-                    />
-                  );
-                })}
-              </div>
-            </SimpleBar>
-            <div
-              ref={leftCheveron}
-              style={{
-                backgroundColor: "rgb(50,50,50)",
-                height: 50,
-                width: 50,
-                position: "absolute",
-                left: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <ChevronLeft
-                fontSize="large"
-                style={{ fill: "white" }}
-                color="white"
-              />
-            </div>
-            <div
-              ref={rightCheveron}
-              style={{
-                backgroundColor: "rgb(50,50,50)",
-                height: 50,
-                width: 50,
-                position: "absolute",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                right: 0,
-              }}
-            >
-              <ChevronRight
-                fontSize="large"
-                style={{ fill: "white" }}
-                color="white"
-              />
-            </div>
-          </div>
+          <AdSlider
+            scrollRef={scrollRef}
+            leftCheveron={leftCheveron}
+            rightCheveron={rightCheveron}
+          />
         </div>
-        <div
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
-        >
-          <div
-            style={{
-              width: "80%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <div>LIVING ROOM</div>
-            <div>BEDROOM</div>
-            <div>MATTRESS</div>
-            <div>DINING</div>
-            <div>OUTDOOR</div>
-            <div>STORAGE & CLOSET</div>
-          </div>
-        </div>
+
+        <Menu productCat={productCat} />
         <div style={{ display: "flex", justifyContent: "center", height: 600 }}>
-          <Canvas
+          {/* <Canvas
             shadows
             style={{ height: "100%", flex: 0.6, alignSelf: "center" }}
           >
             <LivingRoom  />
-          </Canvas>
+          </Canvas> */}
           <div
             style={{
               flex: 0.3,
@@ -309,9 +142,9 @@ export default () => {
               }}
             >
               <img
-                src="./images/sofa_calypso.jpeg"
+                src="./images/sofa_calypso.webp"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
             <div
@@ -325,9 +158,9 @@ export default () => {
               }}
             >
               <img
-                src="./images/Sofa_rubyGordon.jpg"
+                src="./images/Sofa_rubyGordon.webp"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
             <div
@@ -343,7 +176,7 @@ export default () => {
               <img
                 src="./images/Sofa_velvet.webp"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
             <div
@@ -359,7 +192,7 @@ export default () => {
               <img
                 src="./images/Sofa_6.jpg"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
             <div
@@ -375,7 +208,7 @@ export default () => {
               <img
                 src="./images/Sofa_artVan.jpg"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
             <div
@@ -391,7 +224,7 @@ export default () => {
               <img
                 src="./images/sofa_5.jpeg"
                 width={"100%"}
-                style={{ flexShrink: 0 ,  objectFit: 'contain',}}
+                style={{ flexShrink: 0, objectFit: "contain" }}
               />
             </div>
           </div>

@@ -25,4 +25,4 @@ export function Trim(props) {
   )
 }
 
-useGLTF.preload('./gltf/Trim.glb')
+// useGLTF.preload('./gltf/Trim.glb')

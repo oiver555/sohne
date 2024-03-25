@@ -7,7 +7,8 @@ const Footer = (props) => {
         justifyContent: "space-around",
         alignItems: "flex-start",
         flexDirection: "row",
-        background: "red",
+        backgroundColor: "rgba(54, 53, 66, 1)", 
+        color: "white"
       }}
     >
       <div

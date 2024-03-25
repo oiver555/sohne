@@ -47,4 +47,4 @@ export function Table(props) {
   )
 }
 
-useGLTF.preload('./gltf/Table.glb')
+// useGLTF.preload('./gltf/Table.glb')

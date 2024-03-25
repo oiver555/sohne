@@ -43,4 +43,4 @@ iridescence: 2,
   );
 }
 
-useGLTF.preload("./gltf/Bird.glb");
+// useGLTF.preload("./gltf/Bird.glb");

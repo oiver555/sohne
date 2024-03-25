@@ -51,4 +51,4 @@ export function SpotLightWall(props) {
   )
 }
 
-useGLTF.preload('./gltf/SpotLightWall.glb')
+// useGLTF.preload('./gltf/SpotLightWall.glb')

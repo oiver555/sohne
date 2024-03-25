@@ -4,13 +4,12 @@ import { Html } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 
 const ThreeContent = (props) => {
-  return (
-    <>
-      <Canvas style={{ flex: 1, backgroundColor: "red" }} shadows>
+  return (    
+      <Canvas style={{ flex: 1, }} shadows>
         <Experience />         
         <Perf/>
       </Canvas>
-    </>
+   
   );
 };
 export default ThreeContent;

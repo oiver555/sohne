@@ -29,4 +29,4 @@ export function Suitcase(props) {
   )
 }
 
-useGLTF.preload('./gltf/Suitcase.glb')
+// useGLTF.preload('./gltf/Suitcase.glb')

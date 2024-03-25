@@ -54,4 +54,4 @@ export function Room(props) {
   );
 }
 
-useGLTF.preload("./gltf/Room.glb");
+// useGLTF.preload("./gltf/Room.glb");

@@ -76,4 +76,4 @@ export default function Table_B(props) {
   );
 }
 
-useGLTF.preload("gltf/Table_B.glb");
+// useGLTF.preload("gltf/Table_B.glb");

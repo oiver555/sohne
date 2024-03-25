@@ -43,4 +43,4 @@ export function TV(props) {
   )
 }
 
-useGLTF.preload('./gltf/TV.glb')
+// useGLTF.preload('./gltf/TV.glb')

@@ -1,5 +1,4 @@
-import {
-  Environment,
+import { 
   OrbitControls,
   PerspectiveCamera,
   SoftShadows,
@@ -10,12 +9,10 @@ import { useContext, useRef } from "react";
 import { BKG } from "./BKG";
 import { SceneContext } from "./ExpContext";
 import Lights from "./Lights";
-import Furniture from "./Furniture";
-import { randFloatSpread } from "three/src/math/MathUtils";
+import Furniture from "./Furniture"; 
 
 export default function Experience(props) {
-  const sceneRef = useRef();
-
+  const sceneRef = useRef(); 
   const { cameraRef } = useContext(SceneContext);
   const targetObject = new THREE.Object3D();
   targetObject.position.y = 5;
@@ -44,7 +41,7 @@ export default function Experience(props) {
       />
 
       <fog attach="fog" args={["orange", 40, 700]} />
-      <SoftShadows size={5} samples={25} focus={2} />
+      <SoftShadows sipze={5} samples={25} focus={2} />
       <OrbitControls makeDefault enabled={true} enableRotate={false} enableZoom={false} />
       <Lights targetObject={targetObject} />
       <Furniture />

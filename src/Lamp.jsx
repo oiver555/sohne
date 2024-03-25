@@ -48,4 +48,4 @@ export function Lamp(props) {
   );
 }
 
-useGLTF.preload("./gltf/Lamp.glb");
+// useGLTF.preload("./gltf/Lamp.glb");

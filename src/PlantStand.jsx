@@ -36,4 +36,4 @@ export function PlantStand(props) {
   );
 }
 
-useGLTF.preload("./gltf/PlantStand.glb");
+// useGLTF.preload("./gltf/PlantStand.glb");

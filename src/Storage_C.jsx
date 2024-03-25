@@ -362,4 +362,4 @@ export default function Storage_C(props) {
   );
 }
 
-useGLTF.preload("gltf/Storage_C.glb");
+// useGLTF.preload("gltf/Storage_C.glb");

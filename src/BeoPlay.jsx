@@ -166,6 +166,6 @@ export function BeoPlay(props) {
   );
 }
 
-useGLTF.preload("./gltf/BeoPlay.glb");
+// useGLTF.preload("./gltf/BeoPlay.glb");
 
  

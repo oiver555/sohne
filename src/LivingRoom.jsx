@@ -79,9 +79,7 @@ const LivingRoom = (props) => {
         near={0.1}
         far={3000}
         position={[65, 137, 153]}
-        rotation={[-0.2, -0, -0]}
-      />
-      <Perf/>
+        rotation={[-0.2, -0, -0]}      />     
       <OrbitControls
         makeDefault
         ref={controls}

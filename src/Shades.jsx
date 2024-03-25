@@ -63,4 +63,4 @@ export function Shades(props) {
   )
 }
 
-useGLTF.preload('./gltf/Shades.glb')
+// useGLTF.preload('./gltf/Shades.glb')

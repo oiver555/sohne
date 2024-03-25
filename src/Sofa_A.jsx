@@ -185,4 +185,4 @@ export default function Sofa_A(props) {
   );
 }
 
-useGLTF.preload("./gltf/Sofa_A.glb");
+// useGLTF.preload("./gltf/Sofa_A.glb");

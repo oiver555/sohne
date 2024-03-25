@@ -71,4 +71,4 @@ iridescence: 1,
   );
 }
 
-useGLTF.preload("./gltf/Sofa.glb");
+// useGLTF.preload("./gltf/Sofa.glb");

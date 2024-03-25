@@ -59,4 +59,4 @@ export function Vases(props) {
   );
 }
 
-useGLTF.preload("./gltf/Vases.glb");
+// useGLTF.preload("./gltf/Vases.glb");

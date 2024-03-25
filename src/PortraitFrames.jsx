@@ -47,4 +47,4 @@ export function PortraitFrames(props) {
   );
 }
 
-useGLTF.preload("./gltf/Portrait_Frames.glb");
+// useGLTF.preload("./gltf/Portrait_Frames.glb");

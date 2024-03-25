@@ -31,4 +31,4 @@ export function Xbox(props) {
   );
 }
 
-useGLTF.preload("./gltf/Xbox.glb");
+// useGLTF.preload("./gltf/Xbox.glb");

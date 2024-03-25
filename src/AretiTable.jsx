@@ -33,4 +33,4 @@ export function AretiTable(props) {
   );
 }
 
-useGLTF.preload("./gltf/AretiTable.glb");
+// useGLTF.preload("./gltf/AretiTable.glb");

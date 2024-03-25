@@ -31,4 +31,4 @@ export function Carpet(props) {
   );
 }
 
-useGLTF.preload("./gltf/Carpet.glb");
+// useGLTF.preload("./gltf/Carpet.glb");

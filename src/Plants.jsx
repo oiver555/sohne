@@ -60,4 +60,4 @@ export function Plants(props) {
   );
 }
 
-useGLTF.preload("./gltf/Plants.glb");
+// useGLTF.preload("./gltf/Plants.glb");

@@ -85,4 +85,4 @@ export function SpotlightCeiling(props) {
   );
 }
 
-useGLTF.preload("./gltf/Spotlight_Ceiling.glb");
+// useGLTF.preload("./gltf/Spotlight_Ceiling.glb");

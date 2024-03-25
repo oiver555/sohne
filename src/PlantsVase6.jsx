@@ -44,4 +44,4 @@ export function PlantVase6(props) {
   )
 }
 
-useGLTF.preload('./gltf/PlantsVase6.glb')
+// useGLTF.preload('./gltf/PlantsVase6.glb')

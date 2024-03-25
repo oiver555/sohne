@@ -30,11 +30,11 @@ const CategorySlider = (props) => {
         }}
         src={
           currChair === "a"
-            ? "./images/Chairs_A_Slider_1.png"
+            ? "./images/Chairs_A_Slider_1.webp"
             : currChair === "b"
             ? "./images/Chairs_B_Slider.png"
             : currChair === "c"
-            ? "./images/Chairs_C_Slider.png"
+            ? "./images/Chairs_C_Slider.webp"
             : "./images/Chairs_D_Slider.png"
         }
       />
@@ -42,19 +42,19 @@ const CategorySlider = (props) => {
       <img
         title="storage"
         style={{ transform: "scaleX(-1)" }}
-        src="./images/Storage.png"
+        src="./images/Storage.webp"
         width={"100%"}
       />
       <img
         title="table"
         style={{ transform: "scaleX(-1)" }}
-        src="./images/Table.png"
+        src="./images/Table.webp"
         width={"100%"}
       />
       <img
         title="sofa"
         style={{ transform: "scaleX(-1)" }}
-        src="./images/Sofa.png"
+        src="./images/Sofa.webp"
         width={"100%"}
       />
     </div>

@@ -136,4 +136,4 @@ export function Aquarium(props) {
   );
 }
 
-useGLTF.preload("./gltf/Aquarium.glb");
+// useGLTF.preload("./gltf/Aquarium.glb");

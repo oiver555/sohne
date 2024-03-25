@@ -26,4 +26,4 @@ export function BKG_Outside_Matte(props) {
   )
 }
 
-useGLTF.preload('./gltf/BKG_Outside_matte.glb')
+// useGLTF.preload('./gltf/BKG_Outside_matte.glb')

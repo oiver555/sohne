@@ -30,4 +30,4 @@ export function Can(props) {
   );
 }
 
-useGLTF.preload("./gltf/CanSoda.glb");
+// useGLTF.preload("./gltf/CanSoda.glb");

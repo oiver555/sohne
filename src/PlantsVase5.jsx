@@ -50,4 +50,4 @@ export function PlantVase5(props) {
   )
 }
 
-useGLTF.preload('./gltf/PlantsVase5.glb')
+// useGLTF.preload('./gltf/PlantsVase5.glb')

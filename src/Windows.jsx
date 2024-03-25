@@ -56,4 +56,4 @@ export function Windows(props) {
   );
 }
 
-useGLTF.preload("./gltf/Window.glb");
+// useGLTF.preload("./gltf/Window.glb");

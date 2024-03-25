@@ -260,4 +260,4 @@ export default function Sofa_C(props) {
   );
 }
 
-useGLTF.preload("gltf/Sofa_C.glb");
+// useGLTF.preload("gltf/Sofa_C.glb");

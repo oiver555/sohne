@@ -57,4 +57,4 @@ export function PlantVase1(props) {
   );
 }
 
-useGLTF.preload("./gltf/PlantsVase1.glb");
+// useGLTF.preload("./gltf/PlantsVase1.glb");

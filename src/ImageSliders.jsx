@@ -61,7 +61,7 @@ const ImageSliders = (props) => {
                 });
               }}
               width="100%"
-              src="./images/Chair_A.png"
+              src="./images/Chair_A.webp"
               style={{ pointerEvents: "fill" }}
             />
             <figcaption>
@@ -91,7 +91,7 @@ const ImageSliders = (props) => {
                 });
               }}
               width="100%"
-              src="./images/Chair_B.png"
+              src="./images/Chair_B.webp"
               style={{ pointerEvents: "fill" }}
             />
             <figcaption>
@@ -121,7 +121,7 @@ const ImageSliders = (props) => {
                 });
               }}
               width="100%"
-              src="./images/Chair_C.png"
+              src="./images/Chair_C.webp"
               style={{ pointerEvents: "fill" }}
             />
             <figcaption>
@@ -151,7 +151,7 @@ const ImageSliders = (props) => {
                 });
               }}
               width="100%"
-              src="./images/Chair_D.png"
+              src="./images/Chair_D.webp"
               style={{ pointerEvents: "fill" }}
             />
             <figcaption>
@@ -182,7 +182,7 @@ const ImageSliders = (props) => {
                 });
               }}
               width="100%"
-              src="./images/Chair_E.png"
+              src="./images/Chair_E.webp"
               style={{ pointerEvents: "fill", }}
             />
             <figcaption>
@@ -203,7 +203,7 @@ const ImageSliders = (props) => {
             <img
              
               width="100%"
-              src="./images/Chair_E.png"
+              src="./images/Chair_E.webp"
               style={{ pointerEvents: "fill", opacity : 0}}
             />
             <figcaption>
