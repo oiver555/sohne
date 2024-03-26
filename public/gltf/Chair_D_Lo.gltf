@@ -1,0 +1,149 @@
+{
+  "accessors": [
+    {
+      "name": "Chair_D_lo_1_0_indices",
+      "componentType": 5123,
+      "count": 456,
+      "min": [
+        0
+      ],
+      "max": [
+        214
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "name": "Chair_D_lo_1_0_positions",
+      "componentType": 5126,
+      "count": 215,
+      "min": [
+        -38.13552500141951,
+        0.025271946357760595,
+        -17.95185114277693
+      ],
+      "max": [
+        38.13833590297726,
+        124.25829340351912,
+        53.774681011357714
+      ],
+      "type": "VEC3"
+    },
+    {
+      "name": "Chair_D_lo_1_0_normals",
+      "componentType": 5126,
+      "count": 215,
+      "min": [
+        -1.0000348904553582,
+        -1.0078197935048272,
+        -1.0012748458806207
+      ],
+      "max": [
+        0.9985266110476325,
+        1.0064167001668145,
+        1.0051241517066956
+      ],
+      "type": "VEC3"
+    },
+    {
+      "name": "Chair_D_lo_1_0_texcoords",
+      "componentType": 5126,
+      "count": 215,
+      "min": [
+        0.028341168860011787,
+        0.018921168843322487
+      ],
+      "max": [
+        0.9847025230439527,
+        0.9904478170480197
+      ],
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "obj2gltf",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "name": "Chair_D_Lo",
+      "byteLength": 1120,
+      "uri": "data:application/octet-stream;base64,RFJBQ08CAgEBAAAAY5gBApYBCAQJCQoJCAcKCQcr7/oupaWoUoV3bf+mXdd9KahatLQKKwrVohRFoXzdui5f1y5vt67Lu25dA6sDo8WCpBtIroE5HHOHbux854rSkEA7uQjzmX8txcBqyoHRFCPtFkDSh/5BIhuWvWAU61bM/3+IA/8AAAABAAEBAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQAMD00BA9EF0RAdBz0D7QzRECE+u7iqxYae19Q+MJqhx1U+XyGlY38oBWxQQQYY5cv5z4eCDT+pjNQFE1dBCvMcMI6YOsWRWSZfyUMcDKmjsQGZ0SYuZHLjmT9iluHDRK7KSQEjgzBAebBHm29rAUzHHzjAwcMHAe1oIg8Dty/cOArkjRKhmIXTh4LCNU7sT6ARAbZ0nlBbQpVbi3CE+6GYgKTVh/KY3tmxHJ5jsFZKkV4EXi+OF5Z5NOAMHJyIrsnGjIF0X4NhcTDC87/U7u0fOOBWZLNiR5TbQTHLRI6HSURDLIvo2k4Xx1uZZcfSS2tt2ZHfQ/x86Bb6nYy54oWVD9GBUgNICUN0oBABgAKARA/AagnQMAWoejP0ZUiT6OBlzdAlchKiRyUKQIUBcQ/AypShi6cMkN0NgA4pGbpUXEP0iIwBbRhgOQZwQyBmAKBDAMADqDobAAdfDdEl4p2h50MKUDWI6ITxAKpbwIwIAEhn6K8JgRkAAAAA/wcAALFMGMLp7a89OCGPwTk5+EILBgMBAQb/AY0MERH1BeUCfKRUpFR8fAdUKCgnKAso2yj//xMoHygLKCgDKAMoAyhUVCgHKFSkVPjMnQFpAukLqQGq8ig2jLWJhWi0R8rr8J/e1ugm3lwuuf8oq/2qGvCR8HoqN4NMphYrB01vfIQhCaZ3yX6YMgHJN8VX3yKOMU6xC7CM+Rt7SU8mqluvtD4YYEymlqFpmA3XjiJKzujzaihJKBGujwHC7/e7CvtWg4DkDq/ireOw9jEbnB83ZBko2A+nswS/B+iqvHdvPZo+BR1Ar0pKhux8SKAVDESLQu7/3cbCfhKTYntL/wAAAH8AAAD/AnJTCAUBAQALA9EBdQUtCOUKXQbNELkCRQKhA+kFN4hFNDFLBhM0aox57zk3S6yOkST8fwXuS5UPZo4ot8aZkl1dPLvb50MHkUTBSxkAd42WpI4Rrn5ed9h+GQ4bmo2COSWLl1IEzi6tIDUpKCXsEYiTCP1b4vEap2GW5i0WxehZaGsVmOjmMak8UY3yFhIfFgtPg4eLbJ12rKXDuIIwYBo3F7/vj2nqof4gsbJLWPkUrxsYG4/KVVW4jhPC6BPjGEmZq+3/fsxyH7vVkUk5SI4clEUZ1MQIzETNnMAmPaYUQGAGtoEKuACosEgp1CCKSIEgKGEraFATtVKSLJSQYAIgHxUAzEJplEJNslCCKWmYAg59AAAAEggMTIwwBu8ihgAAAAD/AwAAfO/vPFDEojy8OXg/CgAAAA=="
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1117
+    }
+  ],
+  "materials": [
+    {
+      "name": "default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Chair_D_lo_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1,
+                "TEXCOORD_0": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Chair_D_lo",
+      "mesh": 0
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ]
+}

@@ -11,6 +11,7 @@ import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { KernelSize } from "postprocessing";
 import { useGesture } from "react-use-gesture";
+import gsap from "gsap";
 
 export default function Chair_B(props) {
   console.log("[Chair.B.js]");
@@ -50,7 +51,7 @@ export default function Chair_B(props) {
     "/textures/polka_dot.jpg",
     "/textures/red.jpg",
     "/textures/cyan.jpg",
-  ]); 
+  ]);
 
   polkaDot.wrapS = THREE.RepeatWrapping;
   polkaDot.wrapT = THREE.RepeatWrapping;
@@ -87,6 +88,7 @@ export default function Chair_B(props) {
         metalness: 0.2,
         envMapIntensity: 0.2,
         bumpMap: wood_00_disp,
+
       })
   );
 
@@ -103,8 +105,11 @@ export default function Chair_B(props) {
     bumpMap: fabric_00_disp,
     bumpScale: 10,
     envMapIntensity: 0.4,
+  
   });
 
+
+  
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
@@ -126,7 +131,6 @@ export default function Chair_B(props) {
       setCurrCushionTexture1("/textures/The Reader armchair_diffuse.jpg");
     }
   }, [currChair]);
-
 
   return (
     <animated.group
@@ -174,7 +178,7 @@ export default function Chair_B(props) {
                   setCushionHovered(false);
                   event.stopPropagation();
                 }}
-                />
+              />
             </Select>
             <Select enabled={baseHovered}>
               <mesh

@@ -16,6 +16,14 @@ export default () => {
     b: false,
     c: false,
     d: false,
+    e: false
+  });
+  const [storageVis, setstorageVis] = useState({
+    a: false,
+    b: false,
+    c: false,
+    d: false,
+   
   });
   const chairARef = useRef();
   const chairBRef = useRef();
@@ -111,9 +119,9 @@ export default () => {
   return (
     <ChairsContext.Provider
       value={{
-        chairARef,
         chairsVis,
         setChairsVis,
+        chairARef,
         chairBRef,
         chairCRef,
         chairDRef,
@@ -128,6 +136,8 @@ export default () => {
     >
       <StorageContext.Provider
         value={{
+          storageVis, 
+          setstorageVis,
           storageARef,
           storageBRef,
           storageCRef,

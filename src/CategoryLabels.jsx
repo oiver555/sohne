@@ -1,11 +1,16 @@
+import useConstant from "./hooks/useConstant";
+
 const CategoryLabels = (props) => {
+  const {navHeight} = useConstant()
   return (
     <div
       className="categoryLabel"
       style={{
-        width: "100%",
-        paddingLeft: 50,
-        position: "relative",
+        width: "100%",  
+        top:0,
+        paddingTop: navHeight,    
+        paddingLeft: 50,        
+        position: "absolute",
       }}
     >
       <div
@@ -14,6 +19,7 @@ const CategoryLabels = (props) => {
           fontSize: 35,
           position: "absolute",
           opacity: 0,
+          
         }}
       >
         Seating

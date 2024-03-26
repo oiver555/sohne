@@ -3,6 +3,7 @@ import { ChairsContext, StorageContext } from "./ExpContext";
 import gsap from "gsap";
 import { easings } from "@react-spring/three";
 import { useContext } from "react";
+import useConstant from "./hooks/useConstant";
 
 const Nav = (props) => {
   const { outerHeight, outerWidth, innerWidth } = window;
@@ -18,6 +19,7 @@ const Nav = (props) => {
   } = useContext(ChairsContext);
   const { storageARef, storageRotationAPI, storageGroupPosition } =
     useContext(StorageContext);
+    const {navHeight} = useConstant()
 
   return (
     <div
@@ -32,7 +34,7 @@ const Nav = (props) => {
     >
       <div
         style={{
-          height: 30,
+          height: navHeight,
           width: innerWidth,
           backgroundColor: "rgba(54, 53, 66, 1)",
           display: "flex",
