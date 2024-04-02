@@ -1,10 +1,16 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { useGesture } from "react-use-gesture";
-import { debounce } from "lodash";
 import {
   EffectComposer,
   Outline,
@@ -13,9 +19,9 @@ import {
 } from "@react-three/postprocessing";
 import { KernelSize } from "postprocessing";
 
-export default function Chair_A_1(props) {
+export const Chair_A = React.forwardRef((props, ref) => {
   console.log("[Chair_A.js]");
-  const { nodes } = useMemo(() => useGLTF("./gltf/Chair_A.glb"));
+  const { nodes } = useGLTF("./gltf/Chair_A.glb");
   const [hovered, setHovered] = useState(false);
   const [wood_rough, Chair_A_AO, wood1, wood_norm, ply_diff, wood2] =
     useTexture([
@@ -26,7 +32,8 @@ export default function Chair_A_1(props) {
       "/textures/wood_diff_1.jpg",
       "/textures/wood_diff_2.jpg",
     ]);
-  const { chairARef, chairRotation, } = useContext(ChairsContext);
+  const { chairARef, chairRotation, chairsVis } = useContext(ChairsContext);
+  const effectComposerRef = useRef();
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
@@ -34,7 +41,7 @@ export default function Chair_A_1(props) {
   const bind = useGesture({
     onDrag: ({ offset: [x] }) => (chairARef.current.rotation.y = x * 0.01),
   });
-  const { currChair, setobjConfig, currObjMaterialRef, currBaseTexture } =
+  const { currChair, setobjConfig, currBaseTexture } =
     useContext(GlobalStateContext);
 
   Chair_A_AO.flipY = false;
@@ -81,7 +88,6 @@ export default function Chair_A_1(props) {
 
   useEffect(() => {
     if (currChair === "a") {
-      console.log(currChair);
       setobjConfig({
         baseTextures: [
           "/textures/dark_wood_diff_2k.jpg",
@@ -90,13 +96,24 @@ export default function Chair_A_1(props) {
         ],
         cushionTextures: [],
       });
+    } 
+
+    return () => {
+      disposeEffect()
     }
   }, [currChair]);
- 
+
+  const disposeEffect = () => {
+    console.log(effectComposerRef);
+  };
+  console.log(effectComposerRef);
+
+  
   return (
     <animated.group
       {...spring}
       {...bind()}
+      {...props}
       castShadow
       ref={chairARef}
       name="Chair_A_grp"
@@ -106,7 +123,11 @@ export default function Chair_A_1(props) {
       scale={0.056}
     >
       <Selection>
-        <EffectComposer multisampling={8} autoClear={false}>
+        <EffectComposer
+          ref={effectComposerRef}
+          multisampling={8}
+          autoClear={false}
+        >
           <Outline
             blur
             kernelSize={KernelSize.VERY_SMALL}
@@ -122,20 +143,19 @@ export default function Chair_A_1(props) {
               geometry={nodes.Chair_APIV.geometry}
               material={woodMat1}
               position={[-1.118, 0, -1.352]}
-              onPointerOver={(event) => { 
+              onPointerOver={(event) => {
                 setHovered(true);
                 event.stopPropagation();
               }}
               onPointerOut={(event) => {
                 setHovered(false);
                 event.stopPropagation();
-              }} 
+              }}
             />
           </Select>
         </EffectComposer>
       </Selection>
     </animated.group>
   );
-}
-
+});
 useGLTF.preload("gltf/Chair_A.glb");

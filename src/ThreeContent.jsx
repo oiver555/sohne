@@ -7,7 +7,7 @@ const ThreeContent = (props) => {
   return (    
       <Canvas style={{ flex: 1, }} shadows>
         <Experience />         
-        {/* <Perf/> */}
+        <Perf/>
       </Canvas>
    
   );

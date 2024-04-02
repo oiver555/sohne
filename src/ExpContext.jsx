@@ -7,3 +7,4 @@ export const SofaContext = createContext();
 export const SceneContext = createContext();
 export const ImagesContext = createContext()
 export const GlobalStateContext = createContext()
+export const ExperienceContext = createContext();

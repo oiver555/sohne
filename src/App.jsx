@@ -16,14 +16,25 @@ export default () => {
     b: false,
     c: false,
     d: false,
-    e: false
+    e: false,
   });
-  const [storageVis, setstorageVis] = useState({
-    a: false,
+  const [storageVis, setStorageVis] = useState({
+    a: true,
     b: false,
     c: false,
     d: false,
-   
+  });
+  const [tablesVis, setTableVis] = useState({
+    a: true,
+    b: false,
+    c: false,
+    d: false,
+  });
+  const [sofasVis, setSofasVis] = useState({
+    a: true,
+    b: false,
+    c: false,
+    d: false,
   });
   const chairARef = useRef();
   const chairBRef = useRef();
@@ -36,7 +47,7 @@ export default () => {
   const storageCRef = useRef();
   const storageDRef = useRef();
   const cameraRef = useRef();
-  const livingRoomCam = useRef()
+  const livingRoomCam = useRef();
   const tableARef = useRef();
   const sofaARef = useRef();
   const currObjMaterialRef = useRef();
@@ -112,9 +123,25 @@ export default () => {
     immediate: false,
     pause: true,
   }));
+  const [tableRotation, tableRotationAPI] = useSpring(() => ({
+    from: { rotate: 0 },
+    to: [
+      {
+        rotate: 6.25,
+      },
+    ],
+    config: {
+      duration: 50000,
+      precision: 0.0000001,
+    },
+    loop: true, // Reset the animation when it reaches the end
+    immediate: false,
+    pause: true,
+  }));
 
   const [currCategory, setCurrCategory] = useState("seating");
   const [currChair, setCurrChair] = useState("a");
+  const [currStorage, setCurrStorage] = useState("a");
 
   return (
     <ChairsContext.Provider
@@ -136,8 +163,8 @@ export default () => {
     >
       <StorageContext.Provider
         value={{
-          storageVis, 
-          setstorageVis,
+          storageVis,
+          setStorageVis,
           storageARef,
           storageBRef,
           storageCRef,
@@ -154,6 +181,10 @@ export default () => {
             tableARef,
             tableGroupPosition,
             tableGroupPositionAPI,
+            tablesVis,
+            setTableVis,
+            tableRotation,
+            tableRotationAPI,
           }}
         >
           <SofaContext.Provider
@@ -161,12 +192,14 @@ export default () => {
               sofaARef,
               sofaGroupPosition,
               sofaGroupPositionAPI,
+              sofasVis,
+              setSofasVis,
             }}
           >
             <SceneContext.Provider
               value={{
                 cameraRef,
-                livingRoomCam
+                livingRoomCam,
               }}
             >
               <GlobalStateContext.Provider
@@ -175,6 +208,8 @@ export default () => {
                   setCurrCategory,
                   currChair,
                   setCurrChair,
+                  currStorage,
+                  setCurrStorage,
                   objConfig,
                   setobjConfig,
                   currObjMaterialRef,

@@ -78,7 +78,6 @@ export default function Sofa_B(props) {
       position={[19.8, 1.9, 14]}
       rotation={[-Math.PI / 2, 0, 1.7]}
       scale={0.007}
-      visible={false}
     >
       <mesh
         name="Sofa_B_Back"

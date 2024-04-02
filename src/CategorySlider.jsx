@@ -20,7 +20,7 @@ const CategorySlider = (props) => {
       }}
     >
       <img
-        title="chair"
+        title=""
         style={{
           transform: "scaleX(1)",
           opacity: 1,
@@ -40,19 +40,19 @@ const CategorySlider = (props) => {
       />
 
       <img
-        title="storage"
+        title=""
         style={{ transform: "scaleX(-1)" }}
         src="./images/Storage.webp"
         width={"100%"}
       />
       <img
-        title="table"
+        title=""
         style={{ transform: "scaleX(-1)" }}
         src="./images/Table.webp"
         width={"100%"}
       />
       <img
-        title="sofa"
+        title=""
         style={{ transform: "scaleX(-1)" }}
         src="./images/Sofa.webp"
         width={"100%"}

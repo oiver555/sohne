@@ -7,11 +7,12 @@ import {
   TablesContext,
 } from "./ExpContext";
 import { useContext, useLayoutEffect } from "react";
- 
 
 const Slider = (props) => {
-  const { chairGroupPositionAPI, chairGroupPosition } =  useContext(ChairsContext);
-  const { storageGroupAPI, storageGroupPosition, storageCRef } = useContext(StorageContext);
+  const { chairGroupPositionAPI, chairGroupPosition } =
+    useContext(ChairsContext);
+  const { storageGroupAPI, setStorageVis, storageGroupPosition, storageCRef } =
+    useContext(StorageContext);
   const { cameraRef } = useContext(SceneContext);
   const { tableGroupPositionAPI } = useContext(TablesContext);
   const { sofaGroupPositionAPI } = useContext(SofaContext);
@@ -33,6 +34,7 @@ const Slider = (props) => {
           flexDirection: "row",
           zIndex: 10,
           width: "100%",
+          pointerEvents: "fill",
         }}
       >
         <div
@@ -45,11 +47,6 @@ const Slider = (props) => {
         >
           <div
             onClick={() => {
-              console.log(
-                chairGroupPosition.position,
-                storageGroupPosition.position,
-                cameraRef.current.position
-              );
               chairGroupPositionAPI.start({
                 position: [0, 0, 0],
               });
@@ -70,17 +67,6 @@ const Slider = (props) => {
                 duration: 5,
                 // ease: 'power2.inOut',
               });
-
-              // props.tableA_springRef.start({
-              //   to: {
-              //     position: [0, 0, -40],
-              //   },
-              // });
-              // props.sofaA_springRef.start({
-              //   to: {
-              //     position: [0, 0, -60],
-              //   },
-              // });
 
               gsap.to(".imagesContainer", {
                 xPercent: 0,
@@ -120,7 +106,7 @@ const Slider = (props) => {
           />
           <div
             onClick={() => {
-              console.log("[Slider.js]", storageCRef);
+              console.log("[Slider.js]");
               chairGroupPositionAPI.start({
                 position: [0, 0, 20],
               });
@@ -132,26 +118,7 @@ const Slider = (props) => {
               });
               sofaGroupPositionAPI.start({
                 position: [0, 0, -40],
-              });
-              if (storageCRef.current.visible) {
-                gsap.to(cameraRef.current.position, {
-                  x: 105,
-                  y: 16,
-                  z: 74,
-                  duration: 5,
-                  ease: "power2.inOut",
-                });
-              }
-              // props.tableA_springRef.start({
-              //   to: {
-              //     position: [0, 0, -20],
-              //   },
-              // });
-              // props.sofaA_springRef.start({
-              //   to: {
-              //     position: [0, 0, -40],
-              //   },
-              // });
+              }); 
               gsap.to(".imagesContainer", {
                 xPercent: -100,
               });
@@ -189,7 +156,6 @@ const Slider = (props) => {
               backgroundColor: "lightgrey",
             }}
           />
-
           <div
             id="tables"
             onClick={() => {

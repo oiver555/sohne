@@ -1,8 +1,5 @@
-import { useContext, useState } from "react";
-import { ChairsContext, StorageContext } from "./ExpContext";
 import CategorySlider from "./CategorySlider";
 import ImageSliders from "./ImageSliders";
-import CategoryLabels from "./CategoryLabels";
 import useConstant from "./hooks/useConstant";
 
 const HTMLContent = (props) => {
@@ -14,18 +11,14 @@ const HTMLContent = (props) => {
           height: "100%",
           width: "100%",
           flex: 1,
-          display: "flex",
-         
-          // alignItems: "center",
-          // justifyContent: "center",
+          display: "flex",   
           overflow: "hidden",
           position: "relative",
           flexDirection: "column",
         }}
       >
         <CategorySlider />
-        <ImageSliders />
-        {/* <CategoryLabels /> */}
+        <ImageSliders />      
       </div>
     </>
   );

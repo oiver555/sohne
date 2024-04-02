@@ -25,11 +25,10 @@ const Furniture = (props) => {
     <>
       <animated.group position={chairGroupPosition.position}>
         <Chairs />
-        <Html transform center position={[0, -6, 0]} sprite>
+        <Html transform center position={[0, -6, 0]} sprite zIndexRange={[0,1]}>
           <div
             style={{
-              display: "flex",
-              // backgroundColor: "yellow",
+              display: "flex", 
               width: 250,
               justifyContent: "space-around",
             }}
@@ -56,7 +55,7 @@ const Furniture = (props) => {
           </div>
         </Html>
       </animated.group>
-      {/* <animated.group position={storageGroupPosition.position}>
+      <animated.group position={storageGroupPosition.position}>
         <Storages />
       </animated.group>
       <animated.group position={tableGroupPosition.position}>
@@ -64,7 +63,7 @@ const Furniture = (props) => {
       </animated.group>
       <animated.group position={sofaGroupPosition.position}>
         <Sofas />
-      </animated.group> */}
+      </animated.group>
     </>
   );
 };

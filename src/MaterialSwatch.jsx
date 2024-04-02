@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const MaterialSwatch = (props) => {
-  console.log("[MaterialSwatch.js]", props.texturePath);
+  // console.log("[MaterialSwatch.js]", props.texturePath);
   const [opacity, setOpacity] = useState(0.5);
 
   return (

@@ -107,4 +107,4 @@ export default function Chair_C(props) {
   );
 }
 
-useGLTF.preload("gltf/Chair_C.glb");
+ 

@@ -3,9 +3,9 @@ import Chair_B from "./Chair_B";
 import Chair_C from "./Chair_C";
 import Chair_D from "./Chair_D";
 import { Chair_E } from "./Chair_E";
-import Chair_A from "./Chair_A";
+import {Chair_A} from "./Chair_A";
 import { Box } from "@react-three/drei";
-import { ChairsContext } from "./ExpContext";
+import { ChairsContext, ExperienceContext } from "./ExpContext";
 import { Chair_A_lo } from "./Chair_A_lo";
 import { Chair_B_Lo } from "./Chair_B_Lo";
 import { Chair_C_Lo } from "./Chair_C_Lo";
@@ -14,6 +14,7 @@ import { Chair_E_Lo } from "./Chair_E_Lo";
 import { animated } from "@react-spring/three";
 const Chairs = (props) => {
   const { chairRotation, chairsVis } = useContext(ChairsContext);
+  const {chairACompRef} = useContext(ExperienceContext)
 
   return (
     <group>
@@ -28,7 +29,7 @@ const Chairs = (props) => {
             </animated.group>
           }
         >
-          <Chair_A />
+          <Chair_A ref={chairACompRef} />
         </Suspense>
       )}
       {chairsVis.b && (

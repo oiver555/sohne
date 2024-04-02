@@ -49,7 +49,8 @@ export default () => {
         userSelect: "none",
       }}
     >
-      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden" }}>
+      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden", position:"relative" }}>
+      <Nav />
         <div
           style={{
             flexDirection: "row",
@@ -238,8 +239,10 @@ export default () => {
           />
         </div>
         <Footer />
+     
       </div>
-      <Nav />
+    
+     
     </div>
   );
 };

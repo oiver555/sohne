@@ -2,7 +2,6 @@ import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 
 const Lights = (props) => {
-  console.log("[Lights.js]");
   const targetObject2 = new THREE.Object3D();
   targetObject2.position.y = 5;
   targetObject2.position.x = 20;

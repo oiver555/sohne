@@ -1,7 +1,7 @@
- 
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
+import { ExperienceContext } from "./ExpContext";
 
 export function BKG(props) {
   const { nodes, materials } = useGLTF("./gltf/BKG_01.gltf");
@@ -11,7 +11,7 @@ export function BKG(props) {
     "./textures/wall_2.jpg",
     "./textures/floor.jpg",
   ]);
-
+  const { storageCCompRef, storageBCompRef, storageACompRef, tableACompRef } = useContext(ExperienceContext);
   wall1LightMap.flipY = false;
   wall2LightMap.flipY = false;
   floorLightMap.flipY = false;
@@ -31,7 +31,7 @@ export function BKG(props) {
     envMapIntensity: 0,
   });
   const floor = new THREE.MeshPhysicalMaterial({
-    map: marble00, 
+    map: marble00,
     // aoMap: floorLightMap,
     color: new THREE.Color("rgba(240,245,255,1)"),
     lightMap: floorLightMap,
@@ -41,7 +41,29 @@ export function BKG(props) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      dispose={null}
+      onPointerDown={(e) => {
+        // console.log("Background CLicked", e, e.intersections.length);
+        if (e.intersections.length < 4 && storageCCompRef.current) { 
+          storageCCompRef.current.deSelect();
+          e.stopPropagation();
+        }
+        if (e.intersections.length < 4 && storageBCompRef.current) { 
+          storageBCompRef.current.deSelect();
+          e.stopPropagation();
+        }
+        if (e.intersections.length < 4 && storageACompRef.current) { 
+          storageACompRef.current.deSelect();
+          e.stopPropagation();
+        }
+        if (e.intersections.length < 4 && tableACompRef.current) { 
+          tableACompRef.current.deSelect();
+          e.stopPropagation();
+        }
+      }}
+    >
       <group position={[-5.427, 0.082, -21.46]}>
         <group position={[0, 0, 9.789]} scale={[442.959, 72.322, 442.959]}>
           <mesh

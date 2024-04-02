@@ -294,4 +294,4 @@ export function Chair_E(props) {
   );
 }
 
-useGLTF.preload("./gltf/Chair_E.glb");
+ 

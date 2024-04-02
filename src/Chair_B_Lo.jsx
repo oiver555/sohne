@@ -15,4 +15,4 @@ export function Chair_B_Lo(props) {
   )
 }
 
-useGLTF.preload('./gltf/Chair_B_Lo.gltf')
+ 

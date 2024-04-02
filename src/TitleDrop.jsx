@@ -74,7 +74,7 @@ const TitleDrop = (props) => {
           width: window.innerWidth,
           height: window.innerHeight,
           zIndex: 10,
-           
+           color:"white",
           fontSize: 250,
           // transform: "translateY(-100%)",
           justifyContent: "center",
@@ -82,19 +82,19 @@ const TitleDrop = (props) => {
           position: "absolute",
         }}
       >
-        <span className="test" style={{ display: "inline-block" }}>
+        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
           S
         </span>
-        <span className="test" style={{ display: "inline-block" }}>
+        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
           ö
         </span>
-        <span className="test" style={{ display: "inline-block" }}>
+        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
           h
         </span>
-        <span className="test" style={{ display: "inline-block" }}>
+        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
           n
         </span>
-        <span className="test" style={{ display: "inline-block" }}>
+        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
           e
         </span>
       </div>

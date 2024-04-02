@@ -12,10 +12,11 @@ import { ChairsContext, GlobalStateContext } from "./ExpContext";
 import { KernelSize } from "postprocessing";
 import { useGesture } from "react-use-gesture";
 import gsap from "gsap";
+import { useThree } from "@react-three/fiber";
 
 export default function Chair_B(props) {
   console.log("[Chair.B.js]");
-  const { nodes } = useMemo(() => useGLTF("./gltf/Chair_B.glb"));
+  const { nodes } =  useGLTF("./gltf/Chair_B.glb") 
   const { chairBRef, chairRotation } = useContext(ChairsContext);
   const [baseHovered, setBaseHovered] = useState(false);
   const [cushionHovered, setCushionHovered] = useState(false);
@@ -73,30 +74,29 @@ export default function Chair_B(props) {
   fabric_00_nor.flipY = true;
   fabric_00_nor.flipY = false;
 
-  const woodMat = useMemo(
-    () =>
-      new THREE.MeshPhysicalMaterial({
+  const woodMat =    new THREE.MeshPhysicalMaterial({
         map:
           currBaseTexture === "/textures/The Reader armchair-b_diffuse.jpg"
             ? wood_00_diff
             : currBaseTexture === "/textures/red.jpg"
             ? red
-            : cyan,
+            : currBaseTexture === "/textures/cyan.jpg"
+            ? cyan
+            : wood_00_diff,
         normalMap: wood_00_norm,
         roughnessMap: wood_00_spec,
         roughness: 0.7,
         metalness: 0.2,
         envMapIntensity: 0.2,
         bumpMap: wood_00_disp,
-
-      })
-  );
-
+      }) 
   const fabricMat = new THREE.MeshStandardMaterial({
     map:
       currCushionTexture1 === "/textures/The Reader armchair_diffuse.jpg"
         ? fabric_00_diff
-        : polkaDot,
+        : currCushionTexture1 === "/textures/polka_dot.jpg"
+        ? polkaDot
+        : fabric_00_diff,
     roughnessMap: fabric_00_spec,
     displacementMap: fabric_00_disp,
     displacementScale: 0,
@@ -105,11 +105,8 @@ export default function Chair_B(props) {
     bumpMap: fabric_00_disp,
     bumpScale: 10,
     envMapIntensity: 0.4,
-  
   });
 
-
-  
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
@@ -215,4 +212,4 @@ export default function Chair_B(props) {
   );
 }
 
-useGLTF.preload("gltf/Chair_B.glb");
+ 

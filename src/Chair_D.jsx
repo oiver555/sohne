@@ -18,7 +18,7 @@ import { useGesture } from "react-use-gesture";
 
 export default function Chair_D(props) {
   console.log("[Chair_D.js]");
-  const { nodes } = useGLTF("./gltf/Chair_D.glb");
+  const { nodes,materials } = useGLTF("./gltf/Chair_D.glb");
   const { chairDRef, chairRotation } = useContext(ChairsContext);
   const [Chairpbrdiffuse, Chairpbrnormal, Chairpbrroughness] = useTexture([
     "./textures/Chair_pbr_diffuse.jpg",
@@ -42,8 +42,7 @@ export default function Chair_D(props) {
   Chairpbrdiffuse.flipY = false;
   Chairpbrnormal.flipY = false;
   Chairpbrroughness.flipY = false;
-  const fabricMtl = useMemo(
-    () =>
+  const fabricMtl = 
       new THREE.MeshStandardMaterial({
         map: Chairpbrdiffuse,
         roughnessMap: Chairpbrroughness,
@@ -51,9 +50,7 @@ export default function Chair_D(props) {
         roughness: 1,
         metalness: 0,
         envMapIntensity: 0.2,
-      }),
-    []
-  );
+      })
 
   const [spring, set] = useSpring(() => ({
     rotation: [0, 0, 0],
@@ -221,4 +218,4 @@ export default function Chair_D(props) {
   );
 }
 
-useGLTF.preload("gltf/Chair_D.glb");
+ 

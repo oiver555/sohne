@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
   ChairsContext,
   GlobalStateContext,
@@ -16,15 +16,35 @@ const Discover = (props) => {
     chairsVis,
     chairCRef,
     chairDRef,
-    chairERef
+    chairERef,
+    setChairsVis,
   } = useContext(ChairsContext);
   const { tableGroupPosition } = useContext(TablesContext);
   const { setCurrCategory } = useContext(GlobalStateContext);
-  const { storageARef, storageRotationAPI, storageGroupPosition } =
-    useContext(StorageContext);
+  const {
+    storageARef,
+    storageBRef,
+    storageCRef,
+    storageDRef,
+    storageRotationAPI,
+    storageGroupPosition,
+    setStorageVis,
+    storageVis,
+  } = useContext(StorageContext);
+
+  // useEffect(() => {
+  //   if (Object.values(storageVis).some((isVis) => isVis)) {
+  //     gsap.to(".storageSlider", {
+  //       duration: 2.5,
+  //       y: 0,
+  //       stagger: 0.04,
+  //     });
+  //   }
+  // }, [{...storageVis}]);
 
   return (
     <div
+      className="makeVis"
       style={{
         position: "absolute",
         zIndex: 10,
@@ -37,6 +57,7 @@ const Discover = (props) => {
         margin: 0,
         textAlign: "center",
         pointerEvents: "none",
+        opacity: 0,
       }}
     >
       <button
@@ -47,10 +68,12 @@ const Discover = (props) => {
           border: "0px solid grey",
           padding: "10px 30px 10px 30px",
           pointerEvents: "all",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
         }}
         onClick={() => {
           if (chairGroupPosition.position.get()[2] === 0) {
             console.log("Chair");
+            setCurrCategory("Chair");
             chairRotaionAPI.update({
               from: {
                 rotate: chairsVis.a
@@ -59,7 +82,7 @@ const Discover = (props) => {
                   ? chairBRef.current.rotation.y
                   : chairsVis.c
                   ? chairCRef.current.rotation.y
-                  :chairsVis.d 
+                  : chairsVis.d
                   ? chairDRef.current.rotation.y
                   : chairERef.current.rotation.y,
               },
@@ -87,19 +110,18 @@ const Discover = (props) => {
               duration: 2,
             });
 
-            gsap.to(".chairSlider", {
-              duration: 2.5,
-              y: 0,
-              stagger: 0.04,
-            });
+            setTimeout(() => {
+              gsap.to(".chairSlider", {
+                duration: 2.5,
+                y: 0,
+                stagger: 0.04,
+              });
+            }, 50);
 
-            gsap.to(
-              ".categoryContainer, .discover, #seatingLabel, .slidersVis, .nav",
-              {
-                duration: 1.5,
-                opacity: 0,
-              }
-            );
+            gsap.to(".categoryContainer, .discover, .slidersVis, .nav", {
+              duration: 1.5,
+              opacity: 0,
+            });
             gsap.to("#seatingLabel", {
               duration: 1.5,
               opacity: 1,
@@ -119,9 +141,17 @@ const Discover = (props) => {
             });
           } else if (storageGroupPosition.position.get()[2] === 0) {
             console.log("Storage");
-
+            setCurrCategory("Storage");
             storageRotationAPI.update({
-              from: { rotate: storageARef.current.rotation.y },
+              from: {
+                rotate: storageVis.a
+                  ? storageARef.current.rotation.y
+                  : storageVis.b
+                  ? storageBRef.current.rotation.y
+                  : storageVis.c
+                  ? storageCRef.current.rotation.y
+                  : storageVis.d,
+              },
               to: [
                 {
                   rotate: 6.25,
@@ -144,18 +174,18 @@ const Discover = (props) => {
               duration: 2,
             });
 
-            gsap.to(".storageSlider", {
-              duration: 2.5,
-              y: 0,
-              stagger: 0.04,
+            setTimeout(() => {
+              gsap.to(".storageSlider", {
+                duration: 2.5,
+                y: 0,
+                stagger: 0.04,
+              });
+            }, 50);
+
+            gsap.to(".categoryContainer, .discover, .slidersVis, .nav ", {
+              duration: 1.5,
+              opacity: 0,
             });
-            gsap.to(
-              ".categoryContainer, .discover, .slidersVis, .slidersVis ",
-              {
-                duration: 1.5,
-                opacity: 0,
-              }
-            );
             gsap.to("#storageLabel", {
               duration: 1.5,
               opacity: 1,
@@ -200,11 +230,6 @@ const Discover = (props) => {
               duration: 2,
             });
 
-            gsap.to(".chairSlider", {
-              duration: 2.5,
-              y: 0,
-              stagger: 0.04,
-            });
             gsap.to(
               ".categoryContainer, .discover, .slidersVis, .slidersVis ",
               {

@@ -27,7 +27,7 @@ const CategoryDrop = (props) => {
         ease: "sine",
         opacity: 1,
       },
-      ">"
+      4.5
     );
     tl.to(
       ".initial",
@@ -41,13 +41,6 @@ const CategoryDrop = (props) => {
     );
   }, []);
 
-  useEffect(() => {
-    if (props.category === "Chairs") {
-    } else if (props.category === "Storage") {
-    } else if (props.category === "Tables") {
-    } else if (props.category === "Sofas") {
-    }
-  }, [props.category]);
 
   return (
     <div
@@ -58,6 +51,7 @@ const CategoryDrop = (props) => {
         overflow: "hidden",
         top: "25%",
         pointerEvents: "none",
+        color:"#FCFAF3",
       }}
     >
       <div
@@ -76,12 +70,12 @@ const CategoryDrop = (props) => {
           height: 1000,
         }}
       >
-        <div style={{ height: 200 }}>
+        <div style={{ height: 200,  }}>
           {"Chairs".split("").map((letter, index) => (
             <span
               key={index}
               className="categoryDrop initial makeVis"
-              style={{ display: "inline-block" }}
+              style={{ display: "inline-block",textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)'  }}
             >
               {letter}
             </span>
@@ -92,30 +86,30 @@ const CategoryDrop = (props) => {
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block" }}
+              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
             >
               {letter}
             </span>
           ))}
         </div>
 
-        <div style={{ height: 200, background: "blue" }}>
+        <div style={{ height: 200,   }}>
           {"Tables".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block" }}
+              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
             >
               {letter}
             </span>
           ))}
         </div>
-        <div style={{ height: 200, background: "orange" }}>
+        <div style={{ height: 200,   }}>
           {"Sofas".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block" }}
+              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
             >
               {letter}
             </span>
