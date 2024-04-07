@@ -33,4 +33,4 @@ export function Shelving(props) {
   );
 }
 
-useGLTF.preload("./gltf/Shelf.glb");
+// useGLTF.preload("./gltf/Shelf.glb");

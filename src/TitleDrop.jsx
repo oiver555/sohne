@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const TitleDrop = (props) => {
   useEffect(() => {
     const tl = gsap.timeline({ repeat: 0 });
-
+ 
     tl.fromTo(
       ".test",
       {
@@ -23,7 +23,7 @@ const TitleDrop = (props) => {
       ".test",
       {
         duration: 1,
-        yPercent: 15,
+        yPercent: 0,
         ease: "sine",
         yoyo: false,
         stagger: 0.1,
@@ -74,27 +74,57 @@ const TitleDrop = (props) => {
           width: window.innerWidth,
           height: window.innerHeight,
           zIndex: 10,
-           color:"white",
-          fontSize: 250,
+          color: "white",
+          fontSize: `${250 * 0.11}vw`,
           // transform: "translateY(-100%)",
           justifyContent: "center",
           display: "flex",
           position: "absolute",
         }}
       >
-        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
+        <span
+          className="test"
+          style={{
+            display: "inline-block",
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+          }}
+        >
           S
         </span>
-        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
+        <span
+          className="test"
+          style={{
+            display: "inline-block",
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+          }}
+        >
           ö
         </span>
-        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
+        <span
+          className="test"
+          style={{
+            display: "inline-block",
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+          }}
+        >
           h
         </span>
-        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
+        <span
+          className="test"
+          style={{
+            display: "inline-block",
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+          }}
+        >
           n
         </span>
-        <span className="test" style={{ display: "inline-block", textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)' }}>
+        <span
+          className="test"
+          style={{
+            display: "inline-block",
+            textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+          }}
+        >
           e
         </span>
       </div>

@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CategoryDrop = (props) => {
   useEffect(() => {
@@ -41,17 +41,33 @@ const CategoryDrop = (props) => {
     );
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobileDevice = window.innerWidth <= 768; // You can adjust this threshold as needed
+      setIsMobile(isMobileDevice);
+    };
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize); // Listen for resize events
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+    };
+  }, []); // Empty dependency array ensures effect runs only once
 
   return (
     <div
       style={{
-        height: 200,
+        height: isMobile ? 150 : 200,
         width: window.innerWidth,
         position: "absolute",
         overflow: "hidden",
-        top: "25%",
+        top: isMobile ? "2%" : "25%",
         pointerEvents: "none",
-        color:"#FCFAF3",
+        color: "#FCFAF3",
+
       }}
     >
       <div
@@ -61,55 +77,68 @@ const CategoryDrop = (props) => {
           width: window.innerWidth,
           zIndex: 10,
           pointerEvents: "none",
-          fontSize: 150,
+          fontSize: isMobile ?  `${150 * 0.11}vw` : 150,
           // transform: "translateY(-100%)",
           alignItems: "center",
           display: "flex",
           position: "absolute",
           flexDirection: "column",
           height: 1000,
+          // backgroundColor: "red",
         }}
       >
-        <div style={{ height: 200,  }}>
+        <div style={{ height: isMobile ? 150 : 200,   }}>
           {"Chairs".split("").map((letter, index) => (
             <span
               key={index}
               className="categoryDrop initial makeVis"
-              style={{ display: "inline-block",textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)'  }}
+              style={{
+                display: "inline-block",
+                textShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+              }}
             >
               {letter}
             </span>
           ))}
         </div>
-        <div style={{ height: 200, background: "yellow" }}>
+        <div style={{ height: isMobile ? 150 : 200, background: "yellow" }}>
           {"Storage".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
+              style={{
+                display: "inline-block",
+                textShadow: "0px 4px 8px rgba(0, 0, 0, 0.5)",
+              }}
             >
               {letter}
             </span>
           ))}
         </div>
 
-        <div style={{ height: 200,   }}>
+        <div style={{ height: isMobile ? 150 : 200 }}>
           {"Tables".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
+              style={{
+                display: "inline-block",
+                textShadow: "0px 4px 8px rgba(0, 0, 0, 0.5)",
+              }}
             >
               {letter}
             </span>
           ))}
         </div>
-        <div style={{ height: 200,   }}>
+        <div style={{ height: isMobile ? 150 : 200 }}>
           {"Sofas".split("").map((letter, index) => (
             <span
               key={index}
               className="makeVis categoryDrop"
-              style={{ display: "inline-block", textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
+              style={{
+                display: "inline-block",
+                textShadow: "0px 4px 8px rgba(0, 0, 0, 0.5)",
+              }}
             >
               {letter}
             </span>

@@ -20,7 +20,7 @@ const Discover = (props) => {
     setChairsVis,
   } = useContext(ChairsContext);
   const { tableGroupPosition } = useContext(TablesContext);
-  const { setCurrCategory } = useContext(GlobalStateContext);
+  const { setCurrCategory, isMobile } = useContext(GlobalStateContext);
   const {
     storageARef,
     storageBRef,
@@ -32,26 +32,18 @@ const Discover = (props) => {
     storageVis,
   } = useContext(StorageContext);
 
-  // useEffect(() => {
-  //   if (Object.values(storageVis).some((isVis) => isVis)) {
-  //     gsap.to(".storageSlider", {
-  //       duration: 2.5,
-  //       y: 0,
-  //       stagger: 0.04,
-  //     });
-  //   }
-  // }, [{...storageVis}]);
-
   return (
     <div
       className="makeVis"
       style={{
         position: "absolute",
         zIndex: 10,
-        top: 100,
+        bottom: isMobile ? 0 : undefined,
+        top: isMobile ? 0 : 100,
         display: "flex",
         height: "100%",
         width: "100%",
+        // backgroundColor: "green",
         alignItems: "center",
         justifyContent: "center",
         margin: 0,
@@ -65,6 +57,9 @@ const Discover = (props) => {
         style={{
           borderRadius: 20,
           fontSize: 15,
+          height: 40,
+          bottom: isMobile ? 100 : 0,
+          position: isMobile ? "absolute" : "relative" ,
           border: "0px solid grey",
           padding: "10px 30px 10px 30px",
           pointerEvents: "all",

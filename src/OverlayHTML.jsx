@@ -18,10 +18,10 @@ const OverlayHTML = () => {
             userSelect: "none"
           }}
         > 
-          {/* <Discover /> */}
+          <Discover />
           <Slider />
-          {/* <TitleDrop /> */}
-          {/* <CategoryDrop /> */}
+          <TitleDrop />
+          <CategoryDrop />
         </div>
       </div>
     </>

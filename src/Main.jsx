@@ -12,7 +12,7 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Canvas } from "@react-three/fiber";
-import LivingRoom from "./LivingRoom.jsx";
+// import LivingRoom from "./LivingRoom.jsx";
 import { Trim } from "./html/Trim.jsx";
 import { AdSlider } from "./html/AdSlider.jsx";
 import { Menu } from "./html/Menu.jsx";
@@ -49,8 +49,15 @@ export default () => {
         userSelect: "none",
       }}
     >
-      <div style={{ height: 2000, overflowY: "scroll", overflowX: "hidden", position:"relative" }}>
-      <Nav />
+      <div
+        style={{
+          height: 2000,
+          overflowY: "scroll",
+          overflowX: "hidden",
+          position: "relative",
+        }}
+      >
+        <Nav />
         <div
           style={{
             flexDirection: "row",
@@ -60,8 +67,23 @@ export default () => {
           }}
         >
           <OverlayHTML />
-          <ThreeContent outerHeight={outerHeight} />
-          <HTMLContent outerHeight={outerHeight} />
+
+          <ThreeContent
+            id={"three-content"}
+            style={{ flex: 1, height: "100%", width: "100%", backgroundColor: "red" }}
+          />
+          <HTMLContent
+            id={"html-content"}
+            style={{
+              height: "100%",
+              width: "100%",
+              flex: 1,
+              display: "flex",
+              overflow: "hidden",
+              position: "relative",
+              flexDirection: "column",
+            }}
+          />
         </div>
         <Trim />
 
@@ -239,10 +261,7 @@ export default () => {
           />
         </div>
         <Footer />
-     
       </div>
-    
-     
     </div>
   );
 };

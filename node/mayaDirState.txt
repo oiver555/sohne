@@ -28,7 +28,6 @@
   "Chair_A.gltf",
   "Chair_A.ma",
   "Chair_A.mtl",
-  "Chair_A.obj",
   "Chair_A_01.ma",
   "Chair_A_lo.gltf",
   "Chair_A_Lo.obj",
@@ -154,5 +153,9 @@
   "Table_C.gltf",
   "Table_D.gltf",
   "Table_A.gltf",
-  "Table_A.obj"
+  "Chair_A.obj",
+  "Table_A.obj",
+  "PlusMinus.mtl",
+  "PlusMinus.obj",
+  "plus_minus.ma"
 ]

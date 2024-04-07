@@ -11,7 +11,7 @@ export function BKG(props) {
     "./textures/wall_2.jpg",
     "./textures/floor.jpg",
   ]);
-  const { storageCCompRef, storageBCompRef, storageACompRef, tableACompRef } = useContext(ExperienceContext);
+  const {chairACompRef, storageCCompRef, storageBCompRef, storageACompRef, tableACompRef } = useContext(ExperienceContext);
   wall1LightMap.flipY = false;
   wall2LightMap.flipY = false;
   floorLightMap.flipY = false;
@@ -32,7 +32,8 @@ export function BKG(props) {
   });
   const floor = new THREE.MeshPhysicalMaterial({
     map: marble00,
-    // aoMap: floorLightMap,
+    aoMap: floorLightMap,
+    aoMapIntensity: .2,
     color: new THREE.Color("rgba(240,245,255,1)"),
     lightMap: floorLightMap,
     lightMapIntensity: 1,
@@ -46,6 +47,10 @@ export function BKG(props) {
       dispose={null}
       onPointerDown={(e) => {
         // console.log("Background CLicked", e, e.intersections.length);
+        if (e.intersections.length < 4 && chairACompRef.current) { 
+          chairACompRef.current.deSelect();
+          e.stopPropagation();
+        }
         if (e.intersections.length < 4 && storageCCompRef.current) { 
           storageCCompRef.current.deSelect();
           e.stopPropagation();
@@ -104,4 +109,4 @@ export function BKG(props) {
   );
 }
 
-// useGLTF.preload("./gltf/BKG_01.gltf");
+useGLTF.preload("./gltf/BKG_01.gltf");

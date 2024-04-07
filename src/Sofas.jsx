@@ -12,7 +12,7 @@ const Sofas = (props) => {
     <group>
       {sofasVis.a && (
         <Suspense fallback={<Box position={[0, 2, 0]} />}>
-          <Sofa_A />
+          {/* <Sofa_A /> */}
         </Suspense>
       )}
       {sofasVis.b && (

@@ -19,18 +19,39 @@ const Furniture = (props) => {
   const { storageGroupPosition } = useContext(StorageContext);
   const { tableGroupPosition } = useContext(TablesContext);
   const { sofaGroupPosition } = useContext(SofaContext);
-  const { objConfig, currObjMaterialRef, currBaseTexture, setCurrBaseTexture, setCurrCushionTexture1, currCushionTexture1 } =
-    useContext(GlobalStateContext);
+  const {
+    objConfig,
+    currObjMaterialRef,
+    currBaseTexture,
+    setCurrBaseTexture,
+    setCurrCushionTexture1,
+    currCushionTexture1,
+    isMobile,
+  } = useContext(GlobalStateContext);
   return (
     <>
       <animated.group position={chairGroupPosition.position}>
         <Chairs />
-        <Html transform center position={[0, -6, 0]} sprite zIndexRange={[0,1]}>
+        <Html
+          style={{
+            margin: 0,
+            width: window.outerWidth,
+          }}
+          // transform
+          center
+          position={[0, isMobile ? 2 : -6, 0]}
+          sprite
+          zIndexRange={[0, 1]}
+        >
           <div
             style={{
-              display: "flex", 
-              width: 250,
-              justifyContent: "space-around",
+              display: "flex",
+              width: isMobile ? window.outerWidth : 250,
+              height: isMobile ? 200 : undefined,
+              marginLeft: isMobile ? 10 : 0,
+              justifyContent: isMobile ? "space-around" :"center",
+              alignItems: "flex-start",
+              flexDirection: isMobile ? "column" : "row",
             }}
           >
             {objConfig.baseTextures.map((texturePath) => (

@@ -46,7 +46,7 @@ const prevSrcDirState = JSON.parse(fs.readFileSync(prevSrcDirStateFile))
 const srcDir = "C:\\Users\\osain\\Coding\\Projects\\3js\\Sohne\\src"
 const srcDirState = fs.readdirSync(srcDir)
 
-
+return
 if (prevSrcDirState.length) {
     const newFileNames = srcDirState.filter(currentState => !prevSrcDirState.includes(currentState))
 

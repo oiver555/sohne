@@ -3,22 +3,15 @@ import ImageSliders from "./ImageSliders";
 import useConstant from "./hooks/useConstant";
 
 const HTMLContent = (props) => {
-  const {navHeight} = useConstant()
-   return (
+  const { navHeight } = useConstant();
+  return (
     <>
       <div
-        style={{
-          height: "100%",
-          width: "100%",
-          flex: 1,
-          display: "flex",   
-          overflow: "hidden",
-          position: "relative",
-          flexDirection: "column",
-        }}
+        {...props}
+       
       >
         <CategorySlider />
-        <ImageSliders />      
+        <ImageSliders />
       </div>
     </>
   );

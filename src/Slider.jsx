@@ -1,12 +1,13 @@
 import gsap from "gsap";
 import {
   ChairsContext,
+  GlobalStateContext,
   SceneContext,
   SofaContext,
   StorageContext,
   TablesContext,
 } from "./ExpContext";
-import { useContext, useLayoutEffect } from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 const Slider = (props) => {
   const { chairGroupPositionAPI, chairGroupPosition } =
@@ -16,7 +17,7 @@ const Slider = (props) => {
   const { cameraRef } = useContext(SceneContext);
   const { tableGroupPositionAPI } = useContext(TablesContext);
   const { sofaGroupPositionAPI } = useContext(SofaContext);
-
+  const { isMobile } = useContext(GlobalStateContext);
   useLayoutEffect(() => {
     gsap.to(".slider-progress", { scaleX: 1, duration: 3 });
   });
@@ -39,10 +40,11 @@ const Slider = (props) => {
       >
         <div
           style={{
-            width: "20%",
+            width: isMobile ? "50%" : "20%",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+           
           }}
         >
           <div
@@ -67,7 +69,6 @@ const Slider = (props) => {
                 duration: 5,
                 // ease: 'power2.inOut',
               });
-
               gsap.to(".imagesContainer", {
                 xPercent: 0,
               });
@@ -118,7 +119,7 @@ const Slider = (props) => {
               });
               sofaGroupPositionAPI.start({
                 position: [0, 0, -40],
-              }); 
+              });
               gsap.to(".imagesContainer", {
                 xPercent: -100,
               });
@@ -129,7 +130,7 @@ const Slider = (props) => {
 
               gsap.to(".categoryDrop", {
                 duration: 2,
-                y: -200,
+                y: isMobile ? -150 : -200,
               });
               gsap.to("#chairs", {
                 duration: 1.5,
@@ -192,7 +193,7 @@ const Slider = (props) => {
 
               gsap.to(".categoryDrop", {
                 duration: 2,
-                y: -400,
+                y: isMobile ? -300 : -400,
               });
               gsap.to(".slider-progress", {
                 duration: 2,
@@ -255,7 +256,7 @@ const Slider = (props) => {
 
               gsap.to(".categoryDrop", {
                 duration: 2,
-                y: -600,
+                y: isMobile ? -450 : -600,
               });
               gsap.to(".imagesContainer", {
                 xPercent: -300,
@@ -294,6 +295,7 @@ const Slider = (props) => {
       <div
         className="slidersVis"
         style={{
+          
           display: "flex",
           position: "absolute",
           bottom: 10,
@@ -307,19 +309,21 @@ const Slider = (props) => {
       >
         <div
           style={{
-            width: "25%",
+            width: isMobile ? "60%" : "25%",
             backgroundColor: "lightgrey",
             display: "flex",
             flexDirection: "row",
             borderRadius: 5,
             justifyContent: "space-between",
+          overflow: "hidden",
+
           }}
         >
           <div
             className="slider-progress"
             style={{
               height: 5,
-              width: "25%",
+              width: isMobile ? "30%" : "25%",
               borderRadius: 5,
               backgroundColor: "black",
             }}

@@ -398,6 +398,166 @@ const ImageSliders = (props) => {
           </div>
         </div>
       )}
+      {/* TABLE */}
+      {currCategory === "Table" && (
+        <div
+          style={{
+            position: "absolute",
+            pointerEvents: "none",
+            paddingBottom: navHeight + 50,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "row",
+              WebkitFlexWrap: "wrap",
+              justifyContent: "center",
+              pointerEvents: "none",
+            }}
+          >
+            <figure
+              className="storageSlider"
+              style={{
+                width: "40%",
+                margin: 10,
+                transform: "translateY(1000px)",
+              }}
+            >
+              <img
+                onClick={() => {
+                  setTableVis({
+                    a: true,
+                    b: false,
+                    c: false,
+                    d: false,
+                  });
+                }}
+                width="100%"
+                src="./images/Table_A.jpg"
+                style={{ pointerEvents: "fill" }}
+              />
+              <figcaption>
+                Söhne Storage
+                <br />
+                500 &euro;
+              </figcaption>
+            </figure>
+            <figure
+              className="tableSlider"
+              style={{
+                width: "40%",
+                margin: 10,
+                transform: "translateY(1000px)",
+              }}
+            >
+              <img
+                onClick={() => {
+                  setTableVis({
+                    a: false,
+                    b: true,
+                    c: false,
+                    d: false,
+                  });
+                  cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0));
+                  gsap.to(cameraRef.current.position, {
+                    x: 100,
+                    y: 15,
+                    z: 70,
+                    duration: 1,
+                    onUpdate: () =>
+                      cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0)),
+                  });
+                  gsap.to(cameraRef.current, {
+                    fov: 10,
+                    duration: 1,
+                    onUpdate: () =>
+                      cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0)),
+                  });
+                }}
+                width="100%"
+                src="./images/Storage_B.jpg"
+                style={{ pointerEvents: "fill" }}
+              />
+              <figcaption>
+                Söhne Storage
+                <br />
+                500 &euro;
+              </figcaption>
+            </figure>
+            <figure
+              className="storageSlider"
+              style={{
+                width: "40%",
+                margin: 10,
+                transform: "translateY(1000px)",
+              }}
+            >
+              <img
+                onClick={() => {
+                  cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0));
+                  gsap.to(cameraRef.current.position, {
+                    x: 110,
+                    y: 15,
+                    z: 75,
+                    duration: 1,
+                    onUpdate: () =>
+                      cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0)),
+                  });
+                  gsap.to(cameraRef.current, {
+                    fov: 10,
+                    duration: 1,
+                    onUpdate: () =>
+                      cameraRef.current.lookAt(new THREE.Vector3(0, 2, 0)),
+                  });
+                  setTableVis({
+                    a: false,
+                    b: false,
+                    c: true,
+                    d: false,
+                  });
+                }}
+                width="100%"
+                src="./images/Storage_C.jpg"
+                style={{ pointerEvents: "fill" }}
+              />
+              <figcaption>
+                Söhne Storage
+                <br />
+                500 &euro;
+              </figcaption>
+            </figure>
+            <figure
+              className="storageSlider"
+              style={{
+                width: "40%",
+                margin: 10,
+                transform: "translateY(1000px)",
+              }}
+            >
+              <img
+                onClick={() => {
+                  setTableVis({
+                    a: false,
+                    b: false,
+                    c: false,
+                    d: true,
+                  });
+                }}
+                width="100%"
+                src="./images/Storage_D.jpg"
+                style={{ pointerEvents: "fill" }}
+              />
+              <figcaption>
+                Söhne Storage
+                <br />
+                500 &euro;
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      )}
       <CategoryLabels />
     </div>
   );

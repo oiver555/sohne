@@ -5,7 +5,7 @@ import { Perf } from "r3f-perf";
 
 const ThreeContent = (props) => {
   return (    
-      <Canvas style={{ flex: 1, }} shadows>
+      <Canvas  {...props}   shadows>
         <Experience />         
         <Perf/>
       </Canvas>

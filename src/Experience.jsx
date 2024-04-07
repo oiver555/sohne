@@ -60,7 +60,7 @@ export default function Experience(props) {
           far={400}
           position={[100, 15, 70]}
         />
-        <fog attach="fog" args={["orange", 40, 700]} />
+        {/* <fog attach="fog" args={["orange", 40, 700]} /> */}
         <SoftShadows sipze={5} samples={25} focus={2} />
         <OrbitControls
           makeDefault

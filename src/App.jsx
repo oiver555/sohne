@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Main from "./Main";
 import {
   ChairsContext,
@@ -11,6 +11,23 @@ import {
 import { useSpring, useSpringRef, easings } from "@react-spring/three";
 
 export default () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobileDevice = window.innerWidth <= 768; // You can adjust this threshold as needed
+      setIsMobile(isMobileDevice);
+    };
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize); // Listen for resize events
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+    };
+  }, []); 
+
   const [chairsVis, setChairsVis] = useState({
     a: true,
     b: false,
@@ -217,6 +234,7 @@ export default () => {
                   setCurrBaseTexture,
                   currCushionTexture1,
                   setCurrCushionTexture1,
+                  isMobile
                 }}
               >
                 <Main />

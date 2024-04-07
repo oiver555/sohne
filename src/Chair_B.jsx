@@ -1,25 +1,20 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
-import {
-  EffectComposer,
-  Outline,
-  Select,
-  Selection,
-} from "@react-three/postprocessing";
+import React, { useContext, useEffect,  useState } from "react";
+import { useGLTF, useTexture, Outlines } from "@react-three/drei"; 
 import * as THREE from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
-import { KernelSize } from "postprocessing";
-import { useGesture } from "react-use-gesture";
-import gsap from "gsap";
-import { useThree } from "@react-three/fiber";
+ import { useGesture } from "react-use-gesture";
 
 export default function Chair_B(props) {
   console.log("[Chair.B.js]");
-  const { nodes } =  useGLTF("./gltf/Chair_B.glb") 
+  const { nodes } = useGLTF("./gltf/Chair_B.glb");
   const { chairBRef, chairRotation } = useContext(ChairsContext);
-  const [baseHovered, setBaseHovered] = useState(false);
-  const [cushionHovered, setCushionHovered] = useState(false);
+  const [state, setState] = useState({
+    baseHovered: false,
+    baseClicked: false,
+    cushionHovered: false,
+    cushionClicked: false,
+  }); 
   const {
     setobjConfig,
     currChair,
@@ -74,22 +69,22 @@ export default function Chair_B(props) {
   fabric_00_nor.flipY = true;
   fabric_00_nor.flipY = false;
 
-  const woodMat =    new THREE.MeshPhysicalMaterial({
-        map:
-          currBaseTexture === "/textures/The Reader armchair-b_diffuse.jpg"
-            ? wood_00_diff
-            : currBaseTexture === "/textures/red.jpg"
-            ? red
-            : currBaseTexture === "/textures/cyan.jpg"
-            ? cyan
-            : wood_00_diff,
-        normalMap: wood_00_norm,
-        roughnessMap: wood_00_spec,
-        roughness: 0.7,
-        metalness: 0.2,
-        envMapIntensity: 0.2,
-        bumpMap: wood_00_disp,
-      }) 
+  const woodMat = new THREE.MeshPhysicalMaterial({
+    map:
+      currBaseTexture === "/textures/The Reader armchair-b_diffuse.jpg"
+        ? wood_00_diff
+        : currBaseTexture === "/textures/red.jpg"
+        ? red
+        : currBaseTexture === "/textures/cyan.jpg"
+        ? cyan
+        : wood_00_diff,
+    normalMap: wood_00_norm,
+    roughnessMap: wood_00_spec,
+    roughness: 0.7,
+    metalness: 0.2,
+    envMapIntensity: 0.2,
+    bumpMap: wood_00_disp,
+  });
   const fabricMat = new THREE.MeshStandardMaterial({
     map:
       currCushionTexture1 === "/textures/The Reader armchair_diffuse.jpg"
@@ -107,7 +102,7 @@ export default function Chair_B(props) {
     envMapIntensity: 0.4,
   });
 
-  const [spring, set] = useSpring(() => ({
+  const [spring, setSpring] = useSpring(() => ({
     rotation: [0, 0, 0],
     config: { friction: 10 },
   }));
@@ -140,76 +135,78 @@ export default function Chair_B(props) {
       {...bind()}
     >
       <group rotation={[0, 1.4, 0]}>
-        <Selection>
-          <EffectComposer multisampling={8} autoClear={false}>
-            <Outline
-              blur
-              kernelSize={KernelSize.VERY_SMALL}
-              resolutionScale={0}
-              visibleEdgeColor="white"
-              edgeStrength={2}
-              width={500}
-            />
-            <Select enabled={cushionHovered}>
-              <mesh
-                name="Chair_B_Cushion"
-                castShadow
-                receiveShadow
-                geometry={nodes.Chair_B_Cushion.geometry}
-                material={fabricMat}
-                onClick={(event) => {
-                  setobjConfig({
-                    baseTextures: [],
-                    cushionTextures: [
-                      "/textures/The Reader armchair_diffuse.jpg",
-                      "/textures/polka_dot.jpg",
-                    ],
-                  });
-                  event.stopPropagation();
-                }}
-                onPointerOver={(event) => {
-                  setCushionHovered(true);
-                  event.stopPropagation();
-                }}
-                onPointerOut={(event) => {
-                  setCushionHovered(false);
-                  event.stopPropagation();
-                }}
-              />
-            </Select>
-            <Select enabled={baseHovered}>
-              <mesh
-                name="Chair_B_Wood"
-                castShadow
-                receiveShadow
-                geometry={nodes.Chair_B_Wood.geometry}
-                material={woodMat}
-                onClick={(event) => {
-                  setobjConfig({
-                    baseTextures: [
-                      "/textures/The Reader armchair-b_diffuse.jpg",
-                      "/textures/red.jpg",
-                      "/textures/cyan.jpg",
-                    ],
-                    cushionTextures: [],
-                  });
-                  event.stopPropagation();
-                }}
-                onPointerOver={(event) => {
-                  setBaseHovered(true);
-                  event.stopPropagation();
-                }}
-                onPointerOut={(event) => {
-                  setBaseHovered(false);
-                  event.stopPropagation();
-                }}
-              />
-            </Select>
-          </EffectComposer>
-        </Selection>
+        <mesh
+          name="Chair_B_Cushion"
+          castShadow
+          receiveShadow
+          geometry={nodes.Chair_B_Cushion.geometry}
+          material={fabricMat}
+          onClick={(event) => {
+            setobjConfig({
+              baseTextures: [],
+              cushionTextures: [
+                "/textures/The Reader armchair_diffuse.jpg",
+                "/textures/polka_dot.jpg",
+              ],
+            });
+            setState({...state, cushionClicked: true});
+            event.stopPropagation();
+          }}
+          onPointerOver={(event) => {
+            if (state.baseHovered) return
+
+            setState({...state, cushionHovered: true});
+
+            event.stopPropagation();
+          }}
+          onPointerOut={(event) => {
+            setState({...state, cushionHovered: false});
+            event.stopPropagation();
+          }}
+        >
+          <Outlines
+            angle={0}
+            thickness={state.cushionHovered || state.cushionClicked ? 1.1 : 0}
+            color={state.cushionClicked ? "yellow" : "white"}
+          />
+        </mesh>
+
+        <mesh
+          name="Chair_B_Wood"
+          castShadow
+          receiveShadow
+          geometry={nodes.Chair_B_Wood.geometry}
+          material={woodMat}
+          onClick={(event) => {
+            setobjConfig({
+              baseTextures: [
+                "/textures/The Reader armchair-b_diffuse.jpg",
+                "/textures/red.jpg",
+                "/textures/cyan.jpg",
+              ],
+              cushionTextures: [],
+            });
+            setState({...state, baseClicked: true});            
+            event.stopPropagation();
+          }}
+          onPointerOver={(event) => {
+            if (state.cushionHovered) return
+            setState({...state, baseHovered: true});
+            event.stopPropagation();
+          }}
+          onPointerOut={(event) => {
+            setState({...state, baseHovered: false});
+            event.stopPropagation();
+          }}
+        >
+            <Outlines
+            angle={0}
+            thickness={state.baseHovered || state.baseClicked ? 1.1 : 0}
+            color={state.baseClicked ? "yellow" : "white"}
+          />
+         
+        </mesh>
       </group>
     </animated.group>
   );
 }
-
- 

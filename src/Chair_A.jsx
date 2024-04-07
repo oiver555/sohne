@@ -2,27 +2,21 @@ import React, {
   useContext,
   useEffect,
   useImperativeHandle,
-  useMemo,
   useRef,
   useState,
 } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF, useTexture, Outlines } from "@react-three/drei";
 import * as THREE from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { ChairsContext, GlobalStateContext } from "./ExpContext";
-import { useGesture } from "react-use-gesture";
-import {
-  EffectComposer,
-  Outline,
-  Selection,
-  Select,
-} from "@react-three/postprocessing";
-import { KernelSize } from "postprocessing";
+import { useDrag } from "react-use-gesture";
+import gsap from "gsap";
 
 export const Chair_A = React.forwardRef((props, ref) => {
-  console.log("[Chair_A.js]");
-  const { nodes } = useGLTF("./gltf/Chair_A.glb");
+  console.log("Chair_A");
+  const { nodes } = useGLTF("./gltf/Chair_A.gltf");
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [wood_rough, Chair_A_AO, wood1, wood_norm, ply_diff, wood2] =
     useTexture([
       "/textures/dark_wood_rough_2k.jpg",
@@ -33,13 +27,17 @@ export const Chair_A = React.forwardRef((props, ref) => {
       "/textures/wood_diff_2.jpg",
     ]);
   const { chairARef, chairRotation, chairsVis } = useContext(ChairsContext);
-  const effectComposerRef = useRef();
-  const [spring, set] = useSpring(() => ({
+  const test = useRef();
+  const [spring, setSpring] = useSpring(() => ({
     rotation: [0, 0, 0],
-    config: { friction: 10 },
+    config: { friction: 0 },
   }));
-  const bind = useGesture({
-    onDrag: ({ offset: [x] }) => (chairARef.current.rotation.y = x * 0.01),
+  const bind = useDrag(({ offset: [ox, oy], down }) => {
+    if (!clicked) return;
+    setSpring.start({
+      rotation: [0, (ox + oy) * 0.01, 0],
+      immediate: down,
+    });
   });
   const { currChair, setobjConfig, currBaseTexture } =
     useContext(GlobalStateContext);
@@ -96,23 +94,18 @@ export const Chair_A = React.forwardRef((props, ref) => {
         ],
         cushionTextures: [],
       });
-    } 
-
-    return () => {
-      disposeEffect()
     }
   }, [currChair]);
 
-  const disposeEffect = () => {
-    console.log(effectComposerRef);
+  const deSelect = () => {
+    setClicked(false);
   };
-  console.log(effectComposerRef);
+  useImperativeHandle(ref, () => {
+    return { deSelect };
+  });
 
-  
   return (
     <animated.group
-      {...spring}
-      {...bind()}
       {...props}
       castShadow
       ref={chairARef}
@@ -121,41 +114,46 @@ export const Chair_A = React.forwardRef((props, ref) => {
       rotation={[0, 0, 0]}
       rotation-y={chairRotation.rotate}
       scale={0.056}
+      dispose={null}
     >
-      <Selection>
-        <EffectComposer
-          ref={effectComposerRef}
-          multisampling={8}
-          autoClear={false}
+      <animated.group {...spring} {...bind()}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Chair_A.geometry}
+          material={woodMat1}
+          position={[-1.118, 0, -1.352]}
+          onClick={() => {
+            // const tl = gsap.timeline();
+
+            // // Add animations to the timeline
+            // tl.to("#three-content", { flex: 1, duration: 1 }, 0); // 0 delay
+            // tl.to("#html-content", { flex: 0, duration: 1 }, 0); // 0 delay
+
+            
+
+            setClicked(true);
+          }}
+          onPointerOver={(event) => {
+            setHovered(true);
+            event.stopPropagation();
+          }}
+          onPointerOut={(event) => {
+            setHovered(false);
+            event.stopPropagation();
+          }}
         >
-          <Outline
-            blur
-            kernelSize={KernelSize.VERY_SMALL}
-            resolutionScale={0}
-            visibleEdgeColor="white"
-            edgeStrength={2}
-            width={500}
-          />
-          <Select enabled={hovered}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Chair_APIV.geometry}
-              material={woodMat1}
-              position={[-1.118, 0, -1.352]}
-              onPointerOver={(event) => {
-                setHovered(true);
-                event.stopPropagation();
-              }}
-              onPointerOut={(event) => {
-                setHovered(false);
-                event.stopPropagation();
-              }}
+          {(hovered || clicked) && (
+            <Outlines
+              angle={0}
+              thickness={hovered || clicked ? 1 : 0}
+              color={clicked ? "yellow" : "white"}
+              opacity={0}
             />
-          </Select>
-        </EffectComposer>
-      </Selection>
+          )}
+        </mesh>
+      </animated.group>
     </animated.group>
   );
 });
-useGLTF.preload("gltf/Chair_A.glb");
+useGLTF.preload("gltf/Chair_A.gltf");
